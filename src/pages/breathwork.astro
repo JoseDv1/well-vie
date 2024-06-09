@@ -1,0 +1,169 @@
+---
+import ContactForm from "@/components/ContactForm.svelte";
+import Hero from "@/components/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import oneToOneIcon from "@/assets/1to1.svg";
+import companyEventsIcon from "@/assets/company_events.svg";
+import groupEventsIcon from "@/assets/group_events.svg";
+---
+
+<Layout title="Breathwork">
+	<Hero
+		heading="Breathwork"
+		image="/imgs/breathwork/warm_bench-2.jpg"
+		position="20% top"
+	/>
+	<main>
+		<h2>
+			Bring your nervous system, body and mind to a state of peace, calm and
+			liberation
+		</h2>
+		<h3>
+			McKenzie is a certified Trauma-Informed Breathwork Facilitator who brings
+			the benefits of guided meditation using breathing techniques into
+			business, relationships & team building
+		</h3>
+		<section class="benefits">
+			<h2>Benefits of Breathwork:</h2>
+			<article>
+				<img src="/imgs/breathwork/later-2.jpg" alt="" />
+				<ul>
+					<li>Release of stress and anxiety</li>
+					<li>Aides in better sleep</li>
+					<li>Improves focus & mood</li>
+					<li>Gives clarity</li>
+					<li>Increases energy and boosts immunity</li>
+					<li>Improves digestion & circulation</li>
+					<li>Lowers blood pressure</li>
+					<li>Connect to your inner self</li>
+					<li>Moves through stuck energy</li>
+					<li>Helps manage depression</li>
+					<li>Helps heal from trauma and manage PTSD</li>
+				</ul>
+			</article>
+		</section>
+
+		<section class="types">
+			<div>
+				<article>
+					<img
+						src={oneToOneIcon.src}
+						alt="One to One sesons"
+						width="48"
+						height="48"
+					/>
+					<h3>1.1 sesons</h3>
+				</article>
+				<article>
+					<img
+						src={groupEventsIcon.src}
+						alt="Group events"
+						width="48"
+						height="48"
+					/>
+					<h3>Group events</h3>
+				</article>
+				<article>
+					<img
+						src={companyEventsIcon.src}
+						alt="Corporate company events"
+						width="48"
+						height="48"
+					/>
+					<h3>corporate company events</h3>
+				</article>
+			</div>
+			<a class="btn" href="#contact">Work with me</a>
+		</section>
+
+		<!-- Form Section -->
+		<div id="contact">
+			<ContactForm client:only="svelte" />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	main h3 {
+		text-align: center;
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	main section.benefits {
+		margin-bottom: 4rem;
+	}
+
+	main section.benefits article {
+		display: flex;
+		flex-wrap: wrap-reverse;
+		gap: 2rem;
+
+		& > * {
+			flex: 1 0 300px;
+		}
+	}
+
+	main section.benefits article img {
+		border-radius: var(--border-radius);
+		width: 50%;
+		aspect-ratio: 1/1;
+	}
+
+	main section.benefits article ul {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		justify-content: space-between;
+		font-family: var(--roslindale);
+		font-size: 1.5rem;
+		color: var(--text-color);
+
+		@media (width <= 768px) {
+			padding: 0 2rem;
+		}
+	}
+
+	section.types {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin: 4rem 0;
+	}
+
+	section.types div {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		align-items: center;
+		gap: 2rem;
+	}
+
+	section.types article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	section.types article img {
+		object-fit: cover;
+		object-position: center;
+	}
+
+	section.types a.btn {
+		align-self: center;
+		padding: 0.5rem 4rem;
+	}
+</style>

@@ -1,0 +1,129 @@
+---
+import logotype from "@/assets/logotype.svg";
+---
+
+<nav>
+	<!-- Logo  -->
+	<a href="/">
+		<img src={logotype.src} alt="Well Vie" width="80" height="80" />
+	</a>
+
+	<!-- NavMenu -->
+
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About</a></li>
+		<li><a href="/retreats">Retreats</a></li>
+		<li><a href="/breathwork">Breathwork</a></li>
+		<li><a href="#">Book Now</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+
+	<!-- Mobile Menu -->
+	<div>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="32"
+			height="32"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+			fill="none"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+			<line x1="4" y1="6" x2="20" y2="6"></line>
+			<line x1="4" y1="12" x2="20" y2="12"></line>
+			<line x1="4" y1="18" x2="20" y2="18"></line>
+		</svg>
+	</div>
+
+	<script>
+		// Handle Mobile Menu
+		const mobileMenu = document.querySelector("nav > div") as HTMLDivElement;
+		const navMenu = document.querySelector("nav > ul") as HTMLUListElement;
+		const nav = document.querySelector("nav") as HTMLElement;
+		let isOpen = false;
+
+		mobileMenu.addEventListener("click", () => {
+			isOpen = !isOpen;
+			if (isOpen) {
+				// Set a attribute to the navMenu
+				navMenu.setAttribute("data-open", "true");
+			} else {
+				navMenu.removeAttribute("data-open");
+			}
+		});
+
+		// Close the menu when the user clicks outside
+		document.addEventListener("click", (e) => {
+			if (isOpen && !nav.contains(e.target as Node)) {
+				isOpen = false;
+				navMenu.removeAttribute("data-open");
+			}
+		});
+	</script>
+
+	<style>
+		nav {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 0.5rem 2rem;
+			background-color: var(--fg-color);
+			border-radius: 0 0 var(--border-radius) var(--border-radius);
+			color: var(--bg-color);
+			font-family: "Roslindale";
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+			height: 50px;
+		}
+
+		nav:has(ul[data-open]) {
+			border-radius: 0;
+		}
+
+		nav > ul {
+			display: flex;
+			gap: 1rem;
+		}
+
+		nav > div {
+			display: none;
+		}
+
+		@media (width < 768px) {
+			nav > div {
+				display: block;
+			}
+
+			nav > div > svg {
+				aspect-ratio: 1/1;
+				height: 2rem;
+				cursor: pointer;
+			}
+
+			nav > ul {
+				display: none;
+			}
+
+			nav > ul[data-open] {
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				z-index: 100;
+				background-color: var(--fg-color);
+				border-radius: 0 0 var(--border-radius) var(--border-radius);
+				padding: 1rem 2rem;
+			}
+
+			nav > ul[data-open] > li > a {
+				display: block;
+				padding: 0.5rem 0;
+			}
+		}
+	</style>
+</nav>

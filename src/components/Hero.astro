@@ -1,0 +1,83 @@
+---
+interface Props {
+	heading: string;
+	image: string;
+	scroll?: boolean;
+	position?: string;
+	textPosition?: string[];
+}
+
+const {
+	heading,
+	image,
+	scroll = false,
+	position = "center",
+	textPosition = ["20%", "50%"],
+} = Astro.props;
+---
+
+<div class:list={[{ scroll }]}>
+	<h1>{heading}</h1>
+
+	{scroll && <small> Scroll down to know how </small>}
+</div>
+
+<style
+	define:vars={{
+		textX: textPosition[0],
+		textY: textPosition[1],
+		bgPosition: position,
+		imageURL: `url(${image})`,
+	}}
+>
+	div {
+		--bottom-position: 5%;
+
+		background-color: #44444488;
+		background-image: var(--imageURL);
+		background-size: cover;
+		background-position: var(--bgPosition);
+		height: 90dvh;
+		border-radius: var(--border-radius);
+		pointer-events: none;
+		margin-bottom: 1rem;
+
+		& > small {
+			position: absolute;
+			bottom: calc(var(--bottom-position) + 1%);
+			left: 50%;
+			transform: translateX(-50%);
+			color: var(--bg-color);
+		}
+
+		&.scroll::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+			height: var(--bottom-position);
+			border-inline: 1px solid var(--bg-color);
+		}
+
+		& > h1 {
+			font-size: 4rem;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			color: var(--bg-color);
+
+			@media (width < 768px) {
+				top: var(--textY);
+				left: var(--textX);
+			}
+
+			@media (width < 400px) {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				text-shadow: 0 0 2px #232323;
+			}
+		}
+	}
+</style>

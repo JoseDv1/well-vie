@@ -1,0 +1,122 @@
+---
+import Hero from "@/components/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Meet McKenzie">
+	<Hero
+		heading="Meet McKenzie"
+		image="/imgs/about/early-7.jpg"
+		position="top center"
+	/>
+	<main>
+		<section>
+			<h2>
+				McKenzie is a San Francisco-based hair artist & breathwork facilitator
+			</h2>
+		</section>
+		<article>
+			<div></div>
+			<section>
+				<p>
+					Behind the chair, McKenzie’s passion is all things color. With over 12
+					years in the industry she has trained with Paul Mitchell, Goldwell,
+					Wella and Redken color. McKenzie's blend of expertise and creativity
+					ensures each client has a custom coloring experience ranging from sun
+					kissed balayage, complete grey coverage, highlighting techniques, 3D
+					balayage and more.
+				</p>
+			</section>
+		</article>
+		<article>
+			<div></div>
+			<section>
+				<h2>McKenzie is a Trauma Informed Breathwork Facilitator</h2>
+				<p>
+					Behind the chair, McKenzie’s passion is all things color. With over 12
+					years in the industry she has trained with Paul Mitchell, Goldwell,
+					Wella and Redken color. McKenzie's blend of expertise and creativity
+					ensures each client has a custom coloring experience ranging from sun
+					kissed balayage, complete grey coverage, highlighting techniques, 3D
+					balayage and more.
+				</p>
+			</section>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 10%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		gap: 2rem;
+
+		margin-top: 2rem;
+
+		max-width: 1200px;
+		font-size: 1.2rem;
+	}
+
+	main > section {
+		max-width: 800px;
+
+		& h2 {
+			font-size: 4rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	main > article {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 4rem;
+
+		& > * {
+			flex: 1;
+		}
+
+		&:nth-child(even) {
+			flex-direction: row-reverse;
+		}
+
+		div {
+			flex: 1;
+
+			@media (max-width: 800px) {
+				display: none;
+			}
+		}
+
+		& > section {
+			flex: 1 0 300px;
+		}
+
+		& > img {
+			aspect-ratio: 1/1;
+			width: 300px;
+			object-fit: cover;
+		}
+
+		& h2 {
+			font-size: 2rem;
+			margin-bottom: 3rem;
+		}
+
+		& p {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	img {
+		border-radius: var(--border-radius);
+		object-fit: cover;
+	}
+</style>

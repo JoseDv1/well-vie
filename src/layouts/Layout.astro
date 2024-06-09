@@ -1,0 +1,83 @@
+---
+import "@/styles/reset.css";
+import "@/styles/globals.css";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<Navbar />
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer>
+			<Footer />
+		</footer>
+		<script>
+			// Add a fade in animation on scroll for all elements in the main content area
+			document.addEventListener("DOMContentLoaded", () => {
+				const elements = document.querySelectorAll(".slide");
+
+				// Set the opacity of all elements to 0 an move them to the bottom of the page
+				elements.forEach((element) => {
+					const htmlElement = element as HTMLElement;
+					htmlElement.style.opacity = "0";
+					htmlElement.style.transition = "all 2s";
+					htmlElement.style.transform = "translateY(25%)";
+				});
+
+				// Create an IntersectionObserver to fade in elements when they are in view
+				const observer = new IntersectionObserver(
+					(entries) => {
+						// For each entry, fade in the element if it is in view
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								const htmlElement = entry.target as HTMLElement;
+								htmlElement.style.opacity = "1";
+								htmlElement.style.transform = "translateY(0)";
+							}
+						});
+					},
+					{ threshold: 0.1 }
+				);
+
+				elements.forEach((element) => {
+					observer.observe(element);
+				});
+			});
+		</script>
+
+		<style>
+			body {
+				padding: 0 1rem;
+			}
+		</style>
+
+		<style is:global>
+			@media (prefers-reduced-motion) {
+				* {
+					animation-duration: 0.01ms !important;
+					animation-iteration-count: 1 !important;
+					transition-duration: 0.01ms !important;
+					scroll-behavior: auto !important;
+				}
+			}
+		</style>
+	</body>
+</html>

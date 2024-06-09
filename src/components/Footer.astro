@@ -1,0 +1,102 @@
+---
+import xIcon from "@/assets/x.svg?raw";
+import FacebookIcon from "@/assets/facebook.svg?raw";
+import YoutubeIcon from "@/assets/youtube.svg?raw";
+import InstagramIcon from "@/assets/instagram.svg?raw";
+import wIcon from "@/assets/W_symbol.svg";
+---
+
+<footer>
+	<div>
+		<a href="/">
+			<img src={wIcon.src} alt="W Icon" height="50" width="50" />
+		</a>
+	</div>
+
+	<section>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/retreats">Retreats</a></li>
+					<li><a href="/breathwork">Breathwork</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<ul>
+			<li>
+				<a href="#" set:html={xIcon} />
+			</li>
+			<li>
+				<a href="#" set:html={FacebookIcon} />
+			</li>
+			<li>
+				<a href="#" set:html={YoutubeIcon} />
+			</li>
+			<li>
+				<a href="#" set:html={InstagramIcon} />
+			</li>
+		</ul>
+		<footer>
+			<a href="#">Privacy Policy</a>
+			<p>© Well-Vie. All Rights Reserved 2024. Licensing</p>
+		</footer>
+	</section>
+</footer>
+
+<style>
+	footer:not(section footer) {
+		margin-top: 4rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		justify-content: space-around;
+		align-items: center;
+		padding: 1rem;
+		background-color: var(--fg-color);
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
+		color: var(--bg-color);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 3rem;
+
+		@media (width < 768px) {
+			align-items: center;
+		}
+	}
+
+	section header nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	section ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		align-content: center;
+		gap: 1rem;
+	}
+
+	section footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		color: var(--bg-color);
+	}
+
+	section footer a,
+	section footer p {
+		color: var(--bg-color);
+	}
+</style>
