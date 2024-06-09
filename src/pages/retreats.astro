@@ -15,7 +15,7 @@ const articleP = `Experience the transformative embrace of the Liberate & Embody
 				restful moments, all culminating in sacred ceremonies. This journey
 				ensures lasting change, leaving you forever transformed`;
 
-const images = await Astro.glob("../../public/imgs/retreats/experience/*");
+const images = await Astro.glob("../../public/imgs/retreats/experience/*.webp");
 const mappedImgs = images.map((img) => img.default.src);
 ---
 
