@@ -1,0 +1,46 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ContactForm from "@/components/ContactForm.svelte";
+import Hero from "@/components/Hero.astro";
+---
+
+<Layout title="About">
+	<Hero
+		heading="Contact & Location"
+		image="/imgs/contact/later-3.jpg"
+		position="top center"
+	/>
+	<main>
+		<section>
+			<h2>Getting in touch is easy, text 316.258.9949 to start your journey</h2>
+			<h2>Golden West Salon 2288 Union Street San Francisco, CA 94123</h2>
+		</section>
+		<h2>Send a Message</h2>
+		<ContactForm />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		max-width: 800px;
+	}
+
+	section {
+		margin: 4rem 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		text-align: center;
+		gap: 4rem;
+
+		& > * {
+			flex: 0 0 200px;
+		}
+	}
+
+	h2 {
+		font-size: 2rem;
+		text-align: center;
+	}
+</style>

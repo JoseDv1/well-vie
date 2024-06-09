@@ -109,6 +109,8 @@ import groupEventsIcon from "@/assets/group_events.svg";
 	main section.benefits article {
 		display: flex;
 		flex-wrap: wrap-reverse;
+		align-items: center;
+		justify-content: space-between;
 		gap: 2rem;
 
 		& > * {
@@ -158,8 +160,13 @@ import groupEventsIcon from "@/assets/group_events.svg";
 	}
 
 	section.types article img {
+		width: 100px;
 		object-fit: cover;
 		object-position: center;
+	}
+
+	section.types article img[alt="Group events"] {
+		width: 120px;
 	}
 
 	section.types a.btn {

@@ -12,6 +12,7 @@
 </script>
 
 <form
+	id="contact"
 	on:submit|preventDefault={() => {
 		sendEmail();
 	}}
