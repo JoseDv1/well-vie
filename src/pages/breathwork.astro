@@ -157,6 +157,10 @@ import groupEventsIcon from "@/assets/group_Events.svg";
 		border-radius: var(--border-radius);
 		width: 50%;
 		aspect-ratio: 1/1;
+
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 	}
 
 	main section.benefits article ul {
@@ -167,12 +171,6 @@ import groupEventsIcon from "@/assets/group_Events.svg";
 		font-family: var(--roslindale);
 		color: var(--text-color);
 		font-size: var(--heading-paragraph);
-	}
-
-	main section.experience {
-		display: flex;
-		flex-direction: column;
-		gap: var(--section-gap);
 	}
 
 	main section.experience div {
