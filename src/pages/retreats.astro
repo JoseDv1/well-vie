@@ -25,214 +25,221 @@ const mappedImgs = images.map((img) => img.default.src);
 		image="/imgs/retreats/header.webp"
 		position="center"
 	/>
-	<main class="next">
-		<p>Next retreat! <br />join us in the journey</p>
-		<article>
-			<h2>{articleH}</h2>
-			<p>{articleP}</p>
-		</article>
-	</main>
-	<!-- Get set to experience -->
-	<section>
-		<h2>Get set to experience</h2>
-		<GetSetToExperience client:idle />
-	</section>
-
-	<!-- Retreats Galery Carousel -->
-	<Carousel images={mappedImgs} client:visible />
-
-	<!-- Early -->
-	<main class="faq">
-		<h2>Early bird pricing and payment plans available until April 1.</h2>
-
-		<div>
-			<a class="btn">Book Private Room</a>
-			<a class="btn">Book Shared Room</a>
-		</div>
-
+	<main>
+		<section class="next">
+			<p class="slide">Next retreat! <br />join us in the journey</p>
+			<article class="slide">
+				<h2>{articleH}</h2>
+				<p>{articleP}</p>
+			</article>
+		</section>
+		<!-- Get set to experience -->
 		<section>
-			<!-- FAQ -->
-			<article>
-				<h3>FAQ's</h3>
-				<details name="fq">
-					<summary>How do I pay?</summary>
-					<p>
-						You can pay with a credit or debit card on my website:
-						<a href="https://www.itsmckenziechun.com/retreats"
-							>https://www.itsmckenziechun.com/retreats</a
+			<h2>Get set to experience</h2>
+			<GetSetToExperience client:idle />
+		</section>
+
+		<!-- Retreats Galery Carousel -->
+		<section class="car">
+			<h2>Images of our retreat experience and locations</h2>
+			<Carousel images={mappedImgs} client:visible />
+		</section>
+
+		<!-- Early -->
+		<section class="faq">
+			<h2 class="slide">
+				Early bird pricing and payment plans available until April 1.
+			</h2>
+
+			<div class="slide">
+				<a class="btn">Book Private Room</a>
+				<a class="btn">Book Shared Room</a>
+			</div>
+
+			<section>
+				<!-- FAQ -->
+				<article>
+					<h2>FAQ's</h2>
+					<details name="fq">
+						<summary>How do I pay?</summary>
+						<p>
+							You can pay with a credit or debit card on my website:
+							<a href="https://www.itsmckenziechun.com/retreats"
+								>https://www.itsmckenziechun.com/retreats</a
+							>
+						</p>
+					</details>
+					<details name="fq">
+						<summary>When do I pay?</summary>
+						<p>
+							When you sign up there is an option to pay the balance in full
+							(price depending on if you opt for a private or shared room) or
+							take advantage of our payment plan offering which is active until
+							April 1! The cut off to sign up for the retreat is May 1.
+						</p>
+					</details>
+					<details name="fq">
+						<summary>Can I room with someone I know?</summary>
+						<p>
+							Absolutely! Just email itsmckenziechun@gmail.com with the name of
+							the person you would like to room with.
+						</p>
+					</details>
+					<details name="fq">
+						<summary>When is the last day for sign up?</summary>
+						<p>
+							May 1, 2024 is our cut off however we may run out of spots by then
+							(there are only 10 total) so if you would like to go I suggest
+							securing your spot ASAP.
+						</p>
+					</details>
+					<details name="fq">
+						<summary
+							>When are early bird pricing and payment plans active until?</summary
 						>
-					</p>
-				</details>
-				<details name="fq">
-					<summary>When do I pay?</summary>
-					<p>
-						When you sign up there is an option to pay the balance in full
-						(price depending on if you opt for a private or shared room) or take
-						advantage of our payment plan offering which is active until April
-						1! The cut off to sign up for the retreat is May 1.
-					</p>
-				</details>
-				<details name="fq">
-					<summary>Can I room with someone I know?</summary>
-					<p>
-						Absolutely! Just email itsmckenziechun@gmail.com with the name of
-						the person you would like to room with.
-					</p>
-				</details>
-				<details name="fq">
-					<summary>When is the last day for sign up?</summary>
-					<p>
-						May 1, 2024 is our cut off however we may run out of spots by then
-						(there are only 10 total) so if you would like to go I suggest
-						securing your spot ASAP.
-					</p>
-				</details>
-				<details name="fq">
-					<summary
-						>When are early bird pricing and payment plans active until?</summary
-					>
-					<p>April 1, 2024</p>
-				</details>
-				<details name="fq">
-					<summary>What is included in the price?</summary>
-					<p>
-						3 days dedicated to your deep inner transformation, Luxurious
-						accommodations at an oasis located in Pacifica, California, private
-						chef for each meal, access to a pool, sauna, 5 mins from the beach
-						and hiking trails close by, Yoga, Breathwork Sessions, Expert-led
-						workshops, free time and women’s circles, an extraordinary healing
-						experience and lifelong connections with an empowering community of
-						like-minded women.
-					</p>
-				</details>
-				<details name="fq">
-					<summary>How do I get there?</summary>
-					<p>
-						It is located 20 minutes away from SFO and 20 minutes from San
-						Francisco. Depending on where you are coming from we can help
-						arrange a car pool, uber, etc.
-					</p>
-				</details>
-				<details name="fq">
-					<summary>Where is Paciﬁca?</summary>
+						<p>April 1, 2024</p>
+					</details>
+					<details name="fq">
+						<summary>What is included in the price?</summary>
+						<p>
+							3 days dedicated to your deep inner transformation, Luxurious
+							accommodations at an oasis located in Pacifica, California,
+							private chef for each meal, access to a pool, sauna, 5 mins from
+							the beach and hiking trails close by, Yoga, Breathwork Sessions,
+							Expert-led workshops, free time and women’s circles, an
+							extraordinary healing experience and lifelong connections with an
+							empowering community of like-minded women.
+						</p>
+					</details>
+					<details name="fq">
+						<summary>How do I get there?</summary>
+						<p>
+							It is located 20 minutes away from SFO and 20 minutes from San
+							Francisco. Depending on where you are coming from we can help
+							arrange a car pool, uber, etc.
+						</p>
+					</details>
+					<details name="fq">
+						<summary>Where is Paciﬁca?</summary>
 
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50566.29940653141!2d-122.52042132375327!3d37.61642570842883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f772fd14a9679%3A0x44b02f7f17a1c438!2sPac%C3%ADfica%2C%20California%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sco!4v1717903379865!5m2!1ses-419!2sco"
-						width="400"
-						height="300"
-						style="border:0;"
-						allowfullscreen=""
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"
-					>
-					</iframe>
-				</details>
-				<details name="fq">
-					<summary
-						>I have dietary restrictions, is that an issue for the private chef?</summary
-					>
-					<p>
-						There will be no issues with any dietary restrictions, the chef will
-						create meals within your restrictions that you share with us in a
-						form once you have signed up for the retreat.
-					</p>
-				</details>
-				<details name="fq">
-					<summary>Is there free time or is everything scheduled?</summary>
-					<p>
-						There is a beautiful balance of free time and then events,
-						everything is by choice using your own autonomy.
-					</p>
-				</details>
-				<details name="fq">
-					<summary>I am not experienced in breathwork, is that ok?</summary>
-					<p>Absolutely!</p>
-				</details>
-				<details name="fq">
-					<summary>I am not experienced in Yoga, is that ok?</summary>
-					<p>Absolutely!</p>
-				</details>
-				<details name="fq">
-					<summary>Can I break up my payments?</summary>
-					<p>
-						Yes, in the early bird option there is a payment plan at checkout.
-					</p>
-				</details>
-				<details name="fq">
-					<summary>What do I pack?</summary>
-					<p>
-						We will send you an email prior to the retreat with a packing list!
-					</p>
-				</details>
-				<details name="fq">
-					<summary
-						>I've never been on a retreat, what do I need to be prepared for</summary
-					>
-					<p>
-						Embrace the retreat just as you are! No previous experience with
-						yoga, breathwork, or anything else is required. Simply be yourself.
-						We'll move at your pace, and if you prefer to take a break from any
-						activity, that's completely okay.
-					</p>
-				</details>
-			</article>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50566.29940653141!2d-122.52042132375327!3d37.61642570842883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f772fd14a9679%3A0x44b02f7f17a1c438!2sPac%C3%ADfica%2C%20California%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sco!4v1717903379865!5m2!1ses-419!2sco"
+							style="border:0;"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						>
+						</iframe>
+					</details>
+					<details name="fq">
+						<summary
+							>I have dietary restrictions, is that an issue for the private
+							chef?</summary
+						>
+						<p>
+							There will be no issues with any dietary restrictions, the chef
+							will create meals within your restrictions that you share with us
+							in a form once you have signed up for the retreat.
+						</p>
+					</details>
+					<details name="fq">
+						<summary>Is there free time or is everything scheduled?</summary>
+						<p>
+							There is a beautiful balance of free time and then events,
+							everything is by choice using your own autonomy.
+						</p>
+					</details>
+					<details name="fq">
+						<summary>I am not experienced in breathwork, is that ok?</summary>
+						<p>Absolutely!</p>
+					</details>
+					<details name="fq">
+						<summary>I am not experienced in Yoga, is that ok?</summary>
+						<p>Absolutely!</p>
+					</details>
+					<details name="fq">
+						<summary>Can I break up my payments?</summary>
+						<p>
+							Yes, in the early bird option there is a payment plan at checkout.
+						</p>
+					</details>
+					<details name="fq">
+						<summary>What do I pack?</summary>
+						<p>
+							We will send you an email prior to the retreat with a packing
+							list!
+						</p>
+					</details>
+					<details name="fq">
+						<summary
+							>I've never been on a retreat, what do I need to be prepared for</summary
+						>
+						<p>
+							Embrace the retreat just as you are! No previous experience with
+							yoga, breathwork, or anything else is required. Simply be
+							yourself. We'll move at your pace, and if you prefer to take a
+							break from any activity, that's completely okay.
+						</p>
+					</details>
+				</article>
 
-			<!-- Purchasing Policies -->
-			<article class="policy">
-				<h3>Purchasing Policies</h3>
-				<p>
-					As we gear up for the upcoming event in Paciﬁca, California on 6/6,
-					let's go over some important details to ensure a smooth and enjoyable
-					experience!
-				</p>
+				<!-- Purchasing Policies -->
+				<article class="policy">
+					<h2>Purchasing Policies</h2>
+					<p>
+						As we gear up for the upcoming event in Paciﬁca, California on 6/6,
+						let's go over some important details to ensure a smooth and
+						enjoyable experience!
+					</p>
 
-				<p>
-					Upon purchasing, you're agreeing to a few policies that help make the
-					magic happen. Please keep in mind that, given the nature of events,
-					we're unable to make exceptions. Your commitment to these policies is
-					appreciated.
-				</p>
+					<p>
+						Upon purchasing, you're agreeing to a few policies that help make
+						the magic happen. Please keep in mind that, given the nature of
+						events, we're unable to make exceptions. Your commitment to these
+						policies is appreciated.
+					</p>
 
-				<h4>Refund and Transfer Policy</h4>
-				<p>
-					Your ticket is non-refundable and non-transferable to another event.In
-					case of emergencies, you have the option to sell or gift your retreat
-					ticket for the exact event you purchased. If you can't or choose not
-					to utilize these options and decide not to attend for any reason,
-					unfortunately, we won't be able to provide a refund or transfer
-					credit.
-				</p>
-				<h4>Terms and Conditions of Sale</h4>
-				<p>
-					Terms and Conditions of Sale When purchasing your ticket, you're
-					agreeing to the terms and conditions related to the Liberate & Embody
-					Retreat June 6-9 in Paciﬁca, California. Please ensure the full
-					balance, as outlined in your payment plan, is settled at the time of
-					signing up. If The Retreat is canceled due to reasons beyond our
-					control, like COVID-19 or other unforeseen circumstances, we'll
-					provide a transfer credit for a future event hosted by us within 2025
-					or 2026.
-				</p>
-				<h4>Location or Date Changes</h4>
-				<p>
-					There might be changes in the retreat's location or dates. If you
-					choose not to attend the rescheduled date or location, your ticket
-					will be forfeited.
-				</p>
-				<h4>Covid-19 or Pandemic Issues</h4>
-				<p>
-					If unforeseen Covid-19 or pandemic-related issues arise, making the
-					event illegal to host, we'll reschedule the date, with the same
-					purchasing policies in place.
-				</p>
+					<h4>Refund and Transfer Policy</h4>
+					<p>
+						Your ticket is non-refundable and non-transferable to another
+						event.In case of emergencies, you have the option to sell or gift
+						your retreat ticket for the exact event you purchased. If you can't
+						or choose not to utilize these options and decide not to attend for
+						any reason, unfortunately, we won't be able to provide a refund or
+						transfer credit.
+					</p>
+					<h4>Terms and Conditions of Sale</h4>
+					<p>
+						Terms and Conditions of Sale When purchasing your ticket, you're
+						agreeing to the terms and conditions related to the Liberate &
+						Embody Retreat June 6-9 in Paciﬁca, California. Please ensure the
+						full balance, as outlined in your payment plan, is settled at the
+						time of signing up. If The Retreat is canceled due to reasons beyond
+						our control, like COVID-19 or other unforeseen circumstances, we'll
+						provide a transfer credit for a future event hosted by us within
+						2025 or 2026.
+					</p>
+					<h4>Location or Date Changes</h4>
+					<p>
+						There might be changes in the retreat's location or dates. If you
+						choose not to attend the rescheduled date or location, your ticket
+						will be forfeited.
+					</p>
+					<h4>Covid-19 or Pandemic Issues</h4>
+					<p>
+						If unforeseen Covid-19 or pandemic-related issues arise, making the
+						event illegal to host, we'll reschedule the date, with the same
+						purchasing policies in place.
+					</p>
 
-				<p>
-					This overview gives you a snapshot of our purchasing policies,
-					refunds, and transfers. Thank you for your understanding and
-					cooperation. If you have any questions please reach out to
-					itsmckenziechun@gmail.com
-				</p>
-			</article>
+					<p>
+						This overview gives you a snapshot of our purchasing policies,
+						refunds, and transfers. Thank you for your understanding and
+						cooperation. If you have any questions please reach out to
+						itsmckenziechun@gmail.com
+					</p>
+				</article>
+			</section>
 		</section>
 	</main>
 </Layout>
@@ -248,153 +255,119 @@ const mappedImgs = images.map((img) => img.default.src);
 	}
 
 	main {
-		margin: 0 auto;
-		max-width: 800px;
+		margin: var(--section-gap) auto;
+		padding: 0 2rem;
+		max-width: 1200px;
 	}
 
-	main.next {
+	section.next {
 		display: flex;
-		padding: 0 4rem;
 		flex-wrap: wrap;
-		gap: 6rem;
-		font-family:
-			"Roslindale",
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			"Segoe UI",
-			Roboto,
-			Oxygen,
-			Ubuntu,
-			Cantarell,
-			"Open Sans",
-			"Helvetica Neue",
-			sans-serif;
-		font-weight: normal;
-		font-size: 1.5rem;
-		margin-block: 4rem;
-
-		@media (width <= 768px) {
-			padding: 0 1rem;
-		}
+		gap: var(--horizontal-gap);
+		font-family: var(--roslindale);
+		margin-block: var(--section-gap);
 	}
 
-	main.next > p {
-		padding-top: 1rem;
+	section.next > p {
 		font-family: inherit;
 	}
 
-	article {
-		flex: 1 0 280px;
+	section.next > article {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: var(--element-gap);
 	}
 
-	main.next > article h2 {
-		font-size: 3.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	main.next > article p {
-		font-size: 1.5rem;
+	section.next > article p {
 		font-family: inherit;
 	}
 
-	main.next + section > h2 {
-		margin: 0 auto;
-		font-size: 3rem;
+	section.next + section > h2 {
 		text-align: center;
 	}
 
-	main.faq {
-		padding: 0 1rem;
-	}
-
-	main.faq h2 {
+	section.car h2 {
 		text-align: center;
-		font-size: 3rem;
-		margin: 4rem 0;
+		margin: var(--element-gap) 0;
 	}
 
-	main.faq > div {
+	section.faq > h2 {
+		margin: var(--section-gap) 0;
+	}
+
+	section.faq > div {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
-		gap: 1rem;
+		gap: var(--horizontal-gap);
 	}
 
-	main.faq > section {
+	section.faq > section {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
-		gap: 1rem;
-		margin: 2rem 0;
+		gap: var(--horizontal-gap);
+		margin-top: var(--section-gap);
+		margin-bottom: var(--element-gap);
 	}
 
-	main.faq > section > article {
-		margin: 1rem 0;
+	section.faq > section article {
+		flex: 1 0 calc(50% - var(--horizontal-gap));
 	}
 
-	main.faq > section > article h3 {
-		font-size: xx-large;
-	}
-
-	main.faq details {
-		padding: 1rem;
+	section.faq details {
+		padding: 1rem 0;
 		transition: all 0.3s;
 	}
 
-	main.faq details summary {
+	section.faq details summary {
 		color: var(--fg-color);
-		font-size: 1.2rem;
 		list-style: none;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		cursor: pointer;
 		gap: 1rem;
+		font-size: var(--heading-paragraph);
 
 		&::-webkit-details-marker {
 			display: none;
 		}
 	}
 
-	main.faq details summary + * {
+	section.faq details summary + * {
 		margin-top: 1rem;
+		font-size: var(--paragraph);
 	}
 
-	main.faq details summary::after {
-		content: "";
-		width: 24px;
-		aspect-ratio: 1;
-		background: url("arrow.svg") no-repeat center;
-		transition: 0.2s;
-		transform: rotate(-90deg);
-		flex: 0 0 24px;
-		opacity: 0.5;
-	}
-
-	main.faq details[open] summary::after {
-		transform: rotate(90deg);
-		opacity:;
-	}
-
-	main.faq details {
+	section.faq details {
 		overflow: hidden;
 	}
 
-	main.faq details[open] p {
+	section.faq details[open] p {
 		animation: animateDown 0.2s linear forwards;
 	}
 
-	main.faq section article.policy h3 {
+	section.faq section article.policy h3 {
 		margin-bottom: 1rem;
 	}
 
-	main.faq section article.policy p {
+	section.faq section article.policy p {
 		font-size: 1rem;
 		margin-bottom: 1.5rem;
 	}
-	main.faq section article.policy h4 {
+	section.faq section article.policy h4 {
 		font-family: inherit;
 		font-size: 1.2rem;
+	}
+
+	section.faq details a {
+		word-break: break-all;
+	}
+
+	iframe {
+		width: 100%;
+		min-height: 300px;
 	}
 </style>

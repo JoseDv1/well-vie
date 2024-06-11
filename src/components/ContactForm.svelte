@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from "svelte";
-
 	let fName = "";
 	let lName = "";
 	let email = "";
@@ -12,6 +10,7 @@
 </script>
 
 <form
+	class="slide"
 	id="contact"
 	on:submit|preventDefault={() => {
 		sendEmail();
@@ -55,10 +54,10 @@
 	form {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-		max-width: 600px;
+		gap: 30px;
+		max-width: 1200px;
 		margin: 0 auto;
-		padding: 1rem;
+		padding: 0 2rem;
 
 		@media (width <= 600px) {
 			grid-template-columns: 1fr;
@@ -66,16 +65,21 @@
 	}
 
 	label {
-		font-weight: bold;
+		color: var(--text-color);
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
 	}
 
 	input,
 	textarea {
 		width: 100%;
 		padding: 0.5rem;
+		min-height: 60px;
 		border-radius: 8px;
-		border: 1px solid var(--fg-light-color);
+		border: 2px solid var(--fg-light-color);
+		background-color: var(--bg-color);
 		opacity: 0.5;
+		margin-top: 30px;
 
 		&:focus {
 			outline: none;
@@ -86,7 +90,8 @@
 
 	button {
 		grid-column: 1 / -1;
-		padding: 0.5rem;
+
+		justify-self: center;
 	}
 
 	label[for="message"] {

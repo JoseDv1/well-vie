@@ -91,13 +91,12 @@
 <style>
 	main {
 		--bubble-height: 150px;
-		margin: calc(var(--bubble-height) + 2rem) auto 2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		gap: 3rem;
-		padding: 0 2rem;
-		max-width: 700px;
+		gap: var(--section-gap);
+		margin-block: var(--section-gap);
+
 		& > article:nth-child(even) {
 			align-self: end;
 		}
@@ -106,11 +105,11 @@
 	article {
 		--color: var(--fg-light-color);
 		margin-top: var(--bubble-height);
-		max-width: 300px;
+		max-width: min(100%, 400px);
 	}
 
 	article p {
-		padding: 2rem 1rem;
+		padding: 2rem 1.5rem;
 		border: 1px solid var(--fg-color);
 		border-radius: var(--border-radius);
 		background-color: var(--bg-color);

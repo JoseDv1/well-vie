@@ -3,15 +3,13 @@ import xIcon from "@/assets/x.svg?raw";
 import FacebookIcon from "@/assets/facebook.svg?raw";
 import YoutubeIcon from "@/assets/youtube.svg?raw";
 import InstagramIcon from "@/assets/instagram.svg?raw";
-import wIcon from "@/assets/W_symbol.svg";
+import wIcon from "@/assets/W_symbol.svg?raw";
 ---
 
 <footer>
-	<div>
-		<a href="/">
-			<img src={wIcon.src} alt="W Icon" height="50" width="50" />
-		</a>
-	</div>
+	<a href="/">
+		<Fragment set:html={wIcon} />
+	</a>
 
 	<section>
 		<header>
@@ -39,7 +37,6 @@ import wIcon from "@/assets/W_symbol.svg";
 			</li>
 		</ul>
 		<footer>
-			<a href="#">Privacy Policy</a>
 			<p>© Well-Vie. All Rights Reserved 2024. Licensing</p>
 		</footer>
 	</section>
@@ -47,13 +44,13 @@ import wIcon from "@/assets/W_symbol.svg";
 
 <style>
 	footer:not(section footer) {
-		margin-top: 4rem;
+		margin-top: var(--section-gap);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
 		justify-content: space-around;
 		align-items: center;
-		padding: 1rem;
+		padding: 40px 2rem;
 		background-color: var(--fg-color);
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
 		color: var(--bg-color);
@@ -64,7 +61,7 @@ import wIcon from "@/assets/W_symbol.svg";
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-start;
-		gap: 3rem;
+		gap: 2rem;
 
 		@media (width < 768px) {
 			align-items: center;
@@ -87,16 +84,19 @@ import wIcon from "@/assets/W_symbol.svg";
 		gap: 1rem;
 	}
 
-	section footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 1rem;
-		color: var(--bg-color);
+	p {
+		color: currentColor;
+
+		@media (width < 768px) {
+			text-align: center;
+		}
 	}
 
-	section footer a,
-	section footer p {
-		color: var(--bg-color);
+	footer > a {
+		width: 4rem;
+
+		@media (width < 768px) {
+			display: none;
+		}
 	}
 </style>

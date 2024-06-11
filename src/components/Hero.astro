@@ -37,7 +37,7 @@ const {
 		background-image: var(--imageURL);
 		background-size: cover;
 		background-position: var(--bgPosition);
-		height: 90dvh;
+		height: calc(100dvh - 2rem - 90px);
 		border-radius: var(--border-radius);
 		pointer-events: none;
 		margin-bottom: 1rem;
@@ -61,7 +61,6 @@ const {
 		}
 
 		& > h1 {
-			font-size: 4rem;
 			position: absolute;
 			top: 50%;
 			left: 50%;

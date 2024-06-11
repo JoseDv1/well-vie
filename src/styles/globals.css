@@ -20,14 +20,50 @@
 }
 
 :root {
+	/* Colors */
 	--bg-color: #FAFFFF;
 	--fg-color: #708B5E;
-	--fg-light-color: #A3B18A;
+	--fg-light-color: #D4DCCE;
 	--accent-color: #FFDFB9;
 	--text-color: #928581;
-	--border-radius: 30px;
 
+
+	/* Spacing */
+	--section-gap: 130px;
+	--element-gap: 50px;
+	--horizontal-gap: 100px;
+
+	/* Fonts */
 	--roslindale: 'Roslindale', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--gt-walsheim: 'GT Walsheim', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+	/* Root font size */
+	--font-size: 16px;
+
+	/* Font sizes */
+	--heading: 9.375rem;
+	--subheading: 5.625rem;
+	--heading-paragraph: 2rem;
+	--paragraph: 1.5rem;
+
+
+	/* Border radius */
+	--border-radius: 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+	:root {
+		--heading: 4rem;
+		--subheading: 2rem;
+		--heading-paragraph: 1.5rem;
+		--paragraph: 1rem;
+
+		--section-gap: 90px;
+		--element-gap: 30px;
+		--horizontal-gap: 50px;
+	}
 }
 
 body {
@@ -35,6 +71,8 @@ body {
 	font-weight: lighter;
 	background-color: var(--bg-color);
 }
+
+
 
 h1,
 h2,
@@ -47,11 +85,23 @@ h6 {
 	font-weight: normal;
 }
 
+h1 {
+	font-size: var(--heading)
+}
+
+h2 {
+	font-size: var(--subheading);
+}
+
+h3 {
+	font-size: var(--heading-paragraph);
+}
+
 p {
 	font-family: 'GT Walsheim', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-weight: lighter;
 	color: var(--text-color);
-
+	font-size: var(--paragraph);
 }
 
 button,
@@ -61,11 +111,16 @@ a.btn {
 	border: 1px solid var(--fg-color);
 	background-color: var(--bg-color);
 	border-radius: 8px;
-	padding: 0.5rem;
+	padding: 10px 20px;
+	font-size: var(--paragraph);
 	cursor: pointer;
 	text-transform: capitalize;
 	transition: all 0.3s;
-	font-size: large;
+	min-height: 60px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 button:hover,
@@ -84,3 +139,38 @@ a.btn:active {
 a:hover {
 	color: var(--accent-color);
 }
+
+/* 
+60px forms  
+60px buttons / 20padding en x ✅
+navbar de 90px font size 32px ✅
+ancho del logo 50px ✅
+
+# Espacios
+Margen entre secciones 130px ✅
+Margen entre elementos 50px ✅
+Espacio entre imagen y articulo 100px ✅
+
+# Footer
+Animacion logo footer ✅
+margin-block 40px ✅
+
+# Contact from 
+Fondo bg color ✅
+
+# Breathworks
+Alinear los icons de breathworks ✅
+Texto formulario  ✅
+Color  ✅
+Margen 30px ✅
+Fuente ✅
+
+# Carrusel
+Agragar titulo ✅
+Cambiar el tamaño ✅
+Cambiar la animacion por fade ✅
+
+# Todo el contenido
+Animacion en todas las paginas
+
+*/

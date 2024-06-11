@@ -14,7 +14,7 @@ import Layout from "@/layouts/Layout.astro";
 	<!-- Content -->
 	<main>
 		<section class="slide">
-			<h2>
+			<h3>
 				Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris
 				sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis
 				dui placerat ornare. Pellentesque odio nisi euismod in pharetra a
@@ -22,7 +22,7 @@ import Layout from "@/layouts/Layout.astro";
 				cursus faucibus tortor neque egestas auguae eu vulputate magna eros eu
 				erat. Aliquam erat volutpat. Nam dui mi tincidunt quis accumsan
 				porttitor facilisis luctus metus.
-			</h2>
+			</h3>
 			<p>
 				Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris
 				sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis
@@ -69,33 +69,24 @@ import Layout from "@/layouts/Layout.astro";
 
 <style>
 	main {
-		margin: 0 10%;
-
+		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-
-		gap: 2rem;
-
-		margin-top: 2rem;
-
+		gap: var(--section-gap);
+		margin-block: var(--section-gap);
 		max-width: 1200px;
-		font-size: 1.2rem;
+		padding: 0 1rem;
 	}
 
 	main > section {
-		max-width: 500px;
-
-		& h2 {
-			font-size: 1.5rem;
-			margin-bottom: 1rem;
-		}
-
-		& p {
-			font-size: 1rem;
-			margin-bottom: 1rem;
-		}
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: var(--element-gap);
 	}
 
 	main > article {
@@ -103,8 +94,7 @@ import Layout from "@/layouts/Layout.astro";
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		gap: 4rem;
-		margin-bottom: 4rem;
+		gap: var(--element-gap);
 
 		&:nth-child(odd) {
 			flex-direction: row-reverse;
@@ -112,22 +102,22 @@ import Layout from "@/layouts/Layout.astro";
 
 		& > section {
 			flex: 1 0 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: var(--element-gap);
+
+			& > a {
+				@media (max-width: 600px) {
+					align-self: center;
+				}
+			}
 		}
 
 		& > img {
 			aspect-ratio: 1/1;
-			width: 300px;
-			object-fit: cover;
-		}
-
-		& h2 {
-			font-size: 4rem;
-			margin-bottom: 1rem;
-		}
-
-		& p {
-			font-size: 1.5rem;
-			margin-bottom: 1rem;
+			width: max(calc(50% - var(--horizontal-gap)), 400px);
 		}
 	}
 

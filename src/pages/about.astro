@@ -10,12 +10,12 @@ import Layout from "@/layouts/Layout.astro";
 		position="top center"
 	/>
 	<main>
-		<section>
+		<section class="slide">
 			<h2>
 				McKenzie is a San Francisco-based hair artist & breathwork facilitator
 			</h2>
 		</section>
-		<article>
+		<article class="slide">
 			<div></div>
 			<section>
 				<p>
@@ -28,10 +28,10 @@ import Layout from "@/layouts/Layout.astro";
 				</p>
 			</section>
 		</article>
-		<article>
+		<article class="slide">
 			<div></div>
 			<section>
-				<h2>McKenzie is a Trauma Informed Breathwork Facilitator</h2>
+				<h3>McKenzie is a Trauma Informed Breathwork Facilitator</h3>
 				<p>
 					Behind the chair, McKenzie’s passion is all things color. With over 12
 					years in the industry she has trained with Paul Mitchell, Goldwell,
@@ -47,28 +47,18 @@ import Layout from "@/layouts/Layout.astro";
 
 <style>
 	main {
-		margin: 0 10%;
-
+		margin: var(--section-gap) auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-
-		gap: 2rem;
-
-		margin-top: 2rem;
-
+		gap: var(--section-gap);
 		max-width: 1200px;
-		font-size: 1.2rem;
+		padding: 0 2rem;
 	}
 
 	main > section {
-		max-width: 800px;
-
-		& h2 {
-			font-size: 4rem;
-			margin-bottom: 1rem;
-		}
+		text-align: center;
 	}
 
 	main > article {
@@ -76,7 +66,7 @@ import Layout from "@/layouts/Layout.astro";
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		gap: 4rem;
+		gap: var(--section-gap);
 
 		& > * {
 			flex: 1;
@@ -88,7 +78,6 @@ import Layout from "@/layouts/Layout.astro";
 
 		div {
 			flex: 1;
-
 			@media (max-width: 800px) {
 				display: none;
 			}
@@ -96,27 +85,9 @@ import Layout from "@/layouts/Layout.astro";
 
 		& > section {
 			flex: 1 0 300px;
+			display: flex;
+			flex-direction: column;
+			gap: var(--element-gap);
 		}
-
-		& > img {
-			aspect-ratio: 1/1;
-			width: 300px;
-			object-fit: cover;
-		}
-
-		& h2 {
-			font-size: 2rem;
-			margin-bottom: 3rem;
-		}
-
-		& p {
-			font-size: 1.5rem;
-			margin-bottom: 1rem;
-		}
-	}
-
-	img {
-		border-radius: var(--border-radius);
-		object-fit: cover;
 	}
 </style>

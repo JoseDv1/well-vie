@@ -14,38 +14,38 @@ import groupEventsIcon from "@/assets/group_events.svg";
 		position="20% top"
 	/>
 	<main>
-		<h2>
+		<h2 class="slide">
 			Bring your nervous system, body and mind to a state of peace, calm and
 			liberation
 		</h2>
-		<h3>
+		<h3 class="slide">
 			McKenzie is a certified Trauma-Informed Breathwork Facilitator who brings
 			the benefits of guided meditation using breathing techniques into
 			business, relationships & team building
 		</h3>
 		<section class="benefits">
-			<h2>Benefits of Breathwork:</h2>
+			<h2 class="slide">Benefits of Breathwork:</h2>
 			<article>
 				<img src="/imgs/home/later-2.webp" alt="" />
 				<ul>
-					<li>Release of stress and anxiety</li>
-					<li>Aides in better sleep</li>
-					<li>Improves focus & mood</li>
-					<li>Gives clarity</li>
-					<li>Increases energy and boosts immunity</li>
-					<li>Improves digestion & circulation</li>
-					<li>Lowers blood pressure</li>
-					<li>Connect to your inner self</li>
-					<li>Moves through stuck energy</li>
-					<li>Helps manage depression</li>
-					<li>Helps heal from trauma and manage PTSD</li>
+					<li class="slide">Release of stress and anxiety</li>
+					<li class="slide">Aides in better sleep</li>
+					<li class="slide">Improves focus & mood</li>
+					<li class="slide">Gives clarity</li>
+					<li class="slide">Increases energy and boosts immunity</li>
+					<li class="slide">Improves digestion & circulation</li>
+					<li class="slide">Lowers blood pressure</li>
+					<li class="slide">Connect to your inner self</li>
+					<li class="slide">Moves through stuck energy</li>
+					<li class="slide">Helps manage depression</li>
+					<li class="slide">Helps heal from trauma and manage PTSD</li>
 				</ul>
 			</article>
 		</section>
 
 		<section class="types">
 			<div>
-				<article>
+				<article class="slide">
 					<img
 						src={oneToOneIcon.src}
 						alt="One to One sesons"
@@ -54,7 +54,7 @@ import groupEventsIcon from "@/assets/group_events.svg";
 					/>
 					<h3>1.1 sesons</h3>
 				</article>
-				<article>
+				<article class="slide">
 					<img
 						src={groupEventsIcon.src}
 						alt="Group events"
@@ -63,21 +63,21 @@ import groupEventsIcon from "@/assets/group_events.svg";
 					/>
 					<h3>Group events</h3>
 				</article>
-				<article>
+				<article class="slide">
 					<img
 						src={companyEventsIcon.src}
 						alt="Corporate company events"
 						width="48"
 						height="48"
 					/>
-					<h3>corporate company events</h3>
+					<h3>Corporate company events</h3>
 				</article>
 			</div>
-			<a class="btn" href="#contact">Work with me</a>
+			<a class="btn slide" href="#contact">Work with me</a>
 		</section>
 
 		<!-- Form Section -->
-		<div id="contact">
+		<div id="contact" class="slide">
 			<ContactForm client:only="svelte" />
 		</div>
 	</main>
@@ -85,25 +85,19 @@ import groupEventsIcon from "@/assets/group_events.svg";
 
 <style>
 	main {
-		max-width: 800px;
+		max-width: 1200px;
 		margin: 0 auto;
 		margin-bottom: 2rem;
+		padding: 0 2rem;
 	}
 
-	h2 {
+	main h2 {
 		text-align: center;
-		font-size: 2rem;
-		margin-bottom: 2rem;
+		margin-block: var(--section-gap);
 	}
 
 	main h3 {
 		text-align: center;
-		font-size: 1.5rem;
-		margin-bottom: 2rem;
-	}
-
-	main section.benefits {
-		margin-bottom: 4rem;
 	}
 
 	main section.benefits article {
@@ -111,10 +105,17 @@ import groupEventsIcon from "@/assets/group_events.svg";
 		flex-wrap: wrap-reverse;
 		align-items: center;
 		justify-content: space-between;
-		gap: 2rem;
+		gap: var(--horizontal-gap);
 
 		& > * {
-			flex: 1 0 300px;
+			flex: 1 0 calc(50% - var(--horizontal-gap));
+		}
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			& > * {
+				flex: 1 0 100%;
+			}
 		}
 	}
 
@@ -130,47 +131,48 @@ import groupEventsIcon from "@/assets/group_events.svg";
 		gap: 1rem;
 		justify-content: space-between;
 		font-family: var(--roslindale);
-		font-size: 1.5rem;
 		color: var(--text-color);
-
-		@media (width <= 768px) {
-			padding: 0 2rem;
-		}
+		font-size: var(--heading-paragraph);
 	}
 
 	section.types {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
-		margin: 4rem 0;
+		gap: var(--horizontal-gap);
+		margin-block: var(--section-gap);
 	}
 
 	section.types div {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		align-items: center;
-		gap: 2rem;
+		display: flex;
+		align-items: baseline;
+		justify-items: center;
+		gap: var(--element-gap);
+		flex-wrap: wrap;
+		& > * {
+			flex: 1;
+		}
+
+		@media (width <= 768px) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	section.types article {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 1rem;
+		gap: var(--element-gap);
+		margin-bottom: var(--element-gap);
 	}
 
 	section.types article img {
-		width: 100px;
+		width: 100%;
 		object-fit: cover;
 		object-position: center;
 	}
 
-	section.types article img[alt="Group events"] {
-		width: 120px;
-	}
-
 	section.types a.btn {
 		align-self: center;
-		padding: 0.5rem 4rem;
 	}
 </style>

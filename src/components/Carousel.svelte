@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { slide } from "svelte/transition";
+	import { fade } from "svelte/transition";
 	import Arrow from "@/assets/arrow.svg?raw";
 
 	export let images: string[] = [];
@@ -38,11 +38,9 @@
 		{#each images as image, i}
 			{#if i === currentSlide}
 				<img
-					loading="lazy"
 					src={image}
 					alt={`Slide ${i + 1}`}
-					transition:slide={{
-						axis: "x",
+					in:fade={{
 						duration: 1000,
 					}}
 				/>
@@ -74,31 +72,22 @@
 
 <style>
 	section {
-		padding: 2rem;
-		width: 100%;
 		aspect-ratio: 16 / 9;
 		border-radius: var(--border-radius);
 	}
 
-	.carousel {
-		width: 100%;
-		height: 100%;
-		display: inline-block;
-		overflow: hidden;
-		border-radius: var(--border-radius);
-	}
-
 	img {
-		width: 100%;
+		width: 1200px;
 		aspect-ratio: 16 / 9;
 		border-radius: var(--border-radius);
 		object-fit: cover;
 	}
 
 	.carousel__controls {
-		padding: 0 1rem;
+		padding: 0 0.5rem;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		position: absolute;
 		top: 50%;
 		left: 0;
@@ -106,21 +95,22 @@
 		transform: translateY(-50%);
 
 		& > button {
-			background-color: var(--fg-color);
-			color: white;
-			border: none;
-			padding: 0.5rem;
-			cursor: pointer;
+			opacity: 0.5;
 			transition: background-color 0.3s;
 			border-radius: 100%;
+
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 3rem;
-			aspect-ratio: 1;
+			transition: opacity 0.3s;
+			width: 32px;
 
 			&:nth-child(even) {
 				transform: rotate(180deg);
+			}
+
+			&:hover {
+				opacity: 1;
 			}
 		}
 	}
@@ -132,12 +122,6 @@
 		margin-top: 1rem;
 
 		& > button {
-			background-color: var(--fg-color);
-			color: white;
-			border: none;
-			aspect-ratio: 1;
-			width: 1rem;
-			cursor: pointer;
 			transition: background-color 0.3s;
 			border-radius: 100%;
 
@@ -151,5 +135,15 @@
 				outline: var(--fg-color) solid 1px;
 			}
 		}
+	}
+
+	button {
+		min-height: auto;
+		min-width: auto;
+		width: 24px;
+		padding: 0;
+		aspect-ratio: 1;
+		background-color: var(--fg-color);
+		color: var(--bg-color);
 	}
 </style>
