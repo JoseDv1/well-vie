@@ -21,7 +21,8 @@ import Hero from "@/components/Hero.astro";
 		</section>
 		<article>
 			<h2 class="slide">Send a Message</h2>
-			<ContactForm />
+			<ContactForm client:only="svelte" />
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
 		</article>
 	</main>
 </Layout>

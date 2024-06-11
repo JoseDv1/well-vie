@@ -1,18 +1,47 @@
 <script>
+	import { onMount } from "svelte";
+
+	export let haveDate = false;
 	let fName = "";
 	let lName = "";
 	let email = "";
 	let subject = "";
 	let message = "";
 	$: fullName = `${fName} ${lName}`;
+	let date = new Date().toISOString().split("T")[0];
+	$: emailBody = `
+	Name: ${fullName}\n
+	Email: ${email}\n
+	From ${haveDate ? `Breathworks Page\n` : ` Contact Page\n `}
+	Subject: ${subject}\n 
+	${haveDate ? `Tentative Date: ${date}\n` : `Contact Date: ${date}\n `}
+	Message: ${message}
+	`;
 
-	const sendEmail = () => {};
+	const sendEmail = () => {
+		// if (fName && lName && email && subject && message) {
+		// 	window.location.href = `mailto:itsmckenziechun@gmail.com?subject=${subject}&body=${emailBody}`;
+		// } else {
+		// 	alert("Please fill out all fields");
+		// }
+
+		Email.send({
+			Host: "smtp.elasticemail.com",
+			Username: "Jose David Villegas Aristizabal",
+			Password: "password",
+			To: "itsmckenziechun@gmail.com",
+			From: email,
+			Subject: subject,
+			Body: "And this is the body",
+		}).then((message) => alert(message));
+	};
 </script>
 
 <form
 	class="slide"
 	id="contact"
 	on:submit|preventDefault={() => {
+		console.log("submit");
 		sendEmail();
 	}}
 >
@@ -42,12 +71,21 @@
 		<input type="text" id="subject" bind:value={subject} required />
 	</label>
 
+	{#if haveDate}
+		<label for="date"
+			>Event date or tentative date:
+			<input type="date" id="date" bind:value={date} required />
+		</label>
+	{/if}
+
 	<label for="message"
 		>Message:
 		<textarea id="message" bind:value={message} required></textarea>
 	</label>
 
-	<button type="submit">Submit</button>
+	<button href={`mailto:<REPLACE@EMAIL>?subject=${subject}&body=${emailBody}`}
+		>Submit</button
+	>
 </form>
 
 <style>
@@ -57,7 +95,6 @@
 		gap: 30px;
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 0 2rem;
 
 		@media (width <= 600px) {
 			grid-template-columns: 1fr;
@@ -73,13 +110,14 @@
 	input,
 	textarea {
 		width: 100%;
-		padding: 0.5rem;
+		padding: 20px;
 		min-height: 60px;
 		border-radius: 8px;
 		border: 2px solid var(--fg-light-color);
 		background-color: var(--bg-color);
 		opacity: 0.5;
 		margin-top: 30px;
+		font-size: var(--paragraph);
 
 		&:focus {
 			outline: none;
@@ -90,7 +128,6 @@
 
 	button {
 		grid-column: 1 / -1;
-
 		justify-self: center;
 	}
 
@@ -102,5 +139,21 @@
 			min-width: 100%;
 			resize: vertical;
 		}
+	}
+
+	label:has(input[type="date"]),
+	input:last-of-type {
+		grid-column: 1 / -1;
+		justify-self: center;
+		min-width: 50%;
+		text-align: center;
+
+		@media (width <= 768px) {
+			min-width: 100%;
+		}
+	}
+
+	input:last-of-type {
+		font-size: var(--paragraph);
 	}
 </style>

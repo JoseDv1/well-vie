@@ -78,7 +78,8 @@ import groupEventsIcon from "@/assets/group_events.svg";
 
 		<!-- Form Section -->
 		<div id="contact" class="slide">
-			<ContactForm client:only="svelte" />
+			<ContactForm client:only="svelte" haveDate />
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
 		</div>
 	</main>
 </Layout>
