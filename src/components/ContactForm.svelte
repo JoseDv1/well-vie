@@ -118,6 +118,7 @@
 		opacity: 0.5;
 		margin-top: 30px;
 		font-size: var(--paragraph);
+		font-family: var(--gt-walsheim);
 		color: var(--text-color);
 
 		&:focus {

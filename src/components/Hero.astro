@@ -2,7 +2,6 @@
 interface Props {
 	heading: string;
 	image: string;
-	scroll?: boolean;
 	position?: string;
 	textPosition?: string[];
 	mobileTextPosition?: string[];
@@ -11,17 +10,14 @@ interface Props {
 const {
 	heading,
 	image,
-	scroll = false,
 	position = "center",
 	textPosition = ["20%", "50%"],
 	mobileTextPosition = ["50%", "50%"],
 } = Astro.props;
 ---
 
-<div class:list={[{ scroll }]} class="hero">
+<div class="hero">
 	<h1>{heading}</h1>
-
-	{scroll && <small> Scroll down to know how </small>}
 </div>
 
 <style
@@ -53,17 +49,6 @@ const {
 			left: 50%;
 			transform: translateX(-50%);
 			color: var(--bg-color);
-			z-index: 100;
-		}
-
-		&.scroll::after {
-			content: "";
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			bottom: 0;
-			height: var(--bottom-position);
-			border-inline: 1px solid var(--bg-color);
 			z-index: 100;
 		}
 
