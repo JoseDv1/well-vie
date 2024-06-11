@@ -139,38 +139,3 @@ a.btn:active {
 a:hover {
 	color: var(--accent-color);
 }
-
-/* 
-60px forms ✅
-60px buttons / 20padding en x ✅
-navbar de 90px font size 32px ✅
-ancho del logo 50px ✅
-
-# Espacios
-Margen entre secciones 130px ✅
-Margen entre elementos 50px ✅
-Espacio entre imagen y articulo 100px ✅
-
-# Footer
-Animacion logo footer ✅
-margin-block 40px ✅
-
-# Contact from 
-Fondo bg color ✅
-
-# Breathworks
-Alinear los icons de breathworks ✅
-Texto formulario  ✅
-Color  ✅
-Margen 30px ✅
-Fuente ✅
-
-# Carrusel
-Agragar titulo ✅
-Cambiar el tamaño ✅
-Cambiar la animacion por fade ✅
-
-# Todo el contenido
-Animacion en todas las paginas
-
-*/

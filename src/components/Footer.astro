@@ -7,53 +7,61 @@ import wIcon from "@/assets/W_symbol.svg?raw";
 ---
 
 <footer>
-	<a href="/">
-		<Fragment set:html={wIcon} />
-	</a>
-
-	<section>
-		<header>
-			<nav>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/retreats">Retreats</a></li>
-					<li><a href="/breathwork">Breathwork</a></li>
-					<li><a href="/contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<ul>
-			<li>
-				<a href="#" set:html={xIcon} />
-			</li>
-			<li>
-				<a href="#" set:html={FacebookIcon} />
-			</li>
-			<li>
-				<a href="#" set:html={YoutubeIcon} />
-			</li>
-			<li>
-				<a href="#" set:html={InstagramIcon} />
-			</li>
-		</ul>
-		<footer>
-			<p>© Well-Vie. All Rights Reserved 2024. Licensing</p>
-		</footer>
-	</section>
+	<div class="wrapper">
+		<a href="/">
+			<Fragment set:html={wIcon} />
+		</a>
+		<section>
+			<header>
+				<nav>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/retreats">Retreats</a></li>
+						<li><a href="/breathwork">Breathwork</a></li>
+						<li><a href="/contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+			<ul>
+				<li>
+					<a href="#" set:html={xIcon} />
+				</li>
+				<li>
+					<a href="#" set:html={FacebookIcon} />
+				</li>
+				<li>
+					<a href="#" set:html={YoutubeIcon} />
+				</li>
+				<li>
+					<a href="#" set:html={InstagramIcon} />
+				</li>
+			</ul>
+			<footer>
+				<p>© Well-Vie. All Rights Reserved 2024. Licensing</p>
+			</footer>
+		</section>
+	</div>
 </footer>
 
 <style>
 	footer:not(section footer) {
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
+		background-color: var(--fg-color);
+		color: var(--bg-color);
+	}
+
+	.wrapper {
+		margin: 0 auto;
+		width: 100%;
+		height: 100%;
 		margin-top: var(--section-gap);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		padding: 40px 2rem;
-		background-color: var(--fg-color);
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
-		color: var(--bg-color);
+		max-width: 1200px;
 	}
 
 	section {
@@ -65,6 +73,8 @@ import wIcon from "@/assets/W_symbol.svg?raw";
 
 		@media (width < 768px) {
 			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
 		}
 	}
 
@@ -86,15 +96,15 @@ import wIcon from "@/assets/W_symbol.svg?raw";
 
 	p {
 		color: currentColor;
+		font-size: 1rem;
 
 		@media (width < 768px) {
 			text-align: center;
 		}
 	}
 
-	footer > a {
+	.wrapper > a {
 		width: 4rem;
-
 		@media (width < 768px) {
 			display: none;
 		}
