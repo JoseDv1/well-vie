@@ -106,11 +106,11 @@ import groupEventsIcon from "@/assets/group_Events.svg";
 					<h3>Corporate company events</h3>
 				</article>
 			</div>
-			<a class="btn slide" href="#contact">Work with me</a>
 		</section>
 
 		<!-- Form Section -->
 		<div id="contact" class="slide">
+			<h2>Work With Me</h2>
 			<ContactForm client:only="svelte" haveDate />
 			<script src="https://smtpjs.com/v3/smtp.js"></script>
 		</div>
@@ -225,8 +225,9 @@ import groupEventsIcon from "@/assets/group_Events.svg";
 		display: flex;
 		align-items: baseline;
 		justify-items: center;
-		gap: var(--element-gap);
+		gap: var(--horizontal-gap);
 		flex-wrap: wrap;
+
 		& > * {
 			flex: 1;
 		}
@@ -246,9 +247,13 @@ import groupEventsIcon from "@/assets/group_Events.svg";
 	}
 
 	section.types article img {
-		width: 100%;
+		width: 200px;
 		object-fit: cover;
 		object-position: center;
+
+		@media (max-width: 768px) {
+			width: 150px;
+		}
 	}
 
 	section.types a.btn {

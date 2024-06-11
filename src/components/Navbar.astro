@@ -87,7 +87,7 @@ import logotype from "@/assets/logotype.svg";
 
 	img {
 		width: 200px;
-		margin-top: -1.5rem;
+		margin-top: calc(-1.5rem + 4px);
 	}
 
 	header {
@@ -106,14 +106,14 @@ import logotype from "@/assets/logotype.svg";
 
 	header > ul {
 		display: flex;
-		gap: 1rem;
+		gap: 3rem;
 	}
 
 	header > div {
 		display: none;
 	}
 
-	@media (width < 768px) {
+	@media (width < 1000px) {
 		header > div {
 			display: block;
 		}
