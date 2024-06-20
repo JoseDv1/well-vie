@@ -3,7 +3,7 @@ import Hero from "@/components/Hero.astro";
 import Carousel from "@/components/Carousel.svelte";
 import Layout from "@/layouts/Layout.astro";
 import RetreatsForm from "@/components/RetreatsForm.svelte";
-
+import RetreatsCarousel from "@/components/RetreatsCarousel.svelte";
 import GetSetToExperience from "@/components/GetSetToExperience.svelte";
 const images = await Astro.glob("../../public/imgs/retreats/experience/*.webp");
 const mappedImgs = images.map((img) => img.default.src);
@@ -33,6 +33,20 @@ const mappedImgs = images.map((img) => img.default.src);
 		<section class="car">
 			<h2>Images of our retreat experience and locations</h2>
 			<Carousel images={mappedImgs} client:visible />
+		</section>
+
+		<section>
+			<hr />
+			<RetreatsCarousel
+				testimonials={[
+					{
+						name: "Diana Ryan",
+						text: "Amazing experience! Let's repeat it next year. My only complain is the short time there!",
+					},
+				]}
+				client:only="svelte"
+			/>
+			<hr />
 		</section>
 
 		<!-- Form -->
@@ -184,6 +198,18 @@ const mappedImgs = images.map((img) => img.default.src);
 		}
 		100% {
 			transform: translatey(0);
+		}
+	}
+
+	hr {
+		border-top: 2px solid var(--fg-light-color);
+
+		&:first-of-type {
+			margin-top: var(--section-gap);
+		}
+
+		&:last-of-type {
+			margin-bottom: var(--section-gap);
 		}
 	}
 
