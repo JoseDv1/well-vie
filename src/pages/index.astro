@@ -73,13 +73,19 @@ let heading = "Live Life Well";
 	</main>
 </Layout>
 
-<style>
+<style
+	define:vars={{
+		mobileTextX: mobileTextPosition[0],
+		mobileTextY: mobileTextPosition[1],
+		textX: textPosition[0],
+		textY: textPosition[1],
+	}}
+>
 	.hero {
 		position: relative;
 		overflow: hidden;
 		border-radius: var(--border-radius);
 		max-height: calc(100dvh - 2rem - 90px);
-		opacity: 0.85;
 
 		& > h1 {
 			position: absolute;
