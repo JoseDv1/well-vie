@@ -2,19 +2,9 @@
 import Hero from "@/components/Hero.astro";
 import Carousel from "@/components/Carousel.svelte";
 import Layout from "@/layouts/Layout.astro";
+import RetreatsForm from "@/components/RetreatsForm.svelte";
+
 import GetSetToExperience from "@/components/GetSetToExperience.svelte";
-
-const articleH = "Liberate & Embody Retreat June 6-9, Pacifica, CA";
-const articleP = `Experience the transformative embrace of the Liberate & Embody
-				Retreat—an extraordinary journey. Imagine it as your personal quantum
-				leap into swift well-being transformation—an exhilarating jump unlocking
-				profound shifts in life. Anticipate swift progress, positive changes,
-				and a deep understanding of your true self. Immerse in rejuvenating
-				activities: somatic movement, expert-led workshops, and the power of
-				somatic breathwork. From beach sessions and yoga to sauna, swimming, and
-				restful moments, all culminating in sacred ceremonies. This journey
-				ensures lasting change, leaving you forever transformed`;
-
 const images = await Astro.glob("../../public/imgs/retreats/experience/*.webp");
 const mappedImgs = images.map((img) => img.default.src);
 ---
@@ -29,8 +19,8 @@ const mappedImgs = images.map((img) => img.default.src);
 		<section class="next">
 			<p class="slide">Next retreat! <br />join us in the journey</p>
 			<article class="slide">
-				<h2>{articleH}</h2>
-				<p>{articleP}</p>
+				<h2>Fall Northern California Retreat (dates & location coming soon)</h2>
+				<h2>January European Retreat (dates & location coming soon)</h2>
 			</article>
 		</section>
 		<!-- Get set to experience -->
@@ -45,17 +35,14 @@ const mappedImgs = images.map((img) => img.default.src);
 			<Carousel images={mappedImgs} client:visible />
 		</section>
 
-		<!-- Early -->
+		<!-- Form -->
+		<section class="form">
+			<h2>Customize Your Retreat or Wellnes Workshop</h2>
+			<RetreatsForm client:only="svelte" />
+		</section>
+
+		<!-- FAQ & Politics -->
 		<section class="faq">
-			<h2 class="slide">
-				Early bird pricing and payment plans available until April 1.
-			</h2>
-
-			<div class="slide">
-				<a class="btn">Book Private Room</a>
-				<a class="btn">Book Shared Room</a>
-			</div>
-
 			<section>
 				<!-- FAQ -->
 				<article>
@@ -70,15 +57,6 @@ const mappedImgs = images.map((img) => img.default.src);
 						</p>
 					</details>
 					<details name="fq">
-						<summary>When do I pay?</summary>
-						<p>
-							When you sign up there is an option to pay the balance in full
-							(price depending on if you opt for a private or shared room) or
-							take advantage of our payment plan offering which is active until
-							April 1! The cut off to sign up for the retreat is May 1.
-						</p>
-					</details>
-					<details name="fq">
 						<summary>Can I room with someone I know?</summary>
 						<p>
 							Absolutely! Just email itsmckenziechun@gmail.com with the name of
@@ -86,50 +64,10 @@ const mappedImgs = images.map((img) => img.default.src);
 						</p>
 					</details>
 					<details name="fq">
-						<summary>When is the last day for sign up?</summary>
-						<p>
-							May 1, 2024 is our cut off however we may run out of spots by then
-							(there are only 10 total) so if you would like to go I suggest
-							securing your spot ASAP.
-						</p>
-					</details>
-					<details name="fq">
 						<summary
 							>When are early bird pricing and payment plans active until?</summary
 						>
-						<p>April 1, 2024</p>
-					</details>
-					<details name="fq">
-						<summary>What is included in the price?</summary>
-						<p>
-							3 days dedicated to your deep inner transformation, Luxurious
-							accommodations at an oasis located in Pacifica, California,
-							private chef for each meal, access to a pool, sauna, 5 mins from
-							the beach and hiking trails close by, Yoga, Breathwork Sessions,
-							Expert-led workshops, free time and women’s circles, an
-							extraordinary healing experience and lifelong connections with an
-							empowering community of like-minded women.
-						</p>
-					</details>
-					<details name="fq">
-						<summary>How do I get there?</summary>
-						<p>
-							It is located 20 minutes away from SFO and 20 minutes from San
-							Francisco. Depending on where you are coming from we can help
-							arrange a car pool, uber, etc.
-						</p>
-					</details>
-					<details name="fq">
-						<summary>Where is Paciﬁca?</summary>
-
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50566.29940653141!2d-122.52042132375327!3d37.61642570842883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f772fd14a9679%3A0x44b02f7f17a1c438!2sPac%C3%ADfica%2C%20California%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sco!4v1717903379865!5m2!1ses-419!2sco"
-							style="border:0;"
-							allowfullscreen=""
-							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"
-						>
-						</iframe>
+						<p>(dates & location coming soon)</p>
 					</details>
 					<details name="fq">
 						<summary
@@ -186,11 +124,6 @@ const mappedImgs = images.map((img) => img.default.src);
 				<!-- Purchasing Policies -->
 				<article class="policy">
 					<h2>Purchasing Policies</h2>
-					<p>
-						As we gear up for the upcoming event in Paciﬁca, California on 6/6,
-						let's go over some important details to ensure a smooth and
-						enjoyable experience!
-					</p>
 
 					<p>
 						Upon purchasing, you're agreeing to a few policies that help make
@@ -292,15 +225,13 @@ const mappedImgs = images.map((img) => img.default.src);
 		margin: var(--element-gap) 0;
 	}
 
-	section.faq > h2 {
-		margin: var(--section-gap) 0;
+	section.form {
+		margin-block: var(--section-gap);
 	}
 
-	section.faq > div {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		gap: var(--horizontal-gap);
+	section.form h2 {
+		text-align: center;
+		margin-bottom: var(--section-gap);
 	}
 
 	section.faq > section {

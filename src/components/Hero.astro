@@ -3,6 +3,7 @@ interface Props {
 	heading: string;
 	image: string;
 	position?: string;
+	mobileImage?: string;
 	textPosition?: string[];
 	mobileTextPosition?: string[];
 }
@@ -13,6 +14,7 @@ const {
 	position = "center",
 	textPosition = ["20%", "50%"],
 	mobileTextPosition = ["50%", "50%"],
+	mobileImage = "center",
 } = Astro.props;
 ---
 
@@ -28,6 +30,7 @@ const {
 		imageURL: `url(${image})`,
 		mobileTextX: mobileTextPosition[0],
 		mobileTextY: mobileTextPosition[1],
+		mobileImage,
 	}}
 >
 	div.hero {
@@ -70,6 +73,10 @@ const {
 				left: var(--mobileTextX);
 				transform: translate(-50%, -50%);
 			}
+		}
+
+		@media (width < 768px) {
+			background-position: var(--mobileImage);
 		}
 	}
 </style>

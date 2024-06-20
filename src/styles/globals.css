@@ -139,3 +139,30 @@ a.btn:active {
 a:hover {
 	color: var(--accent-color);
 }
+
+input,
+textarea {
+	width: 100%;
+	padding: 20px;
+	min-height: 60px;
+	border-radius: 8px;
+	border: 2px solid var(--fg-light-color);
+	background-color: var(--bg-color);
+	opacity: 0.5;
+	margin-top: 30px;
+	font-size: var(--paragraph);
+	font-family: var(--gt-walsheim);
+	color: var(--text-color);
+
+	&:focus {
+		outline: none;
+		border-color: var(--fg-color);
+		opacity: 1;
+	}
+}
+
+label {
+	color: var(--text-color);
+	font-family: var(--roslindale);
+	font-size: var(--heading-paragraph);
+}

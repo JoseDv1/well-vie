@@ -7,20 +7,22 @@ import Hero from "@/components/Hero.astro";
 <Layout title="About">
 	<Hero
 		heading="Contact & Location"
-		image="/imgs/contact/later-3.webp"
-		position="top center"
+		image="/imgs/contact/for_contact.jpg"
+		position="center"
+		mobileImage="90% center"
 	/>
 	<main>
 		<section>
 			<h3 class="slide">
-				Getting in touch is easy, text 316.258.9949 to start your journey
+				Getting in touch is easy, message <a href="tel:3162589949"
+					>316.258.9949</a
+				> or email
+				<a href="mailto:itsmckenziechun@gmail.com">itsmckenziechun@gmail.com</a>
 			</h3>
-			<h3 class="slide">
-				Golden West Salon 2288 Union Street San Francisco, CA 94123
-			</h3>
+			<h3 class="slide">Paris <br /> X <br />San Francisco</h3>
 		</section>
 		<article>
-			<h2 class="slide">Send a Message</h2>
+			<h2 class="slide">Questions? Send a message</h2>
 			<ContactForm client:only="svelte" />
 			<script src="https://smtpjs.com/v3/smtp.js"></script>
 		</article>

@@ -19,21 +19,11 @@
 	`;
 
 	const sendEmail = () => {
-		// if (fName && lName && email && subject && message) {
-		// 	window.location.href = `mailto:itsmckenziechun@gmail.com?subject=${subject}&body=${emailBody}`;
-		// } else {
-		// 	alert("Please fill out all fields");
-		// }
-
-		Email.send({
-			Host: "smtp.elasticemail.com",
-			Username: "Jose David Villegas Aristizabal",
-			Password: "password",
-			To: "itsmckenziechun@gmail.com",
-			From: email,
-			Subject: subject,
-			Body: "And this is the body",
-		}).then((message) => alert(message));
+		if (fName && lName && email && subject && message) {
+			window.location.href = `mailto:itsmckenziechun@gmail.com?subject=${subject}&body=${emailBody}`;
+		} else {
+			alert("Please fill out all fields");
+		}
 	};
 </script>
 

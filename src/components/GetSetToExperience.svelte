@@ -8,45 +8,31 @@
 
 	const articles: Article[] = [
 		{
-			text: "3 days dedicated to your deep inner transformation",
+			text: "Days dedicated to your deep inner transformation",
 			image: "/imgs/retreats/experience/img1.webp",
 		},
 		{
-			text: `Luxurious accommodations at an
-			oasis located in Pacifica, California`,
+			text: `Luxurious accommodations`,
 			image: "/imgs/retreats/experience/img2.webp",
 		},
 		{
-			text: `Top-tier private chef crafting culinary
-			masterpieces for every meal`,
+			text: `Top-tier private chef crafting culinary masterpieces for every meal`,
 			image: "/imgs/retreats/experience/img3.webp",
 		},
 		{
-			text: `Exclusive access to a pool, sauna, 5 mins
-			from the beach and trails close by`,
-			image: "/imgs/retreats/experience/img4.webp",
-		},
-
-		{
-			text: `Yoga, Breathwork Sessions,
-			Expert-led workshops`,
+			text: `Yoga, Breathwork Sessions, Expert-led workshops`,
 			image: "/imgs/retreats/experience/img5.webp",
 		},
 		{
-			text: `Hiking, beach/pool time, carefree
-			playfulness and tranquil moments of
-			stillness`,
+			text: `Hiking, beach/pool time, carefree playfulness and tranquil moments of stillness`,
 			image: "/imgs/retreats/experience/img6.webp",
 		},
 		{
-			text: `Lifelong connections with an
-			empowering community of
-			like-minded women`,
+			text: `Lifelong connections with an empowering community of like-minded women`,
 			image: "/imgs/retreats/experience/img7.webp",
 		},
 		{
-			text: `An extraordinary transformative
-			healing experience`,
+			text: `An extraordinary transformative healing experience`,
 			image: "/imgs/retreats/experience/img8.webp",
 		},
 	];
