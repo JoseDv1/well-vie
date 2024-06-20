@@ -1,17 +1,24 @@
 ---
 import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
+
+let textPosition = ["50%", "65%"];
+let mobileTextPosition = ["50%", "65%"];
+let heading = "Live Life Well";
 ---
 
 <Layout title="Well-Vie">
 	<!-- Hero -->
-	<Hero
-		heading="Live Life Well"
-		image="/imgs/home/home_header.webp"
-		scroll={true}
-		textPosition={["50%", "65%"]}
-		mobileTextPosition={["50%", "65%"]}
-	/>
+	<div class="hero">
+		<video
+			class="hero"
+			src="video/HOME_VIDEO_1.mp4"
+			autoplay
+			width="100%"
+			loop
+			muted></video>
+		<h1>{heading}</h1>
+	</div>
 	<!-- Content -->
 	<main>
 		<section class="slide">
@@ -49,9 +56,7 @@ import Layout from "@/layouts/Layout.astro";
 			<img
 				src="/imgs/home/midday-6.webp"
 				alt="Well View"
-				style="
-				object-position: 0;
-				"
+				style="object-position: 0;"
 			/>
 			<section>
 				<h2>Retreats</h2>
@@ -69,6 +74,39 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 
 <style>
+	.hero {
+		position: relative;
+		overflow: hidden;
+		border-radius: var(--border-radius);
+		max-height: calc(100dvh - 2rem - 90px);
+		opacity: 0.85;
+
+		& > h1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			color: var(--bg-color);
+			z-index: 100;
+			max-width: 700px;
+
+			@media (width < 768px) {
+				top: var(--textY);
+				left: var(--textX);
+			}
+
+			@media (width < 400px) {
+				top: var(--mobileTextY);
+				left: var(--mobileTextX);
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		& > video {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
 	main {
 		margin: 0 auto;
 		display: flex;

@@ -34,7 +34,6 @@ const {
 	}}
 >
 	div.hero {
-		--bottom-position: 5%;
 		background-color: var(--bg-color);
 		background-image: var(--imageURL);
 		opacity: 0.85;
@@ -44,16 +43,6 @@ const {
 		border-radius: var(--border-radius);
 		pointer-events: none;
 		margin-bottom: 1rem;
-
-		& > small {
-			font-size: 1rem;
-			position: absolute;
-			bottom: calc(var(--bottom-position) + 1%);
-			left: 50%;
-			transform: translateX(-50%);
-			color: var(--bg-color);
-			z-index: 100;
-		}
 
 		& > h1 {
 			position: absolute;
