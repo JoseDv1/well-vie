@@ -111,6 +111,12 @@
 		margin-bottom: 1rem;
 	}
 
+	b {
+		display: block;
+		margin-top: 1rem;
+		color: var(--fg-color);
+	}
+
 	.carousel {
 		display: flex;
 		flex-direction: column;
