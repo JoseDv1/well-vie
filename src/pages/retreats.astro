@@ -42,10 +42,8 @@ const { retreats, title, getSetToExperience, testimonials, faqs, policies } =
 			<Carousel images={mappedImgs} client:visible />
 		</section>
 
-		<section>
-			<hr />
+		<section class="testimonials">
 			<RetreatsCarousel testimonials={testimonials} client:load />
-			<hr />
 		</section>
 
 		<!-- Form -->
@@ -146,6 +144,11 @@ const { retreats, title, getSetToExperience, testimonials, faqs, policies } =
 	section.car h2 {
 		text-align: center;
 		margin: var(--element-gap) 0;
+	}
+
+	section.testimonials {
+		background-color: var(--fg-color);
+		border-radius: var(--border-radius);
 	}
 
 	section.form {

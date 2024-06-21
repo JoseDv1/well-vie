@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
-	import Arrow from "@/assets/arrow.svg?raw";
 
 	export let testimonials: {
 		name: string;
@@ -13,7 +12,7 @@
 	onMount(() => {
 		interval = setInterval(() => {
 			nextSlide();
-		}, 3000);
+		}, 5000);
 
 		return () => {
 			clearInterval(interval);
@@ -26,13 +25,13 @@
 
 	const goToSlide = (i: number) => {
 		currentSlide = i;
+		clearInterval(interval);
 	};
 </script>
 
 <section>
 	<div class="carousel">
 		<h3>Testimonials</h3>
-
 		{#each testimonials as testimonials, i}
 			{#if i === currentSlide}
 				<div in:fade={{ duration: 1000 }} class="test">
@@ -61,26 +60,28 @@
 <style>
 	section {
 		margin-block: var(--section-gap);
+		padding-block: 2rem;
+		aspect-ratio: 16/4;
 	}
 
 	.carousel__indicators {
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
-		margin-top: 1rem;
+		position: absolute;
+		bottom: 2rem;
+		gap: 1rem;
+		left: 0;
+		right: 0;
 
 		& > button {
 			transition: background-color 0.3s;
 			border-radius: 100%;
+			outline: var(--bg-color) solid 1px;
 
-			&:hover {
-				background-color: var(--bg-color);
-				outline: var(--fg-color) solid 1px;
-			}
-
+			&:hover,
 			&.active {
 				background-color: var(--bg-color);
-				outline: var(--fg-color) solid 1px;
 			}
 		}
 	}
@@ -102,19 +103,23 @@
 		justify-content: center;
 		text-align: center;
 		padding: 1rem;
-		max-width: max(50%, 300px);
-		margin: 0 auto;
+		margin: 2rem auto;
 	}
 
 	h3 {
 		text-align: center;
 		margin-bottom: 1rem;
+		color: var(--bg-color);
+	}
+
+	p {
+		color: var(--accent-color);
 	}
 
 	b {
 		display: block;
 		margin-top: 1rem;
-		color: var(--fg-color);
+		color: var(--bg-color);
 	}
 
 	.carousel {
