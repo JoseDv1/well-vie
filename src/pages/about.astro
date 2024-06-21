@@ -1,51 +1,37 @@
 ---
 import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
+import { pages } from "@content";
+const { contentTitle, footer, paragraphs, title } = pages.about;
 ---
 
 <Layout title="Meet McKenzie">
 	<Hero
-		heading="Meet McKenzie"
+		heading={title}
 		image="/imgs/about/For_About.webp"
 		position="top center"
 	/>
 	<main>
 		<section class="slide">
 			<h2>
-				Certified Trauma-Informed Somatic Breathwork Expert and Life Coach
+				{contentTitle}
 			</h2>
 		</section>
-		<article class="slide">
-			<div></div>
-			<section>
-				<p>
-					Bonjour! I'm McKenzie, the founder of Well-Vie. Over the past years, I
-					have embarked on a profound healing journey through breathwork and
-					retreats. During this time, I have delved into the realms of quantum
-					leaps and nervous system work, experiencing firsthand the
-					transformative power of these practices
-				</p>
-			</section>
-		</article>
-		<article class="slide">
-			<div></div>
-			<section>
-				<p>
-					My mission is to make breathwork and the wellness space approachable
-					and accessible for all. I believe that everyone deserves the
-					opportunity to heal, grow, and thrive. To support this vision, I
-					create wellness workshops and retreats tailored to the unique needs of
-					those looking to begin their healing journey and work on their nervous
-					system. Whether you're just starting out or seeking to deepen your
-					practice, our offerings are designed to guide you on your path to
-					wellness.
-				</p>
-			</section>
-		</article>
+
+		{
+			paragraphs.map((paragraph) => (
+				<article class="slide">
+					<div />
+					<section>
+						<p>{paragraph}</p>
+					</section>
+				</article>
+			))
+		}
+
 		<section class="slide">
 			<h3>
-				Together, we can unlock your full potential and embrace a healthier,
-				more balanced life.
+				{footer}
 			</h3>
 		</section>
 	</main>

@@ -1,0 +1,170 @@
+{
+	"pages": {
+		"home": {
+			"title": "Live Life Well",
+			"mainArticle": {
+				"title": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat.",
+				"content": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat."
+			},
+			"articles": [
+				{
+					"image": "/imgs/home/later-2.webp",
+					"title": "Breathwork",
+					"content": "Experience the transformative embrace of the Liberate & Embody Retreat—an extraordinary journey. Imagine it as your personal quantum leap into swift well-being transformation—an exhilarating jump unlocking profound shifts in life. Anticipate swift progress, positive changes, and a deep understanding of your true self.",
+					"redirect": "/breathwork"
+				},
+				{
+					"image": "/imgs/home/midday-6.webp",
+					"title": "Retreats",
+					"content": "Experience the transformative embrace of the Liberate & Embody Retreat—an extraordinary journey. Imagine it as your personal quantum leap into swift well-being transformation—an exhilarating jump unlocking profound shifts in life. Anticipate swift progress, positive changes, and a deep understanding of your true self.",
+					"redirect": "/retreats"
+				}
+			]
+		},
+		"about": {
+			"title": "Meet McKenzie",
+			"contentTitle": "Certified Trauma-Informed Somatic Breathwork Expert and Life Coach",
+			"paragraphs": [
+				"Bonjour! I'm McKenzie, the founder of Well-Vie. Over the past years, I have embarked on a profound healing journey through breathwork and retreats. During this time, I have delved into the realms of quantum leaps and nervous system work, experiencing firsthand the transformative power of these practices",
+				"My mission is to make breathwork and the wellness space approachable and accessible for all. I believe that everyone deserves the opportunity to heal, grow, and thrive. To support this vision, I create wellness workshops and retreats tailored to the unique needs of those looking to begin their healing journey and work on their nervous system. Whether you're just starting out or seeking to deepen your practice, our offerings are designed to guide you on your path to wellness."
+			],
+			"footer": "Together, we can unlock your full potential and embrace a healthier, more balanced life."
+		},
+		"retreats": {
+			"title": "Retreats",
+			"retreats": [
+				"Fall Northern California Retreat (dates & location coming soon)",
+				"January European Retreat (dates & location coming soon)"
+			],
+			"getSetToExperience": [
+				{
+					"text": "Days dedicated to your deep inner transformation",
+					"image": "/imgs/retreats/experience/img1.webp"
+				},
+				{
+					"text": "Luxurious accommodations",
+					"image": "/imgs/retreats/experience/img2.webp"
+				},
+				{
+					"text": "Top-tier private chef crafting culinary masterpieces for every meal",
+					"image": "/imgs/retreats/experience/img3.webp"
+				},
+				{
+					"text": "Yoga, Breathwork Sessions, Expert-led workshops",
+					"image": "/imgs/retreats/experience/img5.webp"
+				},
+				{
+					"text": "Hiking, beach/pool time, carefree playfulness and tranquil moments of stillness",
+					"image": "/imgs/retreats/experience/img6.webp"
+				},
+				{
+					"text": "Lifelong connections with an empowering community of like-minded women",
+					"image": "/imgs/retreats/experience/img7.webp"
+				},
+				{
+					"text": "An extraordinary transformative healing experience",
+					"image": "/imgs/retreats/experience/img8.webp"
+				}
+			],
+			"testimonials": [
+				{
+					"name": "Diana Ryan",
+					"text": "Amazing experience! Let's repeat it next year. My only complain is the short time there!"
+				}
+			],
+			"faqs": [
+				{
+					"question": "How do I pay?",
+					"answer": "You can pay with a credit or debit card on my website: <a href='https://www.itsmckenziechun.com/retreats'>https://www.itsmckenziechun.com/retreats</a>"
+				},
+				{
+					"question": "Can I room with someone I know?",
+					"answer": "Absolutely! Just email itsmckenziechun@gmail.com with the name of the person you would like to room with."
+				},
+				{
+					"question": "When are early bird pricing and payment plans active until?",
+					"answer": "(dates & location coming soon)"
+				},
+				{
+					"question": "I have dietary restrictions, is that an issue for the private chef?",
+					"answer": "There will be no issues with any dietary restrictions, the chef will create meals within your restrictions that you share with us in a form once you have signed up for the retreat."
+				},
+				{
+					"question": "Is there free time or is everything scheduled?",
+					"answer": "There is a beautiful balance of free time and then events, everything is by choice using your own autonomy."
+				},
+				{
+					"question": "I am not experienced in breathwork, is that ok?",
+					"answer": "Absolutely!"
+				},
+				{
+					"question": "I am not experienced in Yoga, is that ok?",
+					"answer": "Absolutely!"
+				},
+				{
+					"question": "Can I break up my payments?",
+					"answer": "Yes, in the early bird option there is a payment plan at checkout."
+				},
+				{
+					"question": "What do I pack?",
+					"answer": "We will send you an email prior to the retreat with a packing list!"
+				},
+				{
+					"question": "I've never been on a retreat, what do I need to be prepared for?",
+					"answer": "Embrace the retreat just as you are! No previous experience with yoga, breathwork, or anything else is required. Simply be yourself. We'll move at your pace, and if you prefer to take a break from any activity, that's completely okay."
+				}
+			],
+			"policies": [
+				{
+					"title": "",
+					"content": "Upon purchasing, you're agreeing to a few policies that help make the magic happen. Please keep in mind that, given the nature of events, we're unable to make exceptions. Your commitment to these policies is appreciated."
+				},
+				{
+					"title": "Refund and Transfer Policy",
+					"content": "Your ticket is non-refundable and non-transferable to another event.In case of emergencies, you have the option to sell or gift your retreat ticket for the exact event you purchased. If you can't or choose not to utilize these options and decide not to attend for any reason, unfortunately, we won't be able to provide a refund or transfer credit."
+				},
+				{
+					"title": "Terms and Conditions of Sale",
+					"content": "Terms and Conditions of Sale When purchasing your ticket, you're agreeing to the terms and conditions related to the Liberate & Embody Retreat June 6-9 in Paciﬁca, California. Please ensure the full balance, as outlined in your payment plan, is settled at the time of signing up. If The Retreat is canceled due to reasons beyond our control, like COVID-19 or other unforeseen circumstances, we'll provide a transfer credit for a future event hosted by us within 2025 or 2026."
+				},
+				{
+					"title": "Location or Date Changes",
+					"content": "There might be changes in the retreat's location or dates. If you choose not to attend the rescheduled date or location, your ticket will be forfeited."
+				},
+				{
+					"title": "Covid-19 or Pandemic Issues",
+					"content": "If unforeseen Covid-19 or pandemic-related issues arise, making the event illegal to host, we'll reschedule the date, with the same purchasing policies in place."
+				},
+				{
+					"title": "",
+					"content": "This overview gives you a snapshot of our purchasing policies, refunds, and transfers. Thank you for your understanding and cooperation. If you have any questions please reach out to itsmckenziechun@gmail.com"
+				}
+			]
+		},
+		"breatwork": {
+			"title": "Breathwork",
+			"mainArticle": {
+				"title": "Experience the Power of Breathwork: Wellness for Everyone",
+				"content": "Welcome to Well-Vie, Led by McKenzie, a dedicated breathwork expert, our mission is to guide you on a transformative journey toward better health and well-being. Through personalized 1:1 sessions, couples breathwork, group events, and corporate workshops, the focus is on enhancing your nervous system's health, reducing stress, and improving overall wellness. Join our retreats and experience the profound impact of mindful breathing, integrating effective techniques with practical wellness practices to elevate your life."
+			},
+			"benefits": [
+				"Release of stress and anxiety",
+				"Aides in better sleep",
+				"Improves focus & mood",
+				"Gives clarity",
+				"Increases energy and boosts immunity",
+				"Improves digestion & circulation",
+				"Lowers blood pressure",
+				"Connect to your inner self",
+				"Moves through stuck energy",
+				"Helps manage depression",
+				"Helps heal from trauma and manage PTSD"
+			]
+		},
+		"contact": {
+			"title": "Contact & Location",
+			"getInTouch": "Getting in touch is easy, message <a href=\"tel:3162589949\">316.258.9949</a> or email<a href=\"mailto:itsmckenziechun@gmail.com\">itsmckenziechun@gmail.com</a>",
+			"address": "Paris <br /> X <br />San Francisco"
+		}
+	}
+}

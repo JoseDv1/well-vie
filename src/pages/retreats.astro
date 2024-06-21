@@ -5,13 +5,20 @@ import Layout from "@/layouts/Layout.astro";
 import RetreatsForm from "@/components/RetreatsForm.svelte";
 import RetreatsCarousel from "@/components/RetreatsCarousel.svelte";
 import GetSetToExperience from "@/components/GetSetToExperience.svelte";
+import { pages } from "@content";
+
+// Carousel images
 const images = await Astro.glob("../../public/imgs/retreats/experience/*.webp");
 const mappedImgs = images.map((img) => img.default.src);
+
+// Page Content
+const { retreats, title, getSetToExperience, testimonials, faqs, policies } =
+	pages.retreats;
 ---
 
 <Layout title="Retreats | Well-Vie">
 	<Hero
-		heading="Retreats"
+		heading={title}
 		image="/imgs/retreats/FOR_Retreats.webp"
 		position="center"
 		mobileImage="60% center"
@@ -20,14 +27,13 @@ const mappedImgs = images.map((img) => img.default.src);
 		<section class="next">
 			<p class="slide">Next retreat! <br />join us in the journey</p>
 			<article class="slide">
-				<h2>Fall Northern California Retreat (dates & location coming soon)</h2>
-				<h2>January European Retreat (dates & location coming soon)</h2>
+				{retreats.map((retreat) => <h2>{retreat}</h2>)}
 			</article>
 		</section>
 		<!-- Get set to experience -->
 		<section>
 			<h2>Get set to experience</h2>
-			<GetSetToExperience client:idle />
+			<GetSetToExperience articles={getSetToExperience} client:idle />
 		</section>
 
 		<!-- Retreats Galery Carousel -->
@@ -38,15 +44,7 @@ const mappedImgs = images.map((img) => img.default.src);
 
 		<section>
 			<hr />
-			<RetreatsCarousel
-				testimonials={[
-					{
-						name: "Diana Ryan",
-						text: "Amazing experience! Let's repeat it next year. My only complain is the short time there!",
-					},
-				]}
-				client:only="svelte"
-			/>
+			<RetreatsCarousel testimonials={testimonials} client:load />
 			<hr />
 		</section>
 
@@ -62,130 +60,28 @@ const mappedImgs = images.map((img) => img.default.src);
 				<!-- FAQ -->
 				<article>
 					<h2>FAQ's</h2>
-					<details name="fq">
-						<summary>How do I pay?</summary>
-						<p>
-							You can pay with a credit or debit card on my website:
-							<a href="https://www.itsmckenziechun.com/retreats"
-								>https://www.itsmckenziechun.com/retreats</a
-							>
-						</p>
-					</details>
-					<details name="fq">
-						<summary>Can I room with someone I know?</summary>
-						<p>
-							Absolutely! Just email itsmckenziechun@gmail.com with the name of
-							the person you would like to room with.
-						</p>
-					</details>
-					<details name="fq">
-						<summary
-							>When are early bird pricing and payment plans active until?</summary
-						>
-						<p>(dates & location coming soon)</p>
-					</details>
-					<details name="fq">
-						<summary
-							>I have dietary restrictions, is that an issue for the private
-							chef?</summary
-						>
-						<p>
-							There will be no issues with any dietary restrictions, the chef
-							will create meals within your restrictions that you share with us
-							in a form once you have signed up for the retreat.
-						</p>
-					</details>
-					<details name="fq">
-						<summary>Is there free time or is everything scheduled?</summary>
-						<p>
-							There is a beautiful balance of free time and then events,
-							everything is by choice using your own autonomy.
-						</p>
-					</details>
-					<details name="fq">
-						<summary>I am not experienced in breathwork, is that ok?</summary>
-						<p>Absolutely!</p>
-					</details>
-					<details name="fq">
-						<summary>I am not experienced in Yoga, is that ok?</summary>
-						<p>Absolutely!</p>
-					</details>
-					<details name="fq">
-						<summary>Can I break up my payments?</summary>
-						<p>
-							Yes, in the early bird option there is a payment plan at checkout.
-						</p>
-					</details>
-					<details name="fq">
-						<summary>What do I pack?</summary>
-						<p>
-							We will send you an email prior to the retreat with a packing
-							list!
-						</p>
-					</details>
-					<details name="fq">
-						<summary
-							>I've never been on a retreat, what do I need to be prepared for</summary
-						>
-						<p>
-							Embrace the retreat just as you are! No previous experience with
-							yoga, breathwork, or anything else is required. Simply be
-							yourself. We'll move at your pace, and if you prefer to take a
-							break from any activity, that's completely okay.
-						</p>
-					</details>
+					{
+						faqs.map((faq) => (
+							<details name="fq">
+								<summary>{faq.question}</summary>
+								<p set:html={faq.answer} />
+							</details>
+						))
+					}
 				</article>
 
 				<!-- Purchasing Policies -->
 				<article class="policy">
 					<h2>Purchasing Policies</h2>
 
-					<p>
-						Upon purchasing, you're agreeing to a few policies that help make
-						the magic happen. Please keep in mind that, given the nature of
-						events, we're unable to make exceptions. Your commitment to these
-						policies is appreciated.
-					</p>
-
-					<h4>Refund and Transfer Policy</h4>
-					<p>
-						Your ticket is non-refundable and non-transferable to another
-						event.In case of emergencies, you have the option to sell or gift
-						your retreat ticket for the exact event you purchased. If you can't
-						or choose not to utilize these options and decide not to attend for
-						any reason, unfortunately, we won't be able to provide a refund or
-						transfer credit.
-					</p>
-					<h4>Terms and Conditions of Sale</h4>
-					<p>
-						Terms and Conditions of Sale When purchasing your ticket, you're
-						agreeing to the terms and conditions related to the Liberate &
-						Embody Retreat June 6-9 in Paciﬁca, California. Please ensure the
-						full balance, as outlined in your payment plan, is settled at the
-						time of signing up. If The Retreat is canceled due to reasons beyond
-						our control, like COVID-19 or other unforeseen circumstances, we'll
-						provide a transfer credit for a future event hosted by us within
-						2025 or 2026.
-					</p>
-					<h4>Location or Date Changes</h4>
-					<p>
-						There might be changes in the retreat's location or dates. If you
-						choose not to attend the rescheduled date or location, your ticket
-						will be forfeited.
-					</p>
-					<h4>Covid-19 or Pandemic Issues</h4>
-					<p>
-						If unforeseen Covid-19 or pandemic-related issues arise, making the
-						event illegal to host, we'll reschedule the date, with the same
-						purchasing policies in place.
-					</p>
-
-					<p>
-						This overview gives you a snapshot of our purchasing policies,
-						refunds, and transfers. Thank you for your understanding and
-						cooperation. If you have any questions please reach out to
-						itsmckenziechun@gmail.com
-					</p>
+					{
+						policies.map((policy) => (
+							<>
+								<h4>{policy.title}</h4>
+								<p>{policy.content}</p>
+							</>
+						))
+					}
 				</article>
 			</section>
 		</section>

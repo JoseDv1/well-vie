@@ -1,10 +1,10 @@
 ---
-import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
+import { pages } from "@content";
+const { mainArticle, title, articles } = pages.home;
 
 let textPosition = ["50%", "50%"];
 let mobileTextPosition = ["50%", "50%"];
-let heading = "Live Life Well";
 ---
 
 <Layout title="Well-Vie">
@@ -17,59 +17,35 @@ let heading = "Live Life Well";
 			width="100%"
 			loop
 			muted></video>
-		<h1>{heading}</h1>
+		<h1>{title}</h1>
 	</div>
 	<!-- Content -->
 	<main>
+		<!-- Main Article -->
 		<section class="slide">
 			<h3>
-				Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris
-				sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis
-				dui placerat ornare. Pellentesque odio nisi euismod in pharetra a
-				ultricies in diam. Sed arcu. Cras consequat. Praesent dapibus neque id
-				cursus faucibus tortor neque egestas auguae eu vulputate magna eros eu
-				erat. Aliquam erat volutpat. Nam dui mi tincidunt quis accumsan
-				porttitor facilisis luctus metus.
+				{mainArticle.title}
 			</h3>
 			<p>
-				Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris
-				sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis
-				dui placerat ornare. Pellentesque odio nisi euismod in pharetra a
-				ultricies in diam. Sed arcu. Cras consequat.
+				{mainArticle.content}
 			</p>
 		</section>
-		<article class="slide">
-			<img src="/imgs/home/later-2.webp" alt="Well View" />
-			<section>
-				<h2>Breathwork</h2>
-				<p>
-					Experience the transformative embrace of the Liberate & Embody
-					Retreat—an extraordinary journey. Imagine it as your personal quantum
-					leap into swift well-being transformation—an exhilarating jump
-					unlocking profound shifts in life. Anticipate swift progress, positive
-					changes, and a deep understanding of your true self.
-				</p>
-				<a class="btn" href="/breathwork">know more</a>
-			</section>
-		</article>
-		<article class="slide">
-			<img
-				src="/imgs/home/midday-6.webp"
-				alt="Well View"
-				style="object-position: 0;"
-			/>
-			<section>
-				<h2>Retreats</h2>
-				<p>
-					Experience the transformative embrace of the Liberate & Embody
-					Retreat—an extraordinary journey. Imagine it as your personal quantum
-					leap into swift well-being transformation—an exhilarating jump
-					unlocking profound shifts in life. Anticipate swift progress, positive
-					changes, and a deep understanding of your true self.
-				</p>
-				<a class="btn" href="/retreats">know more</a>
-			</section>
-		</article>
+
+		<!-- Articles -->
+		{
+			articles.map((article) => (
+				<article class="slide">
+					<img src={article.image} alt={article.title} />
+					<section>
+						<h2>{article.title}</h2>
+						<p>{article.content}</p>
+						<a class="btn" href={article.redirect}>
+							Know more
+						</a>
+					</section>
+				</article>
+			))
+		}
 	</main>
 </Layout>
 

@@ -5,45 +5,31 @@ import Layout from "@/layouts/Layout.astro";
 import oneToOneIcon from "@/assets/1.1.svg";
 import companyEventsIcon from "@/assets/company.svg";
 import groupEventsIcon from "@/assets/group_Events.svg";
+import { pages } from "@content";
+
+const { title, mainArticle, benefits } = pages.breatwork;
 ---
 
 <Layout title="Breathwork">
 	<Hero
-		heading="Breathwork"
+		heading={title}
 		image="/imgs/breathwork/FOR_Breathwork.webp"
 		position="20% top"
 		mobileImage="30% center"
 	/>
 	<main>
 		<h2 class="slide">
-			Experience the Power of Breathwork: Wellness for Everyone
+			{mainArticle.title}
 		</h2>
 		<h3 class="slide">
-			Welcome to Well-Vie, Led by McKenzie, a dedicated breathwork expert, our
-			mission is to guide you on a transformative journey toward better health
-			and well-being. Through personalized 1:1 sessions, couples breathwork,
-			group events, and corporate workshops, the focus is on enhancing your
-			nervous system's health, reducing stress, and improving overall wellness.
-			Join our retreats and experience the profound impact of mindful breathing,
-			integrating effective techniques with practical wellness practices to
-			elevate your life.
+			{mainArticle.content}
 		</h3>
 		<section class="benefits">
 			<h2 class="slide">Benefits of Breathwork:</h2>
 			<article>
 				<img src="/imgs/home/later-2.webp" alt="" />
 				<ul>
-					<li class="slide">Release of stress and anxiety</li>
-					<li class="slide">Aides in better sleep</li>
-					<li class="slide">Improves focus & mood</li>
-					<li class="slide">Gives clarity</li>
-					<li class="slide">Increases energy and boosts immunity</li>
-					<li class="slide">Improves digestion & circulation</li>
-					<li class="slide">Lowers blood pressure</li>
-					<li class="slide">Connect to your inner self</li>
-					<li class="slide">Moves through stuck energy</li>
-					<li class="slide">Helps manage depression</li>
-					<li class="slide">Helps heal from trauma and manage PTSD</li>
+					{benefits.map((benefit) => <li class="slide">{benefit}</li>)}
 				</ul>
 			</article>
 		</section>

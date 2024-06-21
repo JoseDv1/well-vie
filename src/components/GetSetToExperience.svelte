@@ -1,41 +1,7 @@
-<script lang="ts">
+<script>
 	import { onMount } from "svelte";
 
-	type Article = {
-		text: string;
-		image: string;
-	};
-
-	const articles: Article[] = [
-		{
-			text: "Days dedicated to your deep inner transformation",
-			image: "/imgs/retreats/experience/img1.webp",
-		},
-		{
-			text: `Luxurious accommodations`,
-			image: "/imgs/retreats/experience/img2.webp",
-		},
-		{
-			text: `Top-tier private chef crafting culinary masterpieces for every meal`,
-			image: "/imgs/retreats/experience/img3.webp",
-		},
-		{
-			text: `Yoga, Breathwork Sessions, Expert-led workshops`,
-			image: "/imgs/retreats/experience/img5.webp",
-		},
-		{
-			text: `Hiking, beach/pool time, carefree playfulness and tranquil moments of stillness`,
-			image: "/imgs/retreats/experience/img6.webp",
-		},
-		{
-			text: `Lifelong connections with an empowering community of like-minded women`,
-			image: "/imgs/retreats/experience/img7.webp",
-		},
-		{
-			text: `An extraordinary transformative healing experience`,
-			image: "/imgs/retreats/experience/img8.webp",
-		},
-	];
+	export let articles;
 
 	onMount(() => {
 		const elements = document.querySelectorAll(".tooltip");
@@ -44,10 +10,10 @@
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						//
-						const tooltip = entry.target.querySelector("div") as HTMLElement;
+						const tooltip = entry.target.querySelector("div");
 						tooltip.style.opacity = "1";
 						tooltip.style.transform = "translateY(0) translateX(-50%)";
-						const pElement = entry.target.querySelector("p") as HTMLElement;
+						const pElement = entry.target.querySelector("p");
 						pElement.style.backgroundColor = "var(--fg-color)";
 						pElement.style.color = "var(--bg-color)";
 					}
