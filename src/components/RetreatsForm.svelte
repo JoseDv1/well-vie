@@ -23,7 +23,7 @@
 
 	const sendEmail = () => {
 		if (fName && lName && email && message) {
-			window.location.href = `mailto:itsmckenziechun@gmail.com?subject=${subject}&body=${emailBody}`;
+			window.location.href = `mailto:mckenzie@well-vie.com?subject=${subject}&body=${emailBody}`;
 		} else {
 			alert("Please fill out all fields");
 		}

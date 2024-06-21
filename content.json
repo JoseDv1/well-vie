@@ -1,22 +1,22 @@
 {
 	"pages": {
 		"home": {
-			"title": "Live Life Well",
+			"title": "Live Your Life Well",
 			"mainArticle": {
-				"title": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat.",
-				"content": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat."
+				"title": "Welcome to Well-Vie",
+				"content": "At Well-Vie, our mission is to make breathwork, retreats, workshops, and all things wellness approachable and accessible for everyone. The name \"Well-Vie\" combines \"Well\" (stemming from wellness) and \"Vie\" (life in French), bridging the gap and creating a space where you can live your life well. Our thoughtfully designed retreats and workshops cater to your unique needs, whether you're just starting your healing journey or looking to deepen your practice. With personalized guidance, expert-led sessions, and a supportive community, we help you connect with yourself, understand your nervous system, and reclaim your inner power. This is the space to live your life well. Join us and embark on a transformative journey toward a healthier, more balanced life."
 			},
 			"articles": [
 				{
 					"image": "/imgs/home/later-2.webp",
 					"title": "Breathwork",
-					"content": "Experience the transformative embrace of the Liberate & Embody Retreat—an extraordinary journey. Imagine it as your personal quantum leap into swift well-being transformation—an exhilarating jump unlocking profound shifts in life. Anticipate swift progress, positive changes, and a deep understanding of your true self.",
+					"content": "Our mission is to guide you on a transformative journey toward better health and well-being. Through personalized 1:1 sessions, couples breathwork, group events, and corporate workshops, the focus is on enhancing your nervous system's health, reducing stress, and improving overall wellness. Get ready to elevate your life.",
 					"redirect": "/breathwork"
 				},
 				{
 					"image": "/imgs/home/midday-6.webp",
 					"title": "Retreats",
-					"content": "Experience the transformative embrace of the Liberate & Embody Retreat—an extraordinary journey. Imagine it as your personal quantum leap into swift well-being transformation—an exhilarating jump unlocking profound shifts in life. Anticipate swift progress, positive changes, and a deep understanding of your true self.",
+					"content": "Experience the transformative embrace of our retreats by Well-Vie—an extraordinary journey.Imagine it as your personal quantum leap into swift well-being transformation—an exhilarating jump unlocking profound shifts in life. Anticipate swift progress, positive changes and a deep understanding of your true self.",
 					"redirect": "/retreats"
 				}
 			]
@@ -79,7 +79,7 @@
 				},
 				{
 					"question": "Can I room with someone I know?",
-					"answer": "Absolutely! Just email itsmckenziechun@gmail.com with the name of the person you would like to room with."
+					"answer": "Absolutely! Just email mckenzie@well-vie.com with the name of the person you would like to room with."
 				},
 				{
 					"question": "When are early bird pricing and payment plans active until?",
@@ -137,7 +137,7 @@
 				},
 				{
 					"title": "",
-					"content": "This overview gives you a snapshot of our purchasing policies, refunds, and transfers. Thank you for your understanding and cooperation. If you have any questions please reach out to itsmckenziechun@gmail.com"
+					"content": "This overview gives you a snapshot of our purchasing policies, refunds, and transfers. Thank you for your understanding and cooperation. If you have any questions please reach out to mckenzie@well-vie.com"
 				}
 			]
 		},
@@ -163,7 +163,7 @@
 		},
 		"contact": {
 			"title": "Contact & Location",
-			"getInTouch": "Getting in touch is easy, message <a href=\"tel:3162589949\">316.258.9949</a> or email<a href=\"mailto:itsmckenziechun@gmail.com\">itsmckenziechun@gmail.com</a>",
+			"getInTouch": "Getting in touch is easy, message <a href=\"tel:3162589949\">316.258.9949</a> or email<a href=\"mailto:mckenzie@well-vie.com\">mckenzie@well-vie.com</a>",
 			"address": "Paris <br /> X <br />San Francisco"
 		}
 	}
