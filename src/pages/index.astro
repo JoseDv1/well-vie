@@ -1,24 +1,19 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
 import { pages } from "@content";
 const { mainArticle, title, articles } = pages.home;
-
-let textPosition = ["50%", "50%"];
-let mobileTextPosition = ["50%", "50%"];
 ---
 
 <Layout title="Well-Vie">
 	<!-- Hero -->
-	<div class="hero">
-		<video
-			class="hero"
-			src="video/HOME_VIDEO.mp4"
-			autoplay
-			width="100%"
-			loop
-			muted></video>
-		<h1>{title}</h1>
-	</div>
+	<Hero
+		heading={title}
+		image="/imgs/home/for_home.webp"
+		textPosition={["50%", "50%"]}
+		mobileTextPosition={["50%", "50%"]}
+		mobileImage="80% center"
+	/>
 	<!-- Content -->
 	<main>
 		<!-- Main Article -->
@@ -49,46 +44,7 @@ let mobileTextPosition = ["50%", "50%"];
 	</main>
 </Layout>
 
-<style
-	define:vars={{
-		mobileTextX: mobileTextPosition[0],
-		mobileTextY: mobileTextPosition[1],
-		textX: textPosition[0],
-		textY: textPosition[1],
-	}}
->
-	.hero {
-		position: relative;
-		overflow: hidden;
-		border-radius: var(--border-radius);
-		max-height: calc(100dvh - 2rem - 90px);
-
-		& > h1 {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			color: var(--bg-color);
-			max-width: 700px;
-
-			@media (width < 768px) {
-				top: var(--textY);
-				left: var(--textX);
-			}
-
-			@media (width < 500px) {
-				top: var(--mobileTextY);
-				left: var(--mobileTextX);
-				transform: translate(-50%, -50%);
-			}
-		}
-
-		& > video {
-			width: 100%;
-
-			object-fit: cover;
-		}
-	}
-
+<style>
 	main {
 		margin: 0 auto;
 		display: flex;
