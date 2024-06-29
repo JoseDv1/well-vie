@@ -3,27 +3,22 @@
 	let lName = "";
 	let email = "";
 	let phone = "";
-	let message = "";
 
 	let days = 1;
 	let included = [];
-
 	$: fullName = `${fName} ${lName}`;
-
-	$: emailBody = `
-
-	Name: ${fullName}\n
-
-	Email: ${email}\n
-
-	Subject: I Want a Retreat\n 
-
-	Message: ${message}
-	`;
+	$: emailBody = encodeURIComponent(`Hi McKenzie,
+		I Want to book a retreat for ${fullName}
+		Email: ${email}
+		Phone: ${phone}
+		Amount of Days: ${days}
+		${included.length > 0 ? `Included: ${included.join(", ")}` : ""}
+		Thank you
+	`);
 
 	const sendEmail = () => {
-		if (fName && lName && email && message) {
-			window.location.href = `mailto:mckenzie@well-vie.com?subject=${subject}&body=${emailBody}`;
+		if (fName && lName && email) {
+			window.location.href = `mailto:mckenzie@well-vie.com?subject=Retreat&body=${emailBody}`;
 		} else {
 			alert("Please fill out all fields");
 		}

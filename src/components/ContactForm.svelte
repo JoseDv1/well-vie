@@ -7,14 +7,12 @@
 	let message = "";
 	$: fullName = `${fName} ${lName}`;
 	let date = new Date().toISOString().split("T")[0];
-	$: emailBody = `
-	Name: ${fullName}\n
-	Email: ${email}\n
-	From ${haveDate ? `Breathworks Page\n` : ` Contact Page\n `}
-	Subject: ${subject}\n 
-	${haveDate ? `Tentative Date: ${date}\n` : `Contact Date: ${date}\n `}
-	Message: ${message}
-	`;
+	$: emailBody = encodeURIComponent(`Email From ${email} 
+	Hi McKenzie, I am ${fullName} 
+	${!haveDate ? "" : `I want a breathwork Session on :${date}`}
+	--------------------
+	${message}
+	`);
 	const sendEmail = () => {
 		if (fName && lName && email && subject && message) {
 			window.location.href = `mailto:mckenzie@well-vie.com?subject=${subject}&body=${emailBody}`;
