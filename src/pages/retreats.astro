@@ -8,7 +8,7 @@ import GetSetToExperience from "@/components/GetSetToExperience.svelte";
 import { pages } from "@content";
 
 // Carousel images
-const images = await Astro.glob("../../public/imgs/retreats/experience/*.webp");
+const images = await Astro.glob("../../public/imgs/retreats/carousel/*.jpg");
 const mappedImgs = images.map((img) => img.default.src);
 
 // Page Content
@@ -48,7 +48,7 @@ const { retreats, title, getSetToExperience, testimonials, faqs, policies } =
 
 		<!-- Form -->
 		<section class="form">
-			<h2>Customize Your Retreat or Wellnes Workshop</h2>
+			<h2>Customize Your Retreat or Wellness Workshop</h2>
 			<RetreatsForm client:only="svelte" />
 		</section>
 

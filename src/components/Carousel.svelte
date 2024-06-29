@@ -77,7 +77,6 @@
 	}
 
 	img {
-		width: 1200px;
 		aspect-ratio: 16 / 9;
 		border-radius: var(--border-radius);
 		object-fit: cover;

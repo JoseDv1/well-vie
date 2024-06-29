@@ -39,11 +39,11 @@
 			"getSetToExperience": [
 				{
 					"text": "Days dedicated to your deep inner transformation",
-					"image": "/imgs/retreats/experience/img1.webp"
+					"image": "/imgs/retreats/experience/img1.jpg"
 				},
 				{
 					"text": "Luxurious accommodations",
-					"image": "/imgs/retreats/experience/img2.webp"
+					"image": "/imgs/retreats/experience/img2.jpg"
 				},
 				{
 					"text": "Top-tier private chef crafting culinary masterpieces for every meal",
@@ -51,11 +51,11 @@
 				},
 				{
 					"text": "Yoga, Breathwork Sessions, Expert-led workshops",
-					"image": "/imgs/retreats/experience/img5.webp"
+					"image": "/imgs/retreats/experience/img5.jpg"
 				},
 				{
 					"text": "Hiking, beach/pool time, carefree playfulness and tranquil moments of stillness",
-					"image": "/imgs/retreats/experience/img6.webp"
+					"image": "/imgs/retreats/experience/img6.jpg"
 				},
 				{
 					"text": "Lifelong connections with an empowering community of like-minded women",
@@ -171,7 +171,7 @@
 		},
 		"contact": {
 			"title": "Contact & Location",
-			"getInTouch": "Getting in touch is easy, message <a href=\"tel:3162589949\">316.258.9949</a> or email<a href=\"mailto:mckenzie@well-vie.com\">mckenzie@well-vie.com</a>",
+			"getInTouch": "Getting in touch is easy, message <a href=\"tel:3162589949\">316.258.9949</a> or email <a href=\"mailto:mckenzie@well-vie.com\">mckenzie@well-vie.com</a>",
 			"address": "Paris <br /> X <br />San Francisco"
 		}
 	}

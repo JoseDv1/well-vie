@@ -53,7 +53,7 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (width <=800px) {
 	:root {
 		--heading: 4rem;
 		--subheading: 2rem;

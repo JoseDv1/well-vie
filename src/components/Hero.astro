@@ -5,7 +5,6 @@ interface Props {
 	position?: string;
 	mobileImage?: string;
 	textPosition?: string[];
-	mobileTextPosition?: string[];
 }
 
 const {
@@ -13,7 +12,6 @@ const {
 	image,
 	position = "center",
 	textPosition = ["20%", "50%"],
-	mobileTextPosition = ["50%", "50%"],
 	mobileImage = "center",
 } = Astro.props;
 ---
@@ -28,8 +26,6 @@ const {
 		textY: textPosition[1],
 		bgPosition: position,
 		imageURL: `url(${image})`,
-		mobileTextX: mobileTextPosition[0],
-		mobileTextY: mobileTextPosition[1],
 		mobileImage,
 	}}
 >
@@ -52,15 +48,15 @@ const {
 			z-index: 100;
 			max-width: 700px;
 
-			@media (width < 768px) {
+			@media (width <= 768px) {
 				top: var(--textY);
 				left: var(--textX);
 			}
 
 			@media (width < 500px) {
-				top: var(--mobileTextY);
-				left: var(--mobileTextX);
-				transform: translate(-50%, -50%);
+				top: unset;
+				bottom: 1.25rem;
+				left: 1.25rem;
 			}
 		}
 

@@ -58,6 +58,10 @@
 		--color: var(--fg-light-color);
 		margin-top: var(--bubble-height);
 		max-width: min(100%, 400px);
+
+		@media (width <= 450px) {
+			width: 100%;
+		}
 	}
 
 	article p {
