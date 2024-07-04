@@ -97,6 +97,7 @@ p {
 button,
 a.btn {
 	font-family: 'GT Walsheim', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 500;
 	color: var(--fg-color);
 	border: 1px solid var(--fg-color);
 	background-color: var(--bg-color);
