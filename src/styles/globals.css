@@ -32,7 +32,8 @@
 	--font-size: 16px;
 
 	/* Font sizes */
-	--heading: 9.375rem;
+	/* 150px */
+	--heading: 8vw;
 	--subheading: 5.625rem;
 	--heading-paragraph: 2rem;
 	--paragraph: 1.25rem;
