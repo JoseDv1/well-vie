@@ -74,7 +74,8 @@ h6 {
 }
 
 h1 {
-	font-size: var(--heading)
+	font-size: var(--heading);
+	color: var(--bg-color);
 }
 
 h2 {
