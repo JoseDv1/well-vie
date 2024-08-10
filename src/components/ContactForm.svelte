@@ -143,6 +143,4 @@
 	input:last-of-type {
 		font-size: var(--paragraph);
 	}
-
-	br
 </style>
