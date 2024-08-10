@@ -18,16 +18,9 @@ const { contentTitle, footer, paragraphs, title } = pages.about;
 			</h2>
 		</section>
 
-		{
-			paragraphs.map((paragraph) => (
-				<article class="slide">
-					<div />
-					<section>
-						<p>{paragraph}</p>
-					</section>
-				</article>
-			))
-		}
+		<article>
+			{paragraphs.map((paragraph) => <p class="slide">{paragraph}</p>)}
+		</article>
 
 		<section class="slide">
 			<h3>
@@ -55,31 +48,9 @@ const { contentTitle, footer, paragraphs, title } = pages.about;
 
 	main > article {
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: var(--section-gap);
-
-		& > * {
-			flex: 1;
-		}
-
-		&:nth-child(even) {
-			flex-direction: row-reverse;
-		}
-
-		div {
-			flex: 1;
-			@media (max-width: 800px) {
-				display: none;
-			}
-		}
-
-		& > section {
-			flex: 1 0 300px;
-			display: flex;
-			flex-direction: column;
-			gap: var(--element-gap);
-		}
+		gap: var(--element-gap);
 	}
 </style>
