@@ -69,8 +69,8 @@
 	</label>
 
 	<button href={`mailto:<REPLACE@EMAIL>?subject=${subject}&body=${emailBody}`}
-		>Submit</button
-	>
+		>Work With Us
+	</button>
 </form>
 
 <style>
@@ -143,4 +143,6 @@
 	input:last-of-type {
 		font-size: var(--paragraph);
 	}
+
+	br
 </style>

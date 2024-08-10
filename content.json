@@ -180,21 +180,30 @@
 		"breatwork": {
 			"title": "Breathwork",
 			"mainArticle": {
-				"title": "Experience the Power of Breathwork: Wellness for Everyone",
-				"content": "Welcome to Well-Vie, Led by McKenzie, a dedicated breathwork expert, our mission is to guide you on a transformative journey toward better health and well-being. Through personalized 1:1 sessions, couples breathwork, group events, and corporate workshops, the focus is on enhancing your nervous system's health, reducing stress, and improving overall wellness. Join our retreats and experience the profound impact of mindful breathing, integrating effective techniques with practical wellness practices to elevate your life."
+				"title": "A powerful tool for healing and transformation",
+				"content": [
+					"At Well-Vie, we believe that everyone deserves to have the opportunity to heal, grow, and thrive. We’re dedicated to that vision through the power of breathwork.",
+
+					"Whether you’re looking for ways to calm yourself down in the heat of a stressful moment, or to completely transform yourself and your life from the inside-out, breathwork is one of our most accessible self-care practices.",
+
+					"Our breathwork sessions are designed to help you understand and heal your nervous system, reduce stress, and improve your overall wellness. In a range of offerings — from one-on-one sessions to private groups to corporate retreats — McKenzie teaches you the profound impact of mindful breathing, and how to integrate these simple, effective techniques into your everyday life.",
+					"McKenzie leads breathwork on Zoom, as well as in-person sessions in California and around Europe."
+				]
 			},
 			"benefits": [
-				"Release of stress and anxiety",
-				"Aides in better sleep",
-				"Improves focus & mood",
-				"Gives clarity",
-				"Increases energy and boosts immunity",
-				"Improves digestion & circulation",
-				"Lowers blood pressure",
-				"Connect to your inner self",
-				"Moves through stuck energy",
-				"Helps manage depression",
-				"Helps heal from trauma and manage PTSD"
+				"Reduced stress and anxiety",
+				"Better sleep",
+				"Improved focus & mood",
+				"More clarity",
+				"Increased energy",
+				"Boosted immunity",
+				"Improved digestion & circulation",
+				"Lower blood pressure",
+				"Connection to your inner self",
+				"Movement of stuck or stagnant energy",
+				"Helps to lift depression",
+				"Helps in healing from trauma",
+				"Helps in managing PTSD"
 			]
 		},
 		"contact": {

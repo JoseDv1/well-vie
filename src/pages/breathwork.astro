@@ -21,11 +21,11 @@ const { title, mainArticle, benefits } = pages.breatwork;
 		<h2 class="slide">
 			{mainArticle.title}
 		</h2>
-		<h3 class="slide">
-			{mainArticle.content}
-		</h3>
+		<article>
+			{mainArticle.content.map((paragraph) => <p class="slide">{paragraph}</p>)}
+		</article>
 		<section class="benefits">
-			<h2 class="slide">Benefits of Breathwork:</h2>
+			<h2 class="slide">The benefits of breathwork</h2>
 			<article>
 				<img src="/imgs/home/later-2.webp" alt="" />
 				<ul>
@@ -97,9 +97,8 @@ const { title, mainArticle, benefits } = pages.breatwork;
 
 		<!-- Form Section -->
 		<div id="contact" class="slide">
-			<h2>Work With Me</h2>
+			<h2>Work With Us</h2>
 			<ContactForm client:only="svelte" haveDate />
-			<script src="https://smtpjs.com/v3/smtp.js"></script>
 		</div>
 	</main>
 </Layout>
@@ -119,6 +118,12 @@ const { title, mainArticle, benefits } = pages.breatwork;
 
 	main h3 {
 		text-align: center;
+	}
+
+	main > article {
+		display: flex;
+		flex-direction: column;
+		gap: var(--element-gap);
 	}
 
 	main section.benefits article {
