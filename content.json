@@ -1,23 +1,25 @@
 {
 	"pages": {
 		"home": {
-			"title": "Live Your Life Well",
+			"title": "Your Life, Well",
 			"mainArticle": {
 				"title": "Welcome to Well-Vie",
-				"content": "At Well-Vie, our mission is to make breathwork, retreats, workshops, and all things wellness approachable and accessible for everyone. The name \"Well-Vie\" combines \"Well\" (stemming from wellness) and \"Vie\" (life in French), bridging the gap and creating a space where you can live your life well. Our thoughtfully designed retreats and workshops cater to your unique needs, whether you're just starting your healing journey or looking to deepen your practice. With personalized guidance, expert-led sessions, and a supportive community, we help you connect with yourself, understand your nervous system, and reclaim your inner power. This is the space to live your life well. Join us and embark on a transformative journey toward a healthier, more balanced life."
+				"content": "Inhale. Exhale. We take 20,000 breaths every single day. That’s 20,000 opportunities for presence, healing and transformation. At Well-Vie — that’s part “wellness,” and part “vie,” French for life — we believe that everyone deserves to feel peace and calm. Our mission is to help you cultivate that feeling with your own intentional and empowering breathwork and wellness practices. We do this with personalized guidance, expert-led sessions and retreats, and supportive community. Whether you’re just starting out or deepening your practice, Well-Vie is here to help you connect with yourself, your truth, and the innate wisdom of your body. It’s your life, well lived."
 			},
 			"articles": [
 				{
 					"image": "/imgs/home/later-2.webp",
 					"title": "Breathwork",
-					"content": "Our mission is to guide you on a transformative journey toward better health and well-being. Through personalized 1:1 sessions, couples breathwork, group events, and corporate workshops, the focus is on enhancing your nervous system's health, reducing stress, and improving overall wellness. Get ready to elevate your life.",
-					"redirect": "/breathwork"
+					"content": "Join our founder, McKenzie, for one-on-one sessions, couples breathwork, group events, or corporate workshops. A certified trauma-informed somatic breathwork and life coach, McKenzie teaches you how to heal your nervous system health, reduce stress in your daily life, and improve your overall wellness.",
+					"redirect": "/breathwork",
+					"cta": "Learn more about breathwork"
 				},
 				{
 					"image": "/imgs/home/midday-6.webp",
 					"title": "Retreats",
-					"content": "Experience the transformative embrace of our retreats by Well-Vie—an extraordinary journey.Imagine it as your personal quantum leap into swift well-being transformation—an exhilarating jump unlocking profound shifts in life. Anticipate swift progress, positive changes and a deep understanding of your true self.",
-					"redirect": "/retreats"
+					"content": "From one-day workshops to immersive, weeklong retreats, Well-Vie offers curated, supportive containers for you to dive into your healing journey. You can expect breathwork, movement, incredible food, like-minded community, and so much more — whether you’re attending one of our public retreats, or hiring us to customize a totally personalized retreat for you and your group.",
+					"redirect": "/retreats",
+					"cta": "Learn more about our retreats"
 				}
 			]
 		},
