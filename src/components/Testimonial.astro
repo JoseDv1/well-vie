@@ -1,7 +1,11 @@
-<script>
-	export let text;
-	export let name;
-</script>
+---
+interface Props {
+	text: string;
+	name: string;
+}
+
+const { text, name } = Astro.props;
+---
 
 <section>
 	<p>{text}</p>
