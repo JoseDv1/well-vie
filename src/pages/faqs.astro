@@ -1,0 +1,121 @@
+---
+import { pages } from "@content";
+import Layout from "@/layouts/Layout.astro";
+
+const { faqs, policies } = pages.retreats;
+---
+
+<Layout title="Faq's">
+	<main>
+
+		<section class="faq">
+			<!-- FAQ -->
+			<article>
+				<h2>FAQ's</h2>
+				{
+					faqs.map((faq) => (
+						<details name="fq">
+						<summary>{faq.question}</summary>
+						<p set:html={faq.answer} />
+					</details>
+				))
+			}
+		</article>
+		
+		<!-- Purchasing Policies -->
+		<article class="policy">
+			<h2>Purchasing Policies</h2>
+			
+			{
+				policies.map((policy) => (
+					<>
+						<h4>{policy.title}</h4>
+						<p>{policy.content}</p>
+					</>
+				))
+			}
+		</article>
+	</section>
+</main>
+</Layout>
+
+<style>
+
+@keyframes animateDown {
+			0% {
+				transform: translatey(-50%);
+			}
+			100% {
+				transform: translatey(0);
+			}
+		}
+
+	main {
+		margin: var(--section-gap) auto;
+			padding: 0 2rem;
+			max-width: 1200px;
+	}
+
+	section.faq {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			gap: var(--horizontal-gap);
+			margin-top: var(--section-gap);
+			margin-bottom: var(--element-gap);
+		}
+
+		section.faq > article {
+			flex: 1 0 calc(50% - var(--horizontal-gap));
+		}
+
+		section.faq details {
+			padding: 1rem 0;
+			transition: all 0.3s;
+		}
+
+		section.faq details summary {
+			color: var(--fg-color);
+			list-style: none;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+			gap: 1rem;
+			font-size: var(--paragraph);
+
+			&::-webkit-details-marker {
+				display: none;
+			}
+		}
+
+		section.faq details summary + * {
+			margin-top: 1rem;
+			font-size: var(--paragraph);
+		}
+
+		section.faq details {
+			overflow: hidden;
+		}
+
+		section.faq details[open] p {
+			animation: animateDown 0.2s linear forwards;
+		}
+
+		section.faq article.policy h3 {
+			margin-bottom: 1rem;
+		}
+
+		section.faq article.policy p {
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+		}
+		section.faq article.policy h4 {
+			font-family: inherit;
+			font-size: 1.2rem;G
+		}
+
+		section.faq details a {
+			word-break: break-all;
+		}
+</style>
