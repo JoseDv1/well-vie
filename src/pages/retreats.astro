@@ -22,15 +22,12 @@ const { title, faqs, policies } = pages.retreats;
 		<section>
 			<h2>Curated space and time for you</h2>
 			<p>
-				Step outside the routines of daily life, and into the intentional ritual
-				that is a Well-Vie retreat. From one-day workshops to weeklong
-				immersives, our retreats include breathwork, movement, nourishing food,
-				and so much more.
+				Step outside the routines of daily life, and into the intentional ritual that is a Well-Vie retreat. From one-day workshops to weeklong immersives, our retreats include breathwork, movement, nourishing food, and so much more. 
+
 			</p>
 			<p>
-				Join one of our upcoming retreats, or reach out using the form below to
-				work with us to customize a completely personalized workshop for you and
-				your chosen group of friends, family, or coworkers.
+				Join one of our upcoming retreats, or reach out using the form below to work with us to customize a completely personalized workshop for you and your chosen group of friends, family, or coworkers. 
+
 			</p>
 		</section>
 
@@ -46,18 +43,18 @@ const { title, faqs, policies } = pages.retreats;
 				<Retreat
 					image="/imgs/retreats/experience/img6.jpg"
 					link="#"
-					title="Provence, France October 10 - 13"
+					title="Tahoe, California November 11 - 13, 2024"
 				/>
 				<Retreat
 					image="/imgs/retreats/experience/img5.jpg"
 					link="#"
-					title="Tahoe, California November 11 - 13"
+					title="Provence, France April 30 - May 3, 2025"
 				/>
 				<Retreat
 					image="/imgs/retreats/experience/img7.jpg"
 					link="#"
-					title="Coming soon"
-				/>
+					title="Europe retreat Early 2025"/>
+
 			</section>
 		</main>
 
@@ -66,7 +63,9 @@ const { title, faqs, policies } = pages.retreats;
 			text="McKenzie's empathetic nature makes everyone feel included and cared for, and her keen insights and breathwork sessions helped me push past my own walls to find greater understanding and empathy for myself"
 		/>
 
-		<section>
+	
+		<!-- Form -->
+		<section class="form">
 			<h2>Customize your own retreat</h2>
 			<p>
 				From tailored retreats for you and your closest women, to corporate
@@ -75,11 +74,6 @@ const { title, faqs, policies } = pages.retreats;
 				or email <a href="mailto:mckenzie@well-vie.com">mckenzie@well-vie.com</a
 				> to start a conversation about yours.
 			</p>
-		</section>
-
-		<!-- Form -->
-		<section class="form">
-			<h2>Customize Your Retreat or Wellness Workshop</h2>
 			<RetreatsForm client:only="svelte" />
 		</section>
 
@@ -171,7 +165,12 @@ const { title, faqs, policies } = pages.retreats;
 
 		section.form h2 {
 			text-align: center;
-			margin-bottom: var(--section-gap);
+			margin-bottom: var(--element-gap);
+		}
+
+		section.form p {
+			text-align: center;
+			margin-bottom: var(--element-gap);
 		}
 
 		section.faq {

@@ -64,54 +64,7 @@
 		},
 		"retreats": {
 			"title": "Retreats",
-			"retreats": [
-				"Fall Northern California Retreat (dates & location coming soon)",
-				"January European Retreat (dates & location coming soon)"
-			],
-			"getSetToExperience": [
-				{
-					"text": "Days dedicated to your deep inner transformation",
-					"image": "/imgs/retreats/experience/img1.jpg"
-				},
-				{
-					"text": "Luxurious accommodations",
-					"image": "/imgs/retreats/experience/img2.jpg"
-				},
-				{
-					"text": "Top-tier private chef crafting culinary masterpieces for every meal",
-					"image": "/imgs/retreats/experience/img3.webp"
-				},
-				{
-					"text": "Yoga, Breathwork Sessions, Expert-led workshops",
-					"image": "/imgs/retreats/experience/img5.jpg"
-				},
-				{
-					"text": "Hiking, beach/pool time, carefree playfulness and tranquil moments of stillness",
-					"image": "/imgs/retreats/experience/img6.jpg"
-				},
-				{
-					"text": "Lifelong connections with an empowering community of like-minded women",
-					"image": "/imgs/retreats/experience/img7.jpg"
-				},
-				{
-					"text": "An extraordinary transformative healing experience",
-					"image": "/imgs/retreats/experience/img8.webp"
-				}
-			],
-			"testimonials": [
-				{
-					"name": "Diana Ryan",
-					"text": "Amazing experience! Let's repeat it next year. My only complain is the short time there!"
-				},
-				{
-					"name": "Sara Smith",
-					"text": "I loved the retreat! I felt so connected to myself and the other people there. I can't wait to go back!"
-				},
-				{
-					"name": "Linda Johnson",
-					"text": "I had the best time at the retreat! I felt so relaxed and connected to myself. I can't wait to go back!"
-				}
-			],
+
 			"faqs": [
 				{
 					"question": "How do I pay?",
