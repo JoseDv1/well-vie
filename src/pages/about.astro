@@ -2,10 +2,10 @@
 import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import { pages } from "@content";
-const { contentTitle, footer, paragraphs, title } = pages.about;
+const { contentTitle, paragraphs, title } = pages.about;
 ---
 
-<Layout title="Meet McKenzie">
+<Layout title="About | Well Vie">
 	<Hero
 		heading={title}
 		image="/imgs/about/For_About.webp"
@@ -21,12 +21,6 @@ const { contentTitle, footer, paragraphs, title } = pages.about;
 		<article>
 			{paragraphs.map((paragraph) => <p class="slide">{paragraph}</p>)}
 		</article>
-
-		<section class="slide">
-			<h3>
-				{footer}
-			</h3>
-		</section>
 	</main>
 </Layout>
 

@@ -24,7 +24,7 @@
 			]
 		},
 		"about": {
-			"title": "Bonjour! I’m McKenzie.",
+			"title": "Bonjour! <br> I’m McKenzie.",
 			"contentTitle": "I’m a certified trauma-informed somatic breathwork expert and life coach",
 			"paragraphs": [
 				"I found breathwork in a time of complete and utter burnout. This was in 2021 when I was a hairstylist in San Francisco, constantly adjusting and readjusting to the reality of salon life during the pandemic. I loved my work and my clients, but I was really struggling with how to set and hold boundaries — both in my business and my personal life. ",
@@ -59,8 +59,7 @@
 				"À bientôt,",
 
 				"McKenzie"
-			],
-			"footer": "Together, we can unlock your full potential and embrace a healthier, more balanced life."
+			]
 		},
 		"retreats": {
 			"title": "Retreats",
