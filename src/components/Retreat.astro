@@ -3,20 +3,25 @@ interface Props {
 	title: string;
 	link: string;
 	image: string;
+	button?: string;
 }
 
-const { image, link, title } = Astro.props;
+const { image, link, title, button = "Learn More" } = Astro.props;
 ---
 
 <article>
 	<img src={image} alt={title} />
 	<div>
-		<h3>{title}</h3>
-		<a href={link} class="btn">Learn more</a>
+		<h3 set:html={title} />
+		<a href={link} target="_blank" class="btn">{button}</a>
 	</div>
 </article>
 
 <style>
+	article {
+		max-width: fit-content;
+	}
+
 	img {
 		object-fit: cover;
 		object-position: center;
