@@ -5,7 +5,7 @@ import { pages } from "@content";
 const { mainArticle, title, articles } = pages.home;
 ---
 
-<Layout title="Well-Vie">
+<Layout title="Home | Well-Vie">
 	<!-- Hero -->
 	<Hero
 		heading={title}
@@ -20,9 +20,7 @@ const { mainArticle, title, articles } = pages.home;
 			<h2>
 				{mainArticle.title}
 			</h2>
-			<h3>
-				{mainArticle.content}
-			</h3>
+			<h3 set:html={mainArticle.content} />
 		</section>
 
 		<!-- Articles -->
@@ -100,5 +98,11 @@ const { mainArticle, title, articles } = pages.home;
 	img {
 		border-radius: var(--border-radius);
 		object-fit: cover;
+	}
+
+	main section :global(br) {
+		display: block;
+		margin: 1rem 0;
+		content: "";
 	}
 </style>
