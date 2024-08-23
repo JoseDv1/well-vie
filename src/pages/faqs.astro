@@ -5,19 +5,20 @@ import Layout from "@/layouts/Layout.astro";
 const { faqs, policies } = pages.retreats;
 ---
 
-<Layout title="Faq's">
+<Layout title="FAQ's & Policies">
 	<main>
+		<h2>FAQ's & Policies</h2>
 
 		<section class="faq">
 			<!-- FAQ -->
-			<article>
-				<h2>FAQ's</h2>
+			<article class="policy">
+				<h3>FAQ's</h3>
 				{
 					faqs.map((faq) => (
-						<details name="fq">
-						<summary>{faq.question}</summary>
+					<article>
+						<h4>{faq.question}</h4>
 						<p set:html={faq.answer} />
-					</details>
+					</article>
 				))
 			}
 		</article>
@@ -41,14 +42,7 @@ const { faqs, policies } = pages.retreats;
 
 <style>
 
-@keyframes animateDown {
-			0% {
-				transform: translatey(-50%);
-			}
-			100% {
-				transform: translatey(0);
-			}
-		}
+
 
 	main {
 		margin: var(--section-gap) auto;
@@ -63,43 +57,6 @@ const { faqs, policies } = pages.retreats;
 			gap: var(--horizontal-gap);
 			margin-top: var(--section-gap);
 			margin-bottom: var(--element-gap);
-		}
-
-		section.faq > article {
-			flex: 1 0 calc(50% - var(--horizontal-gap));
-		}
-
-		section.faq details {
-			padding: 1rem 0;
-			transition: all 0.3s;
-		}
-
-		section.faq details summary {
-			color: var(--fg-color);
-			list-style: none;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			cursor: pointer;
-			gap: 1rem;
-			font-size: var(--paragraph);
-
-			&::-webkit-details-marker {
-				display: none;
-			}
-		}
-
-		section.faq details summary + * {
-			margin-top: 1rem;
-			font-size: var(--paragraph);
-		}
-
-		section.faq details {
-			overflow: hidden;
-		}
-
-		section.faq details[open] p {
-			animation: animateDown 0.2s linear forwards;
 		}
 
 		section.faq article.policy h3 {
