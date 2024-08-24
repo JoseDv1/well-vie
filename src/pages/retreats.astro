@@ -89,13 +89,13 @@ const { title, faqs, policies } = pages.retreats;
 		<section class="faq">
 			<!-- FAQ -->
 			<article>
-				<h2>FAQ's</h2>
+				<h2>FAQs</h2>
 				{
 					faqs.map((faq) => (
-						<details name="fq">
-							<summary>{faq.question}</summary>
+						<article class="policy">
+							<h4>{faq.question}</h4>
 							<p set:html={faq.answer} />
-						</details>
+						</article>
 					))
 				}
 			</article>
@@ -148,14 +148,20 @@ const { title, faqs, policies } = pages.retreats;
 		}
 
 		/* Retreats Grid */
-		main > main > section {
+		main > main  {
+			h2 {
+				margin-bottom: var(--element-gap);
+			}
+
+			& > section {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 2rem;
 
 			@media (max-width: 768px) {
 				grid-template-columns: 1fr;
-			}
+				}
+			}	
 		}
 
 		@keyframes animateDown {

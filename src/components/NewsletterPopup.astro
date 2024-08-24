@@ -1,0 +1,72 @@
+<dialog popover id="newsletter">
+	<button class="close" popovertargetaction="hide" popovertarget="newsletter">
+		&times;</button
+	>
+
+	<form>
+		<h3>Sign Up for our emails</h3>
+
+		<input type="email" placeholder="Email..." />
+		<button>Sign Up</button>
+	</form>
+</dialog>
+
+<script>
+	const $dialog = document.querySelector("[popover]") as HTMLDialogElement;
+
+	document.addEventListener("DOMContentLoaded", () => {
+		setTimeout(() => {
+			$dialog.showPopover();
+		}, 10000);
+	});
+</script>
+
+<style>
+	[popover] {
+		position: fixed;
+		top: unset;
+		bottom: 0;
+		left: 0;
+		margin: 2rem;
+		padding: 3rem;
+		border-radius: var(--border-radius);
+		border: 1px solid var(--fg-color);
+		transition: transform 0.3s;
+
+		@media (width < 768px) {
+			width: 100dvw;
+			margin: 1rem auto;
+		}
+
+		@starting-style {
+			transform: translateY(100%) scale(0.1);
+		}
+	}
+
+	[popover] > button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		&:hover {
+			color: red;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	[popover] > form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	dialog:-internal-dialog-in-top-layer::backdrop {
+		background: rgba(0, 0, 0, 0);
+	}
+</style>

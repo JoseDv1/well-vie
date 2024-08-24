@@ -6,11 +6,12 @@ import { pages } from "@content";
 const { address, getInTouch, title } = pages.contact;
 ---
 
-<Layout title="Contact | Well Vie">
+<Layout title="Contact | Well-Vie">
 	<Hero
 		heading={title}
 		image="/imgs/contact/for_contact_2.jpg"
 		position="center"
+		pcTextPosition={["65%", "50%"]}
 	/>
 	<main>
 		<section>
@@ -21,7 +22,7 @@ const { address, getInTouch, title } = pages.contact;
 		<form>
 			<h2 class="slide">Sign up for our emails</h2>
 			<input type="email" placeholder="Email Adress" />
-			<button>Sing Up</button>
+			<button>Sign Up</button>
 		</form>
 
 		<article>
@@ -46,7 +47,7 @@ const { address, getInTouch, title } = pages.contact;
 		margin-block: var(--section-gap);
 
 		& > * {
-			flex: 0 0 350px;
+			flex: 1 1 500px;
 		}
 	}
 
