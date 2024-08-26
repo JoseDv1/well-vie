@@ -21,7 +21,7 @@ const { mainArticle, title, articles } = pages.home;
 			<h2>
 				{mainArticle.title}
 			</h2>
-			<h3 set:html={mainArticle.content} />
+			{mainArticle.content.map((paragraph) => <h3 set:html={paragraph} />)}
 		</section>
 
 		<!-- Articles -->
@@ -41,7 +41,7 @@ const { mainArticle, title, articles } = pages.home;
 		}
 	</main>
 
-	<NewsletterPopup />
+	<!-- <NewsletterPopup /> -->
 </Layout>
 
 <style>
@@ -101,11 +101,5 @@ const { mainArticle, title, articles } = pages.home;
 	img {
 		border-radius: var(--border-radius);
 		object-fit: cover;
-	}
-
-	main section :global(br) {
-		display: block;
-		margin: var(--element-gap) 0;
-		content: "";
 	}
 </style>
