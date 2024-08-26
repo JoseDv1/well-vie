@@ -13,7 +13,7 @@ const { image, link, title, button = "Learn More" } = Astro.props;
 	<img src={image} alt={title} />
 	<div>
 		<h3 set:html={title} />
-		<a href={link} target="_blank" class="btn">{button}</a>
+		<a href={link} class="btn">{button}</a>
 	</div>
 </article>
 

@@ -6,6 +6,7 @@
 	position: relative;
 	text-wrap: pretty;
 	/* outline: 1px solid red; */
+	scroll-behavior: smooth;
 }
 
 a {
