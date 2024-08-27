@@ -37,7 +37,7 @@ const { title, mainArticle, benefits } = pages.breatwork;
 		<section class="experience">
 			<h2 class="slide">Breathwork Experiences</h2>
 			<div>
-				<article class="slide">
+				<article class="slide" id="oneToOne">
 					<h3>1:1 Sessions</h3>
 					<ul>
 						<li>60 minute guided breathwork session</li>
@@ -77,31 +77,37 @@ const { title, mainArticle, benefits } = pages.breatwork;
 		<section class="types">
 			<div>
 				<article class="slide">
-					<img
-						src={oneToOneIcon.src}
-						alt="One to One sesons"
-						width="48"
-						height="48"
-					/>
-					<h3>1:1 Sessions</h3>
+					<a href="#oneToOne">
+						<img
+							src={oneToOneIcon.src}
+							alt="One to One sesons"
+							width="48"
+							height="48"
+						/>
+						<h3>1:1 Sessions</h3>
+					</a>
 				</article>
 				<article class="slide">
-					<img
-						src={groupEventsIcon.src}
-						alt="Group events"
-						width="48"
-						height="48"
-					/>
-					<h3>Group events</h3>
+					<a href="#contact">
+						<img
+							src={groupEventsIcon.src}
+							alt="Group events"
+							width="48"
+							height="48"
+						/>
+						<h3>Group events</h3>
+					</a>
 				</article>
 				<article class="slide">
-					<img
-						src={companyEventsIcon.src}
-						alt="Corporate company events"
-						width="48"
-						height="48"
-					/>
-					<h3>Corporate/Company Events</h3>
+					<a href="#contact">
+						<img
+							src={companyEventsIcon.src}
+							alt="Corporate company events"
+							width="48"
+							height="48"
+						/>
+						<h3>Corporate/Company Events</h3>
+					</a>
 				</article>
 			</div>
 		</section>
@@ -248,7 +254,7 @@ const { title, mainArticle, benefits } = pages.breatwork;
 		}
 	}
 
-	section.types article {
+	section.types div article a {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -256,7 +262,7 @@ const { title, mainArticle, benefits } = pages.breatwork;
 		margin-bottom: var(--element-gap);
 	}
 
-	section.types article img {
+	section.types article a img {
 		width: 200px;
 		object-fit: cover;
 		object-position: center;
