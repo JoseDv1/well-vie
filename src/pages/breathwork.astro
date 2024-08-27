@@ -42,6 +42,10 @@ const { title, mainArticle, benefits } = pages.breatwork;
 					<ul>
 						<li>60 minute guided breathwork session</li>
 					</ul>
+					<a
+						href="https://calendly.com/well-viebymckenzie/60min?month=2024-08"
+						class="btn">Purchase Package</a
+					>
 				</article>
 				<article class="slide">
 					<h3>Balanced Package (4 Sessions)</h3>
@@ -49,6 +53,10 @@ const { title, mainArticle, benefits } = pages.breatwork;
 						<li>(4) 45 Minute sessions</li>
 						<li>Great start for beginners new to guided breathwork</li>
 					</ul>
+
+					<a href="https://square.link/u/Fvni1X5a" class="btn"
+						>Purchase Package</a
+					>
 				</article>
 				<article class="slide">
 					<h3>Revitalized Package (4 Sessions)</h3>
@@ -59,6 +67,9 @@ const { title, mainArticle, benefits } = pages.breatwork;
 							experience
 						</li>
 					</ul>
+					<a href="https://square.link/u/pUllL1WM" class="btn"
+						>Purchase Package</a
+					>
 				</article>
 			</div>
 		</section>
@@ -169,7 +180,7 @@ const { title, mainArticle, benefits } = pages.breatwork;
 	main section.experience div {
 		display: flex;
 		justify-content: space-between;
-		align-items: start;
+		align-items: stretch;
 		flex-wrap: wrap;
 		gap: var(--horizontal-gap);
 
@@ -185,6 +196,7 @@ const { title, mainArticle, benefits } = pages.breatwork;
 	main section.experience article {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		gap: var(--element-gap);
 	}
 
@@ -197,6 +209,7 @@ const { title, mainArticle, benefits } = pages.breatwork;
 	}
 
 	main section.experience article ul {
+		flex: 1 0 auto;
 		display: flex;
 		flex-direction: column;
 		list-style: disc;
@@ -205,6 +218,10 @@ const { title, mainArticle, benefits } = pages.breatwork;
 		color: var(--text-color);
 		font-family: var(--gt-walsheim);
 		font-size: var(--paragraph);
+	}
+
+	main section.experience article a.btn {
+		align-self: center;
 	}
 
 	section.types {
