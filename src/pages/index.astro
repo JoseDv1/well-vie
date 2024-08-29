@@ -13,6 +13,7 @@ const { mainArticle, title, articles } = pages.home;
 		image="/imgs/home/for_home.webp"
 		textPosition={["50%", "50%"]}
 		mobileImage="80% center"
+		pcTextPosition={["60%", "50%"]}
 	/>
 	<!-- Content -->
 	<main>
@@ -21,7 +22,11 @@ const { mainArticle, title, articles } = pages.home;
 			<h2>
 				{mainArticle.title}
 			</h2>
-			{mainArticle.content.map((paragraph) => <h3 set:html={paragraph} />)}
+			{
+				mainArticle.content.map((paragraph) => (
+					<h3 set:html={paragraph} />
+				))
+			}
 		</section>
 
 		<!-- Articles -->
@@ -64,6 +69,7 @@ const { mainArticle, title, articles } = pages.home;
 		justify-content: center;
 		align-items: center;
 		gap: var(--element-gap);
+		text-align: center;
 	}
 
 	main > article {

@@ -12,7 +12,7 @@ const { image, link, title, button = "Learn More" } = Astro.props;
 <article>
 	<img src={image} alt={title} />
 	<div>
-		<h3 set:html={title}></h3>
+		<h3 set:html={title} />
 		<a href={link} class="btn">{button}</a>
 	</div>
 </article>
@@ -20,6 +20,7 @@ const { image, link, title, button = "Learn More" } = Astro.props;
 <style>
 	article {
 		max-width: fit-content;
+		text-align: center;
 	}
 
 	img {
@@ -44,7 +45,10 @@ const { image, link, title, button = "Learn More" } = Astro.props;
 	h3 {
 		color: var(--bg-color);
 		text-wrap: balance;
-		text-shadow: 1px 1px 5px black, -1px -1px 5px black, 1px -1px 5px black,
+		text-shadow:
+			1px 1px 5px black,
+			-1px -1px 5px black,
+			1px -1px 5px black,
 			1px -1px 5px black;
 
 		@media (max-width: 768px) {

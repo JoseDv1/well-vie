@@ -125,7 +125,7 @@ const { title, faqs, policies } = pages.retreats;
 
 	<style>
 
-		main > section > p {
+		main > section > p, main > section > h2 {
 			text-align: center;
 		}
 
@@ -164,17 +164,21 @@ const { title, faqs, policies } = pages.retreats;
 		main > main  {
 			h2 {
 				margin-bottom: var(--element-gap);
+				text-align: center;
 			}
 
 			& > section {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 2rem;
+			place-items: center;
 
 			@media (max-width: 768px) {
 				grid-template-columns: 1fr;
 				}
 			}	
+
+
 		}
 		
 		section#interested {

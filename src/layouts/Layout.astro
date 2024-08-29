@@ -16,7 +16,7 @@ const { title } = Astro.props;
 	<!-- https://josedv.com -->
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,7 +62,7 @@ const { title } = Astro.props;
 							}
 						});
 					},
-					{ threshold: 0.1 }
+					{ threshold: 0.1 },
 				);
 
 				elements.forEach((element) => {
