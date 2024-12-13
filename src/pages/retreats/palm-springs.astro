@@ -1,6 +1,8 @@
 ---
 import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const images = await Astro.glob("/public/imgs/retreats/palm-springs/*");
 ---
 
 <Layout title="Palm-springs">
@@ -13,6 +15,10 @@ import Layout from "@/layouts/Layout.astro";
 	/>
 
 	<main>
+		<a href="https://linktr.ee/livewellwithry" class="btn"
+			>claiming my spot!</a
+		>
+
 		<!-- Journey -->
 		<article>
 			<h2>Your Journey Begins Here</h2>
@@ -192,6 +198,41 @@ import Layout from "@/layouts/Layout.astro";
 				</ul>
 			</article>
 		</section>
+
+		<!-- Carousel -->
+		<section class="galery">
+			{
+				images.map((image, i) => (
+					<button
+						popovertarget={`gallery-${i}`}
+						popovertargetaction="show"
+					>
+						<picture>
+							<img
+								src={image.default.src}
+								alt="Palm Springs Retreat"
+								
+								
+							/>
+						</picture>
+					</button>
+
+					<dialog popover id={`gallery-${i}`}>
+						<button popovertarget={`gallery-${i}`}
+						popovertargetaction="hide">&times</button>
+						<img
+							src={image.default.src}
+							alt="Palm Springs Retreat"
+						/>
+					</dialog>
+				))
+			}
+		</section>
+
+		<!-- Book -->
+		<a href="https://linktr.ee/livewellwithry" class="btn"
+			>I am ready for transformation!</a
+		>
 	</main>
 </Layout>
 
@@ -206,7 +247,8 @@ import Layout from "@/layouts/Layout.astro";
 		margin-bottom: var(--element-gap);
 	}
 
-	main > article {
+	main > article,
+	main > section {
 		margin-bottom: var(--section-gap);
 	}
 
@@ -215,6 +257,7 @@ import Layout from "@/layouts/Layout.astro";
 	}
 	h3 {
 		margin-bottom: var(--small-gap);
+		font-weight: bold;
 	}
 
 	li {
@@ -238,5 +281,75 @@ import Layout from "@/layouts/Layout.astro";
 
 	#week h2 {
 		grid-area: title;
+	}
+
+	main > a {
+		margin-block: var(--section-gap);
+	}
+
+	.galery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: var(--small-gap);
+
+		picture {
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+		}
+
+		button img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+
+		button:has(img) {
+			border: none;
+			background: none;
+		}
+
+		dialog {
+			padding: 0;
+			border: none;
+			background: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1000;
+		}
+
+		dialog img {
+			max-width: 100dvw;
+			max-height: 100%;
+			object-fit: contain;
+			padding: 1.5rem;
+		}
+
+		dialog::backdrop {
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		dialog button[popovertargetaction="hide"] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 2rem;
+			background: none;
+			border: none;
+			color: white;
+			cursor: pointer;
+			z-index: 1001;
+			margin: 1rem;
+
+			&:hover {
+				color: red;
+			}
+		}
 	}
 </style>
