@@ -304,6 +304,7 @@ const images = await Astro.glob("/public/imgs/retreats/palm-springs/*");
 			width: 100%;
 			height: 100%;
 			cursor: pointer;
+			transition: transform 0.3s ease;
 
 			&:hover {
 				transform: scale(1.2);
@@ -324,6 +325,28 @@ const images = await Astro.glob("/public/imgs/retreats/palm-springs/*");
 			left: 50%;
 			transform: translate(-50%, -50%);
 			z-index: 1000;
+
+			&[popover] {
+			/* Final state of the exit animation */
+  				opacity: 0;
+				transition: all 0.2s allow-discrete ease;
+				transform: translate(-50%, -50%) scale(0.5);
+
+
+			}
+
+			&[popover]:popover-open {
+				opacity: 1;
+				transition: all 0.2s allow-discrete ease;
+				transform: translate(-50%, -50%) scale(1);
+
+
+				@starting-style {
+					opacity: 0;
+					transform: translate(-50%, -50%) scale(0.5);
+				}
+			}
+		
 		}
 
 		dialog img {
