@@ -291,6 +291,8 @@ const images = await Astro.glob("/public/imgs/retreats/palm-springs/*");
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-gap: var(--small-gap);
+		place-content: center;
+
 
 		picture {
 			aspect-ratio: 16 / 9;
