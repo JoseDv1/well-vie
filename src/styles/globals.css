@@ -120,6 +120,11 @@ a.btn:hover {
 	color: var(--bg-color);
 }
 
+a.btn.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
 button:active,
 a.btn:active {
 	background-color: var(--fg-color);
