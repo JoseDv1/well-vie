@@ -6,6 +6,7 @@ interface Props {
 	mobileImage?: string;
 	textPosition?: string[];
 	pcTextPosition?: string[];
+	textShadow?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
 	textPosition = ["20%", "50%"],
 	mobileImage = "center",
 	pcTextPosition = ["50%", "50%"],
+	textShadow = "none",
 } = Astro.props;
 ---
 
@@ -31,6 +33,7 @@ const {
 		mobileImage,
 		pcTextX: pcTextPosition[0],
 		pcTextY: pcTextPosition[1],
+		textShadow,
 	}}
 >
 	div.hero {
@@ -56,6 +59,7 @@ const {
 		color: var(--bg-color);
 		z-index: 100;
 		max-width: 700px;
+		text-shadow: var(--textShadow);
 
 		@media (width <= 768px) {
 			top: var(--textY);
