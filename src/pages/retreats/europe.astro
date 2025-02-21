@@ -1,0 +1,417 @@
+---
+import Hero from "@/components/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const images = await Astro.glob("/public/imgs/retreats/paris/*");
+---
+
+<Layout title="France | Well-vie">
+	<Hero
+		heading="Flow & Flourish"
+		image="/imgs/retreats/paris/img3.jpeg"
+		pcTextPosition={["60%", "10%"]}
+		mobileImage="center"
+		textPosition={["10%", "5%"]}
+		textShadow="0 0 8px rgba(0, 0, 0,1)"
+	/>
+
+	<main>
+
+
+		<!-- Journey -->
+		<article>
+			<h2>Your Journey Begins Here</h2>
+			<p class="big">
+				You are cordially invited to an intimate, life-changing retreat
+				designed for the woman ready to step into her most powerful
+				self. <b>April 10-13 2025, Near Paris.</b>
+			</p>
+
+		<!-- For Woman -->
+		<article>
+			<h2>For the woman who...</h2>
+			<p class="big">
+				For the woman ready to reset, recharge, and reconnect with herself. This weekend is for you.
+			</p>
+		</article>
+		<!-- Included -->
+		<section id="included">
+			<h2>A retreat beyond expectations</h2>
+			<h3>What is included:</h3>
+			<ul>
+				<li>
+					<p>
+						<b>Seamless travel:</b> Located in Gif-sur-Yvette, Ile de France, France 91190. The home is located just off the RER B with a shuttle to the house (5 min drive)
+
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Daily practices:</b> Begin and end each day with nature, movement, breathwork, and meditation sessions that nurture mind, body, and spirit.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Transformational workshops:</b> Expert-led sessions on
+						topics like nervous system healing, manifestation, and living
+						authentically.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Gourmet cuisine:</b> : All meals lovingly prepared by a private chef, featuring breakfast, lunch, dinner, charcuterie boards, and desserts. Nourishment designed to delight and sustain you.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Exclusive retreat workbook:</b> A beautifully crafted
+						guide to help you reflect, integrate, and take the retreat's
+						lessons into your daily life.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Luxury accommodations: </b> Stay in a serene and stylish luxury accommodations with private bedrooms and bathrooms, sauna, hot tub and a forest located directly behind the retreat home.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Community connection:</b> Intimate women’s circles to foster connection, vulnerability, and empowerment.
+					</p>
+				</li>
+				<li>
+					<p>
+						<b>Unplug and recharge:</b> Time to rest, reflect, and reconnect with yourself in the tranquil forest surroundings.
+					</p>
+				</li>
+			</ul>
+		</section>
+		<section id="week">
+			<h2>A weekend dedicated to your deep inner transformation</h2>
+
+			<article>
+				<h3>Thursday</h3>
+				<ul>
+					<li><p>Check in at 6 pm</p></li>
+					<li><p>Welcome dinner</p></li>
+					<li>
+						<p>
+							Opening ceremony: Women’s circle & intention setting
+						</p>
+					</li>
+					<li><p>Guided meditation & grounding breathwork</p></li>
+				</ul>
+			</article>
+			<article>
+				<h3>Friday</h3>
+				<ul>
+					<li><p>Optional morning hike</p></li>
+					<li><p>Breakfast</p></li>
+					<li><p>Optional Fitness/Studio</p></li>
+					<li><p>Wellness workshop</p></li>
+					<li><p>Lunch</p></li>
+					<li><p>Somatic breathwork</p></li>
+					<li><p>Self-limiting beliefs workshop</p></li>
+					<li><p>Dinner</p></li>
+					<li><p>Womens circle</p></li>
+				</ul>
+			</article>
+			<article>
+				<h3>Saturday</h3>
+				<ul>
+					<li><p>Optional morning hike (silent)</p></li>
+					<li><p>Breakfast</p></li>
+					<li><p>Wellness workshop</p></li>
+					<li><p>Emotional processing workshop</p></li>
+					<li><p>Lunch</p></li>
+					<li><p>Freetime</p></li>
+					<li><p>	Highest Self Breathwork & Integration</p></li>
+					<li><p>Dinner</p></li>
+					<li><p>Womens Circle</p></li>
+				</ul>
+			</article>
+			<article>
+				<h3>Sunday</h3>
+				<ul>
+					<li><p>Breakfast</p></li>
+					<li><p>Optional Fitness/Studio</p></li>
+					<li><p>Closing ceremony: Women’s circle</p></li>
+					<li><p>Check out at 11 am</p></li>
+				</ul>
+			</article>
+		</section>
+
+		<!-- Acomdation and payment options -->
+		<section class="accomodation">
+			<h2>Accomodation options</h2>
+			<article>
+				<h3>Private</h3>
+				<p>Enjoy a private room & bathroom for $850 Euros</p>
+
+				<div>
+					<a href="https://buy.stripe.com/5kAaIE3EUbbF0Vi3cf" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Split Payment
+					</a>
+
+					<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Pay in Full
+					</a>
+			</article>
+			<article>
+				<h3>Shared</h3>
+				<p>Bring a friend and share your suite for $500 Euros each</p>
+				<div>
+					<a href="https://buy.stripe.com/7sI1845N20x1gUg7st" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Split Payment
+					</a>
+
+					<a href="https://buy.stripe.com/bIY2c86R693xfQc5km" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Pay in Full
+					</a>
+				</div>
+			</article>
+
+			<p class="center">Pay in full or choose the option to pay half at checkout, with the remaining balance due by April 1, 2025.</p>
+		</section>
+
+		<!-- Carousel -->
+		<section class="galery">
+			{
+				images.map((image, i) => (
+					<button
+						popovertarget={`gallery-${i}`}
+						popovertargetaction="show"
+					>
+						<picture>
+							<img
+								src={image.default.src}
+								alt="Palm Springs Retreat"
+								
+								
+							/>
+						</picture>
+					</button>
+
+					<dialog popover id={`gallery-${i}`}>
+						<button popovertarget={`gallery-${i}`}
+						popovertargetaction="hide">&times</button>
+						<img
+							src={image.default.src}
+							alt="Palm Springs Retreat"
+						/>
+					</dialog>
+				))
+			}
+		</section>
+
+
+		<section class="cancellation">
+			<h3>Purchasing Policy & Cancellations</h3>
+			<p>The payment made at checkout is non-refundable unless the retreat is rescheduled due to unforeseen circumstances. If needed, your ticket can be transferred to another person with 14 days’ notice. No refunds will be provided for cancellations or no-shows.</p>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: var(--section-gap) auto;
+		padding: 0 2rem;
+		max-width: 1200px;
+	}
+
+	article > p {
+		margin-bottom: var(--element-gap);
+	}
+
+	main > article,
+	main > section {
+		margin-bottom: var(--section-gap);
+	}
+
+	h2 {
+		margin-bottom: var(--element-gap);
+	}
+	h3 {
+		margin-bottom: var(--small-gap);
+		font-weight: bold;
+	}
+
+	p.big {
+		font-size: 1.5rem;
+	}
+
+	li {
+		margin-bottom: var(--small-gap);
+	}
+
+	#week {
+		display: grid;
+		grid-template-areas:
+			"title title title title"
+			"thu fri sat sun";
+
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: var(--small-gap);
+
+		@media (width <= 640px) {
+			grid-template-areas: "title" "thu" "fri" "sat" "sun";
+			grid-template-columns: 1fr;
+		}
+	}
+
+	#week h2 {
+		grid-area: title;
+	}
+
+	main > a {
+		margin-block: var(--section-gap);
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.galery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: var(--small-gap);
+		place-content: center;
+		margin-block: var(--section-gap);
+
+
+		picture {
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+		}
+
+		button img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+
+		button:has(img) {
+			border: none;
+			background: none;
+		}
+
+		dialog {
+			padding: 0;
+			border: none;
+			background: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1000;
+
+			&[popover] {
+			/* Final state of the exit animation */
+  				opacity: 0;
+				transition: all 0.2s allow-discrete ease;
+				transform: translate(-50%, -50%) scale(0.5);
+
+
+			}
+
+			&[popover]:popover-open {
+				opacity: 1;
+				transition: all 0.2s allow-discrete ease;
+				transform: translate(-50%, -50%) scale(1);
+
+
+				@starting-style {
+					opacity: 0;
+					transform: translate(-50%, -50%) scale(0.5);
+				}
+			}
+		
+		}
+
+		dialog img {
+			max-width: 100dvw;
+			max-height: 100dvh;
+			object-fit: contain;
+			padding: 1.5rem;
+		}
+
+		dialog::backdrop {
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		dialog button[popovertargetaction="hide"] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 2rem;
+			background: none;
+			border: none;
+			color: white;
+			cursor: pointer;
+			z-index: 1001;
+			margin: 1rem;
+
+			&:hover {
+				color: red;
+			}
+		}
+	}
+
+	.cancellation {
+		background-color: var(--bg-color);
+		padding: 1rem;
+		border-radius: var(--border-radius);
+		margin-block: var(--section-gap);
+	}
+
+	.accomodation {
+		margin-block: var(--section-gap);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--small-gap);
+		justify-content: center;
+		
+		h2 {
+			flex: 1 0 100%;
+			text-align: center;
+		}
+
+		article {
+
+			flex: 1 0 300px;
+			background-color: var(--bg-color);
+			padding: 1rem;
+			border-radius: var(--border-radius);
+
+			h3 {
+				text-align: center;
+			}
+		}
+
+		p {
+			text-align: center;
+		}
+
+
+		div {
+			display: flex;
+			justify-content: center;
+			gap: var(--small-gap);
+		}
+
+	}
+</style>
