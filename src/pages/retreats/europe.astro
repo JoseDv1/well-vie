@@ -16,12 +16,44 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 	/>
 
 	<main>
-		<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" class="btn"
-		target="_blank" rel="noopener noreferrer"
-	
-			>Reserve My Spot</a
-		>
+		<section class="accomodation">
+			<article>
+				<h3>Private</h3>
+				<p>Enjoy a private room & bathroom for $850 Euros</p>
 
+				<div>
+					<a href="https://buy.stripe.com/5kAaIE3EUbbF0Vi3cf" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Split Payment
+					</a>
+
+					<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Pay in Full
+					</a>
+			</article>
+			<article>
+				<h3>Shared</h3>
+				<p>Bring a friend and share your suite for $500 Euros each</p>
+				<div>
+					<a href="https://buy.stripe.com/7sI1845N20x1gUg7st" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Split Payment
+					</a>
+
+					<a href="https://buy.stripe.com/bIY2c86R693xfQc5km" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Pay in Full
+					</a>
+				</div>
+			</article>
+
+			<p class="center">Pay in full or choose the option to pay half at checkout, with the remaining balance due by April 1, 2025.</p>
+		</section>
 		<!-- Journey -->
 		<article>
 			<h2>Your Journey Begins Here</h2>
@@ -215,13 +247,6 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 				))
 			}
 		</section>
-
-		<!-- Book -->
-		<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" 
-		target="_blank" rel="noopener noreferrer"
-		class="btn "
-			>Reserve My Spot</a
-		>
 
 		<section class="cancellation">
 			<h3>Purchasing Policy & Cancellations</h3>
