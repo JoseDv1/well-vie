@@ -5,7 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 const images = await Astro.glob("/public/imgs/retreats/paris/*");
 ---
 
-<Layout title="France ">
+<Layout title="France | Well-vie">
 	<Hero
 		heading="Flow & Flourish"
 		image="/imgs/retreats/paris/img3.jpeg"
@@ -16,14 +16,16 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 	/>
 
 	<main>
-		<a href="https://square.link/u/fH51O76v" class="btn disabled"
+		<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" class="btn"
+		target="_blank" rel="noopener noreferrer"
+	
 			>Reserve My Spot</a
 		>
 
 		<!-- Journey -->
 		<article>
 			<h2>Your Journey Begins Here</h2>
-			<p>
+			<p class="big">
 				You are cordially invited to an intimate, life-changing retreat
 				designed for the woman ready to step into her most powerful
 				self. <b>April 10-13 2025, Near Paris.</b>
@@ -32,7 +34,7 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 		<!-- For Woman -->
 		<article>
 			<h2>For the woman who...</h2>
-			<p>
+			<p class="big">
 				For the woman ready to reset, recharge, and reconnect with herself. This weekend is for you.
 			</p>
 		</article>
@@ -143,6 +145,47 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 			</article>
 		</section>
 
+		<!-- Acomdation and payment options -->
+		<section class="accomodation">
+			<h2>Accomodation options</h2>
+			<article>
+				<h3>Private</h3>
+				<p>Enjoy a private room & bathroom for $850 Euros</p>
+
+				<div>
+					<a href="https://buy.stripe.com/5kAaIE3EUbbF0Vi3cf" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Split Payment
+					</a>
+
+					<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Pay in Full
+					</a>
+			</article>
+			<article>
+				<h3>Shared</h3>
+				<p>Bring a friend and share your suite for $500 Euros each</p>
+				<div>
+					<a href="https://buy.stripe.com/7sI1845N20x1gUg7st" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Split Payment
+					</a>
+
+					<a href="https://buy.stripe.com/bIY2c86R693xfQc5km" class="btn"
+		target="_blank" rel="noopener noreferrer"
+		>
+						Pay in Full
+					</a>
+				</div>
+			</article>
+
+			<p class="center">Pay in full or choose the option to pay half at checkout, with the remaining balance due by April 1, 2025.</p>
+		</section>
+
 		<!-- Carousel -->
 		<section class="galery">
 			{
@@ -174,11 +217,13 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 		</section>
 
 		<!-- Book -->
-		<a href="https://square.link/u/fH51O76v" class="btn disabled"
+		<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" 
+		target="_blank" rel="noopener noreferrer"
+		class="btn "
 			>Reserve My Spot</a
 		>
 
-		<section>
+		<section class="cancellation">
 			<h3>Purchasing Policy & Cancellations</h3>
 			<p>The payment made at checkout is non-refundable unless the retreat is rescheduled due to unforeseen circumstances. If needed, your ticket can be transferred to another person with 14 days’ notice. No refunds will be provided for cancellations or no-shows.</p>
 		</section>
@@ -209,6 +254,10 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 		font-weight: bold;
 	}
 
+	p.big {
+		font-size: 1.5rem;
+	}
+
 	li {
 		margin-bottom: var(--small-gap);
 	}
@@ -236,11 +285,16 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 		margin-block: var(--section-gap);
 	}
 
+	.center {
+		text-align: center;
+	}
+
 	.galery {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-gap: var(--small-gap);
 		place-content: center;
+		margin-block: var(--section-gap);
 
 
 		picture {
@@ -325,5 +379,49 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 				color: red;
 			}
 		}
+	}
+
+	.cancellation {
+		background-color: var(--bg-color);
+		padding: 1rem;
+		border-radius: var(--border-radius);
+		margin-block: var(--section-gap);
+	}
+
+	.accomodation {
+		margin-block: var(--section-gap);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--small-gap);
+		justify-content: center;
+		
+		h2 {
+			flex: 1 0 100%;
+			text-align: center;
+		}
+
+		article {
+
+			flex: 1 0 300px;
+			background-color: var(--bg-color);
+			padding: 1rem;
+			border-radius: var(--border-radius);
+
+			h3 {
+				text-align: center;
+			}
+		}
+
+		p {
+			text-align: center;
+		}
+
+
+		div {
+			display: flex;
+			justify-content: center;
+			gap: var(--small-gap);
+		}
+
 	}
 </style>
