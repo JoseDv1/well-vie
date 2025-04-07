@@ -76,7 +76,7 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 				</li>
 				<li>
 					<p>
-						<b>Community connection:</b> Intimate women’s circles to foster connection, vulnerability, and empowerment.
+						<b>Community connection:</b> Intimate women's circles to foster connection, vulnerability, and empowerment.
 					</p>
 				</li>
 				<li>
@@ -96,7 +96,7 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 					<li><p>Welcome dinner</p></li>
 					<li>
 						<p>
-							Opening ceremony: Women’s circle & intention setting
+							Opening ceremony: Women's circle & intention setting
 						</p>
 					</li>
 					<li><p>Guided meditation & grounding breathwork</p></li>
@@ -135,57 +135,80 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 				<ul>
 					<li><p>Breakfast</p></li>
 					<li><p>Optional Fitness/Studio</p></li>
-					<li><p>Closing ceremony: Women’s circle</p></li>
+					<li><p>Closing ceremony: Women's circle</p></li>
 					<li><p>Check out at 11 am</p></li>
 				</ul>
 			</article>
 		</section>
 
-		<!-- Acomdation and payment options -->
-		<!-- <section class="accomodation">
-			<h2>Accomodation options</h2>
-			<article>
-				<h3>Private</h3>
-				<p>Enjoy a private room & bathroom for $850 Euros</p>
-
-				<div>
-					<a href="https://buy.stripe.com/5kAaIE3EUbbF0Vi3cf" class="btn"
-		target="_blank" rel="noopener noreferrer"
-		>
-						Split Payment
-					</a>
-
-					<a href="https://buy.stripe.com/14k5okcbq2F9cE06os" class="btn"
-		target="_blank" rel="noopener noreferrer"
-		>
-						Pay in Full
-					</a>
-			</article>
-			<article>
-				<h3>Shared</h3>
-				<p>Bring a friend and share your suite for $500 Euros each</p>
-				<div>
-					<a href="https://buy.stripe.com/7sI1845N20x1gUg7st" class="btn"
-		target="_blank" rel="noopener noreferrer"
-		>
-						Split Payment
-					</a>
-
-					<a href="https://buy.stripe.com/bIY2c86R693xfQc5km" class="btn"
-		target="_blank" rel="noopener noreferrer"
-		>
-						Pay in Full
-					</a>
+		<!-- Payment Section -->
+		<section class="payment">
+			<h2>WELL-VIE WOMENS PARIS RETREAT</h2>
+			
+			<div class="retreat-details">
+				<p><span>✨</span> June 27–29, 2025 | 3 Days · 2 Nights</p>
+				<p><span>📍</span> Just outside Paris, France</p>
+			</div>
+			
+			<p class="big">A weekend to shift everything.</p>
+			
+			<p>This intimate womens retreat is designed to help you reset your nervous system, reconnect with your inner clarity, and step into your next chapter with power and softness.</p>
+			
+			<div class="included">
+				<h3>INCLUDED IN YOUR EXPERIENCE:</h3>
+				<ul>
+					<li><span class="bullet">•</span> Breathwork Journeys</li>
+					<li><span class="bullet">•</span> Wellness Workshops (clarity, embodiment, belief work)</li>
+					<li><span class="bullet">•</span> Women's Circles & Connection</li>
+					<li><span class="bullet">•</span> Gentle Movement + Somatic Practices</li>
+					<li><span class="bullet">•</span> Private Chef Prepared Meals</li>
+					<li><span class="bullet">•</span> 3 Days/2-Night Stay in a luxury countryside villa</li>
+					<li><span class="bullet">•</span> Seamless Travel: Located in Gif-sur-Yvette, Île-de-France (91190)</li>
+					<li class="sub-item"><span class="bullet">–</span> Just off the RER B line</li>
+					<li class="sub-item"><span class="bullet">–</span> Shuttle service from station to house (5 min drive)</li>
+				</ul>
+			</div>
+			
+			<div class="who-for">
+				<h3>WHO THIS IS FOR:</h3>
+				<p>For women ready to pause, shift, and come back to themselves. All levels welcome, no experience required.</p>
+			</div>
+			
+			<div class="pricing">
+				<div class="price-option">
+					<h3>Private Room – $850 USD</h3>
+					<ul>
+						<li><span class="tick">✓</span> Your own room for deep rest</li>
+						<li><span class="tick">✓</span> All-inclusive weekend</li>
+						<li><span class="tick">✓</span> Approx. €785 for international guests</li>
+					</ul>
+					<a href="https://square.link/u/r64HP8OR" class="btn" target="_blank" rel="noopener noreferrer">Book Private Room</a>
 				</div>
-			</article>
-
-			<p class="center">Pay in full or choose the option to pay half at checkout, with the remaining balance due by April 1, 2025.</p>
-		</section> -->
+				
+				<div class="price-option">
+					<h3>Shared Room – $425 USD per person</h3>
+					<ul>
+						<li><span class="tick">✓</span> Share a room/bed with a friend</li>
+						<li><span class="tick">✓</span> Must book together</li>
+						<li><span class="tick">✓</span> All-inclusive weekend</li>
+						<li><span class="tick">✓</span> Approx. €392 per person</li>
+					</ul>
+					<a href="https://square.link/u/gwWh5Q7z" class="btn" target="_blank" rel="noopener noreferrer">Book Shared Room</a>
+				</div>
+			</div>
+			
+			<p class="payment-plan"><span>*</span> INTEREST FREE PAYMENT PLANS AVAILABLE AT CHECK OUT <span>*</span></p>
+			
+			<div class="cancellation-policy">
+				<h3>Purchasing Policy & Cancellations</h3>
+				<p>The payment made at checkout is non-refundable unless the retreat is rescheduled due to unforeseen circumstances. If needed, your ticket can be transferred to another person with 14 days' notice (PRIVATE ROOM OPTION ONLY). No refunds will be provided for cancellations or no-shows.</p>
+			</div>
+		</section>
 
 		<!-- Carousel -->
 		<section class="galery">
 			{
-				images.map((image, i) => (
+				images.map((image: { default: { src: string } }, i: number) => (
 					<button
 						popovertarget={`gallery-${i}`}
 						popovertargetaction="show"
@@ -215,7 +238,7 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 
 		<section class="cancellation">
 			<h3>Purchasing Policy & Cancellations</h3>
-			<p>The payment made at checkout is non-refundable unless the retreat is rescheduled due to unforeseen circumstances. If needed, your ticket can be transferred to another person with 14 days’ notice. No refunds will be provided for cancellations or no-shows.</p>
+			<p>The payment made at checkout is non-refundable unless the retreat is rescheduled due to unforeseen circumstances. If needed, your ticket can be transferred to another person with 14 days' notice. No refunds will be provided for cancellations or no-shows.</p>
 		</section>
 	</main>
 </Layout>
@@ -413,5 +436,94 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 			gap: var(--small-gap);
 		}
 
+	}
+
+	.payment {
+		margin-block: var(--section-gap);
+		
+		.retreat-details {
+			margin-block: var(--small-gap);
+			
+			p {
+				font-size: 1.2rem;
+				margin-bottom: 0.5rem;
+				
+				span {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+		
+		.included, .who-for, .cancellation-policy {
+			margin-block: var(--element-gap);
+			
+			.bullet {
+				margin-right: 0.5rem;
+				color: var(--accent-color);
+			}
+			
+			li {
+				display: flex;
+				align-items: flex-start;
+				margin-bottom: 0.5rem;
+			}
+			
+			li.sub-item {
+				margin-left: 1.5rem;
+			}
+		}
+		
+		.pricing {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--element-gap);
+			margin-block: var(--element-gap);
+			
+			.price-option {
+				flex: 1 0 300px;
+				background-color: var(--bg-color);
+				padding: 1.5rem;
+				border-radius: var(--border-radius);
+				display: flex;
+				flex-direction: column;
+				
+				ul {
+					margin-bottom: var(--element-gap);
+					flex-grow: 1;
+				}
+				
+				li {
+					display: flex;
+					align-items: flex-start;
+					margin-bottom: 0.5rem;
+					
+					.tick {
+						color: var(--accent-color);
+						margin-right: 0.5rem;
+						font-weight: bold;
+					}
+				}
+				
+				a.btn {
+					display: flex;
+					width: 100%;
+					text-align: center;
+					margin-top: auto;
+					justify-content: center;
+					align-items: center;
+					min-height: 3rem;
+				}
+			}
+		}
+		
+		.payment-plan {
+			text-align: center;
+			font-weight: bold;
+			margin-block: var(--element-gap);
+			
+			span {
+				color: var(--accent-color);
+			}
+		}
 	}
 </style>
