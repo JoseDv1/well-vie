@@ -206,7 +206,7 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 		<!-- Carousel -->
 		<section class="galery">
 			{
-				images.map((image: { default: { src: string } }, i: number) => (
+				images.map((image: any, i: number) => (
 					<button
 						popovertarget={`gallery-${i}`}
 						popovertargetaction="show"
@@ -444,6 +444,11 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 				span {
 					margin-right: 0.5rem;
 				}
+				
+				@media (max-width: 768px) {
+					margin-bottom: 1.5rem;
+					padding: 0.5rem 0;
+				}
 			}
 		}
 		
@@ -516,6 +521,19 @@ const images = await Astro.glob("/public/imgs/retreats/paris/*");
 			
 			span {
 				color: var(--accent-color);
+			}
+		}
+		
+		.big {
+			@media (max-width: 768px) {
+				margin-bottom: 1.5rem !important;
+				padding: 0.5rem 0;
+			}
+		}
+		
+		p {
+			@media (max-width: 768px) {
+				margin-bottom: 1.5rem;
 			}
 		}
 	}
