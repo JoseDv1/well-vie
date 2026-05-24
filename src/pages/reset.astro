@@ -1,0 +1,298 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const includedItems = [
+	"2 live 90-minute Sunday sessions",
+	"Breathwork & nervous system support",
+	"Community conversations & reflection",
+	"Week 2 & 4 WhatsApp community check-ins",
+	"Replay access included",
+	"Intimate group setting (12 women max)",
+];
+---
+
+<Layout title="The Reset | Well-Vie">
+	<main>
+		<section class="hero slide">
+			<span class="hero-label">A 30-Day Experience</span>
+			<h1>The Reset</h1>
+			<p class="subtitle">
+				For women seeking deeper connection, nervous system support, breathwork,
+				and intentional community.
+			</p>
+			<p>
+				The Reset was created as an entry point into The Ecosystem - a space to
+				slow down, reconnect to yourself, and be supported alongside other women
+				navigating the fullness of life.
+			</p>
+			<a href="#" class="btn disabled">Join The Reset</a>
+		</section>
+
+		<hr class="divider" />
+
+		<section class="included slide">
+			<h2>What's Included</h2>
+			<ul class="included-list">
+				{includedItems.map((item) => <li>{item}</li>)}
+			</ul>
+		</section>
+
+		<hr class="divider" />
+
+		<section class="why slide">
+			<h2>Why "The Reset"?</h2>
+			<div class="why-content">
+				<p>
+					The Reset is designed to create space for women to pause, reconnect to
+					themselves, and receive support before jumping back into the pace of
+					everyday life.
+				</p>
+				<p>
+					This is not about fixing yourself or becoming someone new. It's about
+					creating space to breathe, regulate, reconnect, and feel supported in
+					community.
+				</p>
+			</div>
+		</section>
+
+		<section class="details slide">
+			<div class="details-inner">
+				<h2>Details</h2>
+				<div class="details-grid">
+					<div class="detail-item">
+						<dt>Start Date</dt>
+						<dd>July 1, 2026</dd>
+					</div>
+					<div class="detail-item">
+						<dt>Investment</dt>
+						<dd>$222 / €222</dd>
+					</div>
+				</div>
+				<p>Optional payment plan available.</p>
+				<p class="limited">
+					Spots are intentionally limited to 12 women to preserve the intimacy
+					and intentionality of the experience.
+				</p>
+			</div>
+		</section>
+
+		<section class="closing slide">
+			<h2>What Comes After The Reset?</h2>
+			<p>
+				Women who complete The Reset will receive priority access to future
+				Well-Vie experiences, including The Ecosystem, retreats, workshops, and
+				in-person gatherings.
+			</p>
+			<a href="/ecosystem" class="btn">Explore The Ecosystem</a>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		padding: 0 2rem;
+		padding-top: var(--section-gap);
+		padding-bottom: var(--section-gap);
+		max-width: 900px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--section-gap);
+	}
+
+	/* Hero */
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+		padding-block: var(--element-gap);
+	}
+
+	.hero-label {
+		font-family: var(--gt-walsheim);
+		font-size: var(--paragraph);
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: var(--text-color);
+	}
+
+	.hero h1 {
+		font-size: var(--subheading);
+		color: var(--fg-color);
+		margin-top: 0.25rem;
+	}
+
+	.hero .subtitle {
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--fg-color);
+		max-width: 600px;
+		margin-top: var(--small-gap);
+	}
+
+	.hero > p:not(.subtitle) {
+		max-width: 580px;
+		line-height: 1.8;
+	}
+
+	.hero .btn {
+		margin-top: var(--element-gap);
+	}
+
+	/* Dividers */
+	.divider {
+		width: 60px;
+		border: none;
+		border-top: 1px solid var(--fg-light-color);
+		margin: 0;
+	}
+
+	/* Included */
+	.included {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--element-gap);
+	}
+
+	.included-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		list-style: none;
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--text-color);
+	}
+
+	.included-list li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.included-list li::before {
+		content: "";
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: var(--fg-light-color);
+		flex-shrink: 0;
+	}
+
+	/* Why section */
+	.why {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+	}
+
+	.why h2 {
+		margin-bottom: var(--small-gap);
+	}
+
+	.why-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--small-gap);
+		max-width: 600px;
+	}
+
+	.why-content p {
+		line-height: 1.8;
+	}
+
+	/* Details band */
+	.details {
+		width: calc(100% + 4rem);
+		margin-inline: -2rem;
+		background-color: var(--fg-color);
+		border-radius: var(--border-radius);
+		padding: var(--section-gap) 2rem;
+	}
+
+	.details-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.details-inner h2 {
+		color: var(--bg-color);
+		margin-bottom: var(--small-gap);
+	}
+
+	.details-grid {
+		display: flex;
+		gap: var(--horizontal-gap);
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: var(--small-gap);
+	}
+
+	.detail-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.detail-item dt {
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--bg-color);
+	}
+
+	.detail-item dd {
+		font-family: var(--gt-walsheim);
+		font-size: var(--paragraph);
+		color: var(--bg-color);
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.details-inner p {
+		color: var(--bg-color);
+		line-height: 1.7;
+	}
+
+	.details-inner .limited {
+		font-style: italic;
+		margin-top: var(--small-gap);
+		opacity: 0.85;
+	}
+
+	/* Closing */
+	.closing {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+	}
+
+	.closing h2 {
+		margin-bottom: var(--small-gap);
+	}
+
+	.closing p {
+		max-width: 580px;
+		line-height: 1.8;
+	}
+
+	.closing .btn {
+		margin-top: var(--element-gap);
+	}
+</style>

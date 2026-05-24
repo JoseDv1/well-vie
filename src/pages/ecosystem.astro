@@ -1,0 +1,403 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const insideItems = [
+	"Live Breathwork Journeys",
+	"Community Conversations",
+	"Nervous System Support",
+	"Guest Experts & Workshops",
+	"Retreats & In-Person Gatherings",
+	"Reflection & Integration Practices",
+];
+
+const whoItsForItems = [
+	"deeper connection",
+	"emotional support",
+	"nervous system care",
+	"healing-centered spaces",
+	"intentional community",
+	"honest growth",
+];
+---
+
+<Layout title="The Ecosystem | Well-Vie">
+	<main>
+		<section class="hero slide">
+			<span class="hero-label">Introducing</span>
+			<h1>The Ecosystem</h1>
+			<p class="subtitle">
+				A supportive community for women seeking deeper connection, nervous
+				system support, healing, and growth.
+			</p>
+			<p>
+				The Ecosystem brings together breathwork, community, retreats, nervous
+				system support, and honest conversations to create spaces where women
+				can reconnect to themselves and feel supported through the fullness of
+				life.
+			</p>
+			<a href="#" class="btn disabled">Explore Membership</a>
+		</section>
+
+		<hr class="divider" />
+
+		<section class="why slide">
+			<h2>Why "The Ecosystem"?</h2>
+			<div class="why-content">
+				<p>
+					I chose the word ecosystem because ecosystems are built on connection
+					- life supporting life.
+				</p>
+				<p>
+					Healing, growth, and regulation don't happen in isolation. They happen
+					through community, shared experiences, safe spaces, and meaningful
+					connection.
+				</p>
+				<p>
+					The Ecosystem is designed to feel that way - a space where women can be
+					supported as whole humans while navigating the fullness of life.
+				</p>
+			</div>
+		</section>
+
+		<hr class="divider" />
+
+		<section class="inside slide">
+			<h2>Inside The Ecosystem</h2>
+			<ul class="inside-grid">
+				{insideItems.map((item) => <li>{item}</li>)}
+			</ul>
+		</section>
+
+		<hr class="divider" />
+
+		<section class="who slide">
+			<h2>Who It's For</h2>
+			<p class="who-intro">For women craving:</p>
+			<ul class="who-list">
+				{whoItsForItems.map((item) => <li>{item}</li>)}
+			</ul>
+		</section>
+
+		<section class="closing slide">
+			<div class="closing-inner">
+				<h2>You Don't Have To Carry Everything Alone.</h2>
+				<p>
+					Whether you're new to this work or already on your healing journey, The
+					Ecosystem offers support, connection, and space to return to yourself
+					alongside women doing the same.
+				</p>
+				<a href="#" class="btn disabled">Join The Ecosystem</a>
+			</div>
+		</section>
+
+		<section class="journey slide">
+			<h2>The Path</h2>
+			<ol class="timeline">
+				<li class="timeline-item">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<h3>The Reset</h3>
+						<p>
+							A 30-day experience designed to help women slow down, reconnect to
+							themselves, and experience the heart of The Ecosystem through
+							breathwork, nervous system support, community, and honest
+							conversation.
+						</p>
+						<a href="/reset" class="btn">Learn About The Reset</a>
+					</div>
+				</li>
+				<li class="timeline-item">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<h3>The Ecosystem</h3>
+						<p>
+							A deeper ongoing space for women wanting continued support,
+							connection, breathwork, conversations, guest experts, and
+							intentional growth in community.
+						</p>
+					</div>
+				</li>
+				<li class="timeline-item">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<h3>Well-Vie Retreats</h3>
+						<p>
+							In-person experiences centered around breathwork, restoration,
+							connection, embodiment, and community.
+						</p>
+						<a href="/retreats" class="btn">Explore Retreats</a>
+					</div>
+				</li>
+			</ol>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		padding: 0 2rem;
+		padding-top: var(--section-gap);
+		padding-bottom: var(--section-gap);
+		max-width: 900px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--section-gap);
+	}
+
+	/* Hero */
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+		padding-block: var(--element-gap);
+	}
+
+	.hero-label {
+		font-family: var(--gt-walsheim);
+		font-size: var(--paragraph);
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: var(--text-color);
+	}
+
+	.hero h1 {
+		font-size: var(--subheading);
+		color: var(--fg-color);
+		margin-top: 0.25rem;
+	}
+
+	.hero .subtitle {
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--fg-color);
+		max-width: 600px;
+		margin-top: var(--small-gap);
+	}
+
+	.hero > p:not(.subtitle) {
+		max-width: 580px;
+		line-height: 1.8;
+	}
+
+	.hero .btn {
+		margin-top: var(--element-gap);
+	}
+
+	/* Dividers */
+	.divider {
+		width: 60px;
+		border: none;
+		border-top: 1px solid var(--fg-light-color);
+		margin: 0;
+	}
+
+	/* Why section */
+	.why {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+	}
+
+	.why-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--small-gap);
+		max-width: 600px;
+	}
+
+	.why-content p {
+		line-height: 1.8;
+	}
+
+	/* Inside section */
+	.inside {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--element-gap);
+	}
+
+	.inside-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--small-gap) var(--horizontal-gap);
+		list-style: none;
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--text-color);
+		text-align: left;
+
+		@media (max-width: 600px) {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+	}
+
+	.inside-grid li {
+		padding-block: 0.5rem;
+		border-bottom: 1px solid var(--fg-light-color);
+	}
+
+	/* Who section */
+	.who {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+	}
+
+	.who-intro {
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--fg-color);
+	}
+
+	.who-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		list-style: none;
+		font-size: var(--paragraph);
+		color: var(--text-color);
+	}
+
+	.who-list li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.who-list li::before {
+		content: "";
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: var(--fg-light-color);
+		flex-shrink: 0;
+	}
+
+	/* Closing section */
+	.closing {
+		width: calc(100% + 4rem);
+		margin-inline: -2rem;
+		background-color: var(--fg-color);
+		border-radius: var(--border-radius);
+		padding: var(--section-gap) 2rem;
+	}
+
+	.closing-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+		max-width: 650px;
+		margin: 0 auto;
+	}
+
+	.closing h2 {
+		color: var(--bg-color);
+	}
+
+	.closing p {
+		line-height: 1.8;
+		color: var(--bg-color);
+	}
+
+	.closing .btn {
+		margin-top: var(--element-gap);
+		border-color: var(--bg-color);
+		color: var(--bg-color);
+		background-color: transparent;
+	}
+
+	.closing .btn:hover {
+		background-color: var(--bg-color);
+		color: var(--fg-color);
+	}
+
+	/* Journey section */
+	.journey {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--element-gap);
+		width: 100%;
+	}
+
+	.timeline {
+		list-style: none;
+		padding: 0;
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.timeline-item {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		gap: var(--small-gap);
+		padding-bottom: var(--element-gap);
+	}
+
+	.timeline-item:last-child {
+		padding-bottom: 0;
+	}
+
+	.timeline-item:not(:last-child)::before {
+		content: "";
+		position: absolute;
+		left: 11px;
+		top: 0.6rem;
+		bottom: calc(-0.6rem - 11.5px);
+		width: 1px;
+		background-color: var(--fg-light-color);
+	}
+
+	.timeline-marker {
+		position: relative;
+		flex-shrink: 0;
+		width: 23px;
+		height: 23px;
+		margin-top: 0.6rem;
+		border-radius: 50%;
+		border: 2px solid var(--fg-color);
+		background-color: var(--bg-color);
+		z-index: 1;
+	}
+
+	.timeline-content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-align: left;
+		gap: 0.75rem;
+	}
+
+	.timeline-content h3 {
+		color: var(--fg-color);
+	}
+
+	.timeline-content p {
+		font-size: var(--paragraph);
+		line-height: 1.7;
+	}
+
+	.timeline-content .btn {
+		margin-top: 0.5rem;
+		font-size: 1rem;
+		min-height: 48px;
+	}
+</style>
