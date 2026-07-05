@@ -36,40 +36,22 @@ const { title, mainArticle, benefits } = pages.breatwork;
 
 		<section class="experience">
 			<h2 class="slide">Breathwork Experiences</h2>
-			<div>
+			<div class="experience-grid">
 				<article class="slide" id="oneToOne">
 					<h3>1:1 Sessions</h3>
 					<ul>
 						<li>60 minute guided breathwork session</li>
 					</ul>
-					<a
-						href="https://calendly.com/well-viebymckenzie/60min?month=2024-08"
-						class="btn">Book 1:1 Session</a
-					>
-				</article>
-				<article class="slide">
-					<h3>Balanced Package (4 Sessions)</h3>
-					<ul>
-						<li>(4) 45 Minute sessions</li>
-						<li>Great start for beginners new to guided breathwork</li>
-					</ul>
-
-					<a href="https://square.link/u/Fvni1X5a" class="btn"
-						>Purchase Package</a
-					>
-				</article>
-				<article class="slide">
-					<h3>Revitalized Package (4 Sessions)</h3>
-					<ul>
-						<li>(4) 75 Minute sessions</li>
-						<li>
-							A deep dive into breathwork for those desiring a transformative
-							experience
-						</li>
-					</ul>
-					<a href="https://square.link/u/pUllL1WM" class="btn"
-						>Purchase Package</a
-					>
+					<div class="booking-actions">
+						<a
+							href="https://wa.me/13162589949?text=Hi!%20I%20want%20to%20book%20a%201%3A1%20breathwork%20session%20with%20you.%20My%20name%20is%20"
+							class="btn">Book via WhatsApp</a
+						>
+						<a
+							href="sms:+13162589949&body=Hi!%20I%20want%20to%20book%20a%201%3A1%20breathwork%20session%20with%20you.%20My%20name%20is%20"
+							class="btn">Book via Text</a
+						>
+					</div>
 				</article>
 			</div>
 		</section>
@@ -183,15 +165,15 @@ const { title, mainArticle, benefits } = pages.breatwork;
 		font-size: var(--heading-paragraph);
 	}
 
-	main section.experience div {
+	main section.experience .experience-grid {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: stretch;
 		flex-wrap: wrap;
 		gap: var(--horizontal-gap);
 
 		> * {
-			flex: 1 0 calc(33% - var(--horizontal-gap));
+			flex: 0 1 420px;
 
 			@media (max-width: 768px) {
 				flex: 1 0 100%;
@@ -228,6 +210,13 @@ const { title, mainArticle, benefits } = pages.breatwork;
 
 	main section.experience article a.btn {
 		align-self: center;
+	}
+
+	main section.experience .booking-actions {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
 	}
 
 	section.types {

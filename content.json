@@ -1,175 +1,163 @@
 {
-	"pages": {
-		"home": {
-			"title": "Your Life, <br> Well Lived",
-			"mainArticle": {
-				"title": "Welcome to Well-Vie",
-				"content": [
-					"<i>Inhale. Exhale. </i> We take 20,000 breaths every single day. That’s 20,000 opportunities for presence, healing, and transformation.",
-					"At Well-Vie — that’s part “wellness,” and part “vie,” French for life — we believe that everyone deserves to feel peace and calm. Our mission is to help you cultivate that feeling with your own intentional and empowering breathwork and wellness practices. We do this with personalized guidance, expert-led sessions and retreats, and supportive community.",
-					"Whether you’re just starting out or deepening your practice, Well-Vie is here to help you connect with yourself, your truth, and the innate wisdom of your body. It’s your life, well lived."
-				]
-			},
-			"articles": [
-				{
-					"image": "/imgs/home/later-2.webp",
-					"title": "Breathwork",
-					"content": "Join our founder, McKenzie, for one-on-one sessions, couples breathwork, group events, or corporate workshops. A certified trauma-informed somatic breathwork and life coach, McKenzie teaches you how to heal your nervous system health, reduce stress in your daily life, and improve your overall wellness.",
-					"redirect": "/breathwork",
-					"cta": "Learn more about breathwork"
-				},
-				{
-					"image": "/imgs/home/midday-6.webp",
-					"title": "Retreats",
-					"content": "From one-day workshops to immersive, weeklong retreats, Well-Vie offers curated, supportive containers for you to dive into your healing journey. You can expect breathwork, movement, incredible food, like-minded community, and so much more — whether you’re attending one of our public retreats, or hiring us to customize a totally personalized retreat for you and your group.",
-					"redirect": "/retreats",
-					"cta": "Learn more about our retreats"
-				}
-			]
-		},
-		"about": {
-			"title": "Bonjour! <br> I’m McKenzie.",
-			"contentTitle": "I’m a certified trauma-informed somatic breathwork expert and life coach",
-			"paragraphs": [
-				"I found breathwork in a time of complete and utter burnout. This was in 2021 when I was a hairstylist in San Francisco, constantly adjusting and readjusting to the reality of salon life during the pandemic. I loved my work and my clients, but I was really struggling with how to set and hold boundaries — both in my business and my personal life. ",
+  "pages": {
+    "home": {
+      "title": "Your Life, <br> Well Lived",
+      "mainArticle": {
+        "title": "Welcome to Well-Vie",
+        "content": [
+          "<i>Inhale. Exhale. </i> We take 20,000 breaths every single day. That’s 20,000 opportunities for presence, healing, and transformation.",
+          "At Well-Vie - that’s part “wellness,” and part “vie,” French for life - we believe that everyone deserves to feel peace and calm. Our mission is to help you cultivate that feeling with your own intentional and empowering breathwork and wellness practices. We do this with personalized guidance, expert-led sessions and retreats, and supportive community.",
+          "Whether you’re just starting out or deepening your practice, Well-Vie is here to help you connect with yourself, your truth, and the innate wisdom of your body. It’s your life, well lived."
+        ]
+      },
+      "articles": [
+        {
+          "image": "/imgs/home/later-2.webp",
+          "title": "Breathwork",
+          "content": "Join our founder, McKenzie, for one-on-one sessions, couples breathwork, group events, or corporate workshops. A certified trauma-informed somatic breathwork and life coach, McKenzie teaches you how to heal your nervous system health, reduce stress in your daily life, and improve your overall wellness.",
+          "redirect": "/breathwork",
+          "cta": "Learn more about breathwork"
+        },
+        {
+          "image": "/imgs/home/midday-6.webp",
+          "title": "Retreats",
+          "content": "From one-day workshops to immersive, weeklong retreats, Well-Vie offers curated, supportive containers for you to dive into your healing journey. You can expect breathwork, movement, incredible food, like-minded community, and so much more - whether you’re attending one of our public retreats, or hiring us to customize a totally personalized retreat for you and your group.",
+          "redirect": "/retreats",
+          "cta": "Learn more about our retreats"
+        },
+        {
+          "image": "/imgs/home/ecosystem-community.webp",
+          "title": "Introducing The Ecosystem",
+          "content": "The Ecosystem is a supportive community for women seeking deeper connection, breathwork practices, nervous system support, and intentional spaces for healing and growth.",
+          "redirect": "/ecosystem",
+          "cta": "Explore The Ecosystem"
+        }
+      ]
+    },
+    "about": {
+      "title": "Bonjour! <br> I’m McKenzie.",
+      "contentTitle": "About Well-Vie",
+      "paragraphs": [
+        "Well-Vie began as a space rooted in wellness, intentional living, and creating meaningful experiences for women. Over time, life reshaped the vision behind it completely.",
 
-				"To be honest, I had never even heard of boundaries. Literally. I had none. Pair that with 24/7 anxiety, a nervous system in constant overdrive, and my lifelong pattern of trying to fix everything for everyone? I was exhausted. Overwhelmed. I had nothing left.",
+        "Within one year, I experienced the loss of my mom, became a mother myself, navigated career changes, and adjusted to building a life in a foreign country. Those experiences changed me completely and deepened my understanding of how much women quietly carry while still trying to move through everyday life.",
 
-				"Then, I came across a breathwork retreat. Even though I had no idea what breathwork was, I had this feeling that I just had to be there. I’d always shown up so beautifully for my clients, I told myself. Now how beautifully could I show up for myself?",
+        "During that season, I found myself searching for spaces that felt grounding, honest, and human - spaces where I could breathe, process, and feel supported without pressure to have everything figured out.",
 
-				"At that retreat, I tried breathwork for the very first time. The somatic and mental effects washed over me immediately. “Oh my god,” I remember thinking. “Is this what it feels like to not be anxious?” I wasn’t nervous about what I was about to say, or what I’d said 10 minutes ago, or something I’d said 10 years ago. I felt at peace. Calm. Present.",
+        "That experience became the evolution of Well-Vie.",
 
-				"By the end of the retreat, my entire world had changed. Colors looked brighter, sharper. I felt at home in myself in a way I couldn’t ever remember feeling. I could take a deep breath without the weight of the world on my shoulders. ",
+        "Today, Well-Vie is an ecosystem of support for women navigating full lives through breathwork, nervous system care, retreats, community, and meaningful conversation.",
 
-				"When I arrived home and my husband, Brian, picked me up from the airport, I asked him if I seemed different. “You do,” he replied. ",
+        "I chose the word ecosystem because ecosystems are built on connection - life supporting life. Healing, growth, and regulation don’t happen in isolation. They happen through shared experiences, safe spaces, and community.",
 
-				"“Good,” I said. “Because I feel different.”",
+        "My hope is that women who enter Well-Vie feel supported enough to slow down, reconnect to themselves, and remember they do not have to carry everything alone."
+      ]
+    },
+    "retreats": {
+      "title": "Retreats",
 
-				"From there, I dove headfirst into my breathwork practice. I started by working with a coach, and after almost a year of one-on-one work, I began to facilitate my own sessions. I went to workshop after workshop, wanting to experience and learn as much as I could. I got trained and certified as a trauma-informed breathwork facilitator, then followed it up with another certification in somatic breathwork. I completed a program to become a certified life coach. There was so much to learn, and I couldn’t get enough. (I still can’t!)",
+      "faqs": [
+        {
+          "question": "How do I pay?",
+          "answer": "You can pay with a credit or debit card at checkout."
+        },
+        {
+          "question": "Can I room with someone I know?",
+          "answer": "Absolutely! Just email mckenzie@well-vie.com with the name of the person you would like to room with."
+        },
+        {
+          "question": "When are early bird pricing and payment plans active until?",
+          "answer": "(dates & location coming soon)"
+        },
+        {
+          "question": "I have dietary restrictions, is that an issue for the private chef?",
+          "answer": "There will be no issues with any dietary restrictions, the chef will create meals within your restrictions that you share with us in a form once you have signed up for the retreat."
+        },
+        {
+          "question": "Is there free time or is everything scheduled?",
+          "answer": "There is a beautiful balance of free time and then events, everything is by choice using your own autonomy."
+        },
+        {
+          "question": "I am not experienced in breathwork, is that ok?",
+          "answer": "Absolutely!"
+        },
+        {
+          "question": "I am not experienced in Yoga, is that ok?",
+          "answer": "Absolutely!"
+        },
+        {
+          "question": "Can I break up my payments?",
+          "answer": "Yes, in the early bird option there is a payment plan at checkout."
+        },
+        {
+          "question": "What do I pack?",
+          "answer": "We will send you an email prior to the retreat with a packing list!"
+        },
+        {
+          "question": "I've never been on a retreat, what do I need to be prepared for?",
+          "answer": "Embrace the retreat just as you are! No previous experience with yoga, breathwork, or anything else is required. Simply be yourself. We'll move at your pace, and if you prefer to take a break from any activity, that's completely okay."
+        }
+      ],
+      "policies": [
+        {
+          "title": "",
+          "content": "Upon purchasing, you're agreeing to a few policies that help make the magic happen. Please keep in mind that, given the nature of events, we're unable to make exceptions. Your commitment to these policies is appreciated."
+        },
+        {
+          "title": "Refund and Transfer Policy",
+          "content": "Your ticket is non-refundable and non-transferable to another event.In case of emergencies, you have the option to sell or gift your retreat ticket for the exact event you purchased. If you can't or choose not to utilize these options and decide not to attend for any reason, unfortunately, we won't be able to provide a refund or transfer credit."
+        },
+        {
+          "title": "Terms and Conditions of Sale",
+          "content": "Terms and Conditions of Sale When purchasing your ticket, you're agreeing to the terms and conditions related to the Liberate & Embody Retreat June 6-9 in Paciﬁca, California. Please ensure the full balance, as outlined in your payment plan, is settled at the time of signing up. If The Retreat is canceled due to reasons beyond our control, like COVID-19 or other unforeseen circumstances, we'll provide a transfer credit for a future event hosted by us within 2025 or 2026."
+        },
+        {
+          "title": "Location or Date Changes",
+          "content": "There might be changes in the retreat's location or dates. If you choose not to attend the rescheduled date or location, your ticket will be forfeited."
+        },
+        {
+          "title": "Covid-19 or Pandemic Issues",
+          "content": "If unforeseen Covid-19 or pandemic-related issues arise, making the event illegal to host, we'll reschedule the date, with the same purchasing policies in place."
+        },
+        {
+          "title": "",
+          "content": "This overview gives you a snapshot of our purchasing policies, refunds, and transfers. Thank you for your understanding and cooperation. If you have any questions please reach out to mckenzie@well-vie.com"
+        }
+      ]
+    },
+    "breatwork": {
+      "title": "Breathwork",
+      "mainArticle": {
+        "title": "A powerful tool for healing and transformation",
+        "content": [
+          "At Well-Vie, we believe that everyone deserves to have the opportunity to heal, grow, and thrive. We’re dedicated to that vision through the power of breathwork.",
 
-				"Throughout my training, I found my own personal style of breathwork practice — one that’s rooted in science and spirituality. ",
+          "Whether you’re looking for ways to calm yourself down in the heat of a stressful moment, or to completely transform yourself and your life from the inside-out, breathwork is one of our most accessible self-care practices.",
 
-				"The science of breathwork is all about our nervous systems, and how breathwork helps us create new neural pathways, which leads to new patterns and behaviors. The spirituality of breathwork is in the power of visualization. This practice taps into the power of manifestation, and is an influential tool for healing and transformation. ",
-
-				"When science and spirituality overlap? That’s when we can make lasting changes in our lives.",
-
-				"And that’s exactly why I founded Well-Vie. I’ve experienced that lasting change in my own life, and I want to help you create it for yourself.",
-
-				"As Well-Vie was born into the world, my life continued to change and evolve in the most beautiful and unexpected ways. In 2023, Brian and I sold everything we owned and moved to Paris (yes! France!) with our dog, Hank. I travel back to California regularly, which means that I offer wellness retreats and workshops all over the world. I also get to continue to show up as a hairstylist for my amazing, loyal clients in San Francisco — and I’ve recently started seeing hair clients in Paris. I feel so lucky to call these two amazing cities home.",
-
-				"My heart is filled with love and gratitude for everything, big and small, that happened in order to shape me into exactly who I am today. It brought me here, to this point where I can say with absolute certainty that I am in my soul’s purpose and my life’s work. Thank you for being a part of it.",
-
-				"Oh, and as for my boundaries these days? They’re firm, yet soft. Structured, but flexible. Formed with knowledge, yet open to change. Just like me.",
-				"À bientôt,",
-
-				"McKenzie"
-			]
-		},
-		"retreats": {
-			"title": "Retreats",
-
-			"faqs": [
-				{
-					"question": "How do I pay?",
-					"answer": "You can pay with a credit or debit card at checkout."
-				},
-				{
-					"question": "Can I room with someone I know?",
-					"answer": "Absolutely! Just email mckenzie@well-vie.com with the name of the person you would like to room with."
-				},
-				{
-					"question": "When are early bird pricing and payment plans active until?",
-					"answer": "(dates & location coming soon)"
-				},
-				{
-					"question": "I have dietary restrictions, is that an issue for the private chef?",
-					"answer": "There will be no issues with any dietary restrictions, the chef will create meals within your restrictions that you share with us in a form once you have signed up for the retreat."
-				},
-				{
-					"question": "Is there free time or is everything scheduled?",
-					"answer": "There is a beautiful balance of free time and then events, everything is by choice using your own autonomy."
-				},
-				{
-					"question": "I am not experienced in breathwork, is that ok?",
-					"answer": "Absolutely!"
-				},
-				{
-					"question": "I am not experienced in Yoga, is that ok?",
-					"answer": "Absolutely!"
-				},
-				{
-					"question": "Can I break up my payments?",
-					"answer": "Yes, in the early bird option there is a payment plan at checkout."
-				},
-				{
-					"question": "What do I pack?",
-					"answer": "We will send you an email prior to the retreat with a packing list!"
-				},
-				{
-					"question": "I've never been on a retreat, what do I need to be prepared for?",
-					"answer": "Embrace the retreat just as you are! No previous experience with yoga, breathwork, or anything else is required. Simply be yourself. We'll move at your pace, and if you prefer to take a break from any activity, that's completely okay."
-				}
-			],
-			"policies": [
-				{
-					"title": "",
-					"content": "Upon purchasing, you're agreeing to a few policies that help make the magic happen. Please keep in mind that, given the nature of events, we're unable to make exceptions. Your commitment to these policies is appreciated."
-				},
-				{
-					"title": "Refund and Transfer Policy",
-					"content": "Your ticket is non-refundable and non-transferable to another event.In case of emergencies, you have the option to sell or gift your retreat ticket for the exact event you purchased. If you can't or choose not to utilize these options and decide not to attend for any reason, unfortunately, we won't be able to provide a refund or transfer credit."
-				},
-				{
-					"title": "Terms and Conditions of Sale",
-					"content": "Terms and Conditions of Sale When purchasing your ticket, you're agreeing to the terms and conditions related to the Liberate & Embody Retreat June 6-9 in Paciﬁca, California. Please ensure the full balance, as outlined in your payment plan, is settled at the time of signing up. If The Retreat is canceled due to reasons beyond our control, like COVID-19 or other unforeseen circumstances, we'll provide a transfer credit for a future event hosted by us within 2025 or 2026."
-				},
-				{
-					"title": "Location or Date Changes",
-					"content": "There might be changes in the retreat's location or dates. If you choose not to attend the rescheduled date or location, your ticket will be forfeited."
-				},
-				{
-					"title": "Covid-19 or Pandemic Issues",
-					"content": "If unforeseen Covid-19 or pandemic-related issues arise, making the event illegal to host, we'll reschedule the date, with the same purchasing policies in place."
-				},
-				{
-					"title": "",
-					"content": "This overview gives you a snapshot of our purchasing policies, refunds, and transfers. Thank you for your understanding and cooperation. If you have any questions please reach out to mckenzie@well-vie.com"
-				}
-			]
-		},
-		"breatwork": {
-			"title": "Breathwork",
-			"mainArticle": {
-				"title": "A powerful tool for healing and transformation",
-				"content": [
-					"At Well-Vie, we believe that everyone deserves to have the opportunity to heal, grow, and thrive. We’re dedicated to that vision through the power of breathwork.",
-
-					"Whether you’re looking for ways to calm yourself down in the heat of a stressful moment, or to completely transform yourself and your life from the inside-out, breathwork is one of our most accessible self-care practices.",
-
-					"Our breathwork sessions are designed to help you understand and heal your nervous system, reduce stress, and improve your overall wellness. In a range of offerings — from one-on-one sessions to private groups to corporate retreats — McKenzie teaches you the profound impact of mindful breathing, and how to integrate these simple, effective techniques into your everyday life.",
-					"McKenzie leads breathwork on Zoom, as well as in-person sessions in California and around Europe."
-				]
-			},
-			"benefits": [
-				"Reduced stress and anxiety",
-				"Better sleep",
-				"Improved focus & mood",
-				"More clarity",
-				"Increased energy",
-				"Boosted immunity",
-				"Improved digestion & circulation",
-				"Lower blood pressure",
-				"Connection to your inner self",
-				"Movement of stuck or stagnant energy",
-				"Helps to lift depression",
-				"Helps in healing from trauma",
-				"Helps in managing PTSD"
-			]
-		},
-		"contact": {
-			"title": "Contact",
-			"getInTouch": "Text, call, or WhatsApp: <a href=\"https://wa.me/13162589949\">316.258.9949 </a> <br> Email <a href=\"mailto:mckenzie@well-vie.com\"> mckenzie@well-vie.com  </a><br> I’d love to hear from you! Reach out below.",
-			"address": "Paris <br /> X <br />San Francisco"
-		}
-	}
+          "Our breathwork sessions are designed to help you understand and heal your nervous system, reduce stress, and improve your overall wellness. In a range of offerings - from one-on-one sessions to private groups to corporate retreats - McKenzie teaches you the profound impact of mindful breathing, and how to integrate these simple, effective techniques into your everyday life.",
+          "McKenzie leads breathwork on Zoom, as well as in-person sessions in California and around Europe."
+        ]
+      },
+      "benefits": [
+        "Reduced stress and anxiety",
+        "Better sleep",
+        "Improved focus & mood",
+        "More clarity",
+        "Increased energy",
+        "Boosted immunity",
+        "Improved digestion & circulation",
+        "Lower blood pressure",
+        "Connection to your inner self",
+        "Movement of stuck or stagnant energy",
+        "Helps to lift depression",
+        "Helps in healing from trauma",
+        "Helps in managing PTSD"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "getInTouch": "Text, call, or WhatsApp: <a href=\"https://wa.me/13162589949\">316.258.9949 </a> <br> Email <a href=\"mailto:mckenzie@well-vie.com\"> mckenzie@well-vie.com  </a><br> I’d love to hear from you! Reach out below.",
+      "address": "Paris <br /> X <br />San Francisco"
+    }
+  }
 }

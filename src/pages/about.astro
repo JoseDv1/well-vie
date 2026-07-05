@@ -20,6 +20,10 @@ const { contentTitle, paragraphs, title } = pages.about;
 
 		<article>
 			{paragraphs.map((paragraph) => <p class="slide">{paragraph}</p>)}
+			<div class="signoff slide">
+				<p>Bisous, McKenzie</p>
+				<p>Founder of Well-Vie</p>
+			</div>
 		</article>
 	</main>
 </Layout>
@@ -46,6 +50,25 @@ const { contentTitle, paragraphs, title } = pages.about;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		gap: var(--element-gap);
+		gap: var(--small-gap);
+		max-width: 720px;
+	}
+
+	main > article p {
+		line-height: 1.75;
+	}
+
+	.signoff {
+		margin-top: var(--small-gap);
+	}
+
+	.signoff p:first-child {
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--fg-color);
+	}
+
+	.signoff p:last-child {
+		font-size: var(--paragraph);
 	}
 </style>

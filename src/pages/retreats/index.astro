@@ -3,12 +3,14 @@ import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import RetreatsForm from "@/components/RetreatsForm.svelte";
 import { pages } from "@content";
+import PastRetreatGallery from "@/components/PastRetreatGallery.svelte";
 import Testimonial from "@/components/Testimonial.astro";
 import Retreat from "@/components/Retreat.astro";
 
 // Page Content
 const { title, faqs, policies } = pages.retreats;
-
+const europeWaitlistLink =
+	"mailto:mckenzie@well-vie.com?subject=Europe%202027%20Retreat%20Waitlist&body=Hi%20McKenzie%2C%0A%0AI%20want%20to%20join%20the%20waitlist%20for%20the%20Europe%202027%20retreat.%0A%0AMy%20name%20is%20";
 
 ---
 
@@ -18,6 +20,12 @@ const { title, faqs, policies } = pages.retreats;
 		image="/imgs/retreats/FOR_Retreats.webp"
 		position="center"
 		mobileImage="60% center"
+		containedTitle
+		textPosition={["auto", "12%"]}
+		textRight="1rem"
+		pcTextPosition={["auto", "12%"]}
+		pcTextRight="clamp(2rem, 7vw, 8rem)"
+		textShadow="0 4px 28px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.65)"
 	/>
 	<main>
 		<!-- Content 1 -->
@@ -38,40 +46,19 @@ const { title, faqs, policies } = pages.retreats;
 			text="“My first retreat was the perfect balance of healing experiences, teaching moments, and calming activities that nourished the soul. I felt extremely connected and calm in my body all weekend.”"
 		/>
 
-		<!-- Next's-->
-		<main>
+		<main class="upcoming-retreats">
 			<h2>Upcoming retreats</h2>
 			<section>
 				<Retreat
-					image="/imgs/retreats/img4.jpg"
-					link="/retreats/palm-springs"
-					title="Palm Springs, California <br> March 6 - 9, 2025"
-					button="Learn More"
-
+					image="/imgs/retreats/past/IMG_0037.JPG"
+					link={europeWaitlistLink}
+					title="Europe 2027"
+					button="Join The Waitlist"
 				/>
-				<Retreat
-				image="/imgs/retreats/img7.webp"
-				link="mailto:mckenzie@well-vie.com"
-				title="France Retreat  <br>2025"
-				button="send an email"
-			/>
-				<Retreat
-				image="/imgs/retreats/img5.webp"
-				link="mailto:mckenzie@well-vie.com"
-				title="Portugal Retreat <br> 2026"
-				button="send an email"
-			/>
-			
-			
 			</section>
 		</main>
 
-		<section id="interested">
-			<p>
-				Interested in one of our upcoming retreats that sign-ups haven’t opened for yet? Email <a href="mailto:mckenzie@well-vie.com">mckenzie@well-vie.com</a>
-				 with the retreat name in the subject line to <b>add your name to the waitlist.</b>
-			</p>
-		</section>
+		<PastRetreatGallery client:load />
 
 		<Testimonial
 			name="Christina L."
@@ -137,15 +124,13 @@ const { title, faqs, policies } = pages.retreats;
 
 		section {
 			margin-top: var(--section-gap);
+		}
 
-			&:first-of-type,
-			&:nth-of-type(4) {
-				margin-top: 0;
-				display: flex;
-				flex-direction: column;
-				gap: 2rem;
-		
-			}
+		main > section:first-of-type {
+			margin-top: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
 		}
 
 		hr {
@@ -167,28 +152,21 @@ const { title, faqs, policies } = pages.retreats;
 		}
 
 		/* Retreats Grid */
-		main > main  {
-			h2 {
-				margin-bottom: var(--element-gap);
-				text-align: center;
-			}
-
-			& > section {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 2rem;
-			place-items: center;
-
-			@media (max-width: 768px) {
-				grid-template-columns: 1fr;
-				}
-			}	
-
-
+		main.upcoming-retreats {
+			text-align: center;
 		}
-		
-		section#interested {
-			scroll-margin-block: 10rem;
+
+		main.upcoming-retreats h2 {
+			margin-bottom: var(--element-gap);
+		}
+
+		main.upcoming-retreats > section {
+			display: grid;
+			grid-template-columns: minmax(280px, 500px);
+			justify-content: center;
+			place-items: center;
+			gap: 2rem;
+			margin-top: 0;
 		}
 
 		@keyframes animateDown {
@@ -270,11 +248,18 @@ const { title, faqs, policies } = pages.retreats;
 		}
 		section.faq article.policy h4 {
 			font-family: inherit;
-			font-size: 1.2rem;G
+			font-size: 1.2rem;
 		}
 
 		section.faq details a {
 			word-break: break-all;
+		}
+
+		@media (max-width: 500px) {
+			:global(.hero.contained-title h1) {
+				font-size: clamp(3rem, 20vw, 4rem);
+				max-width: calc(100vw - 2rem);
+			}
 		}
 	</style>
 </Layout>

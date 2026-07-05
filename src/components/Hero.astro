@@ -6,7 +6,10 @@ interface Props {
 	mobileImage?: string;
 	textPosition?: string[];
 	pcTextPosition?: string[];
+	textRight?: string;
+	pcTextRight?: string;
 	textShadow?: string;
+	containedTitle?: boolean;
 }
 
 const {
@@ -16,11 +19,16 @@ const {
 	textPosition = ["20%", "50%"],
 	mobileImage = "center",
 	pcTextPosition = ["50%", "50%"],
+	textRight = "auto",
+	pcTextRight = "auto",
 	textShadow = "none",
+	containedTitle = false,
 } = Astro.props;
+
+const heroClass = containedTitle ? "hero contained-title" : "hero";
 ---
 
-<div class="hero">
+<div class={heroClass}>
 	<h1 set:html={heading} />
 </div>
 
@@ -33,6 +41,8 @@ const {
 		mobileImage,
 		pcTextX: pcTextPosition[0],
 		pcTextY: pcTextPosition[1],
+		textRight,
+		pcTextRight,
 		textShadow,
 	}}
 >
@@ -52,10 +62,15 @@ const {
 		}
 	}
 
+	div.hero.contained-title {
+		position: relative;
+	}
+
 	h1 {
 		position: absolute;
 		top: var(--pcTextY);
 		left: var(--pcTextX);
+		right: var(--pcTextRight);
 		color: var(--bg-color);
 		z-index: 100;
 		max-width: 700px;
@@ -64,12 +79,29 @@ const {
 		@media (width <= 768px) {
 			top: var(--textY);
 			left: var(--textX);
+			right: var(--textRight);
 		}
 
 		@media (width < 500px) {
 			top: unset;
 			bottom: 1.25rem;
 			left: 1.25rem;
+			right: auto;
+		}
+	}
+
+	div.hero.contained-title h1 {
+		margin: 0;
+	}
+
+	@media (width < 500px) {
+		div.hero.contained-title h1 {
+			top: var(--textY);
+			bottom: auto;
+			left: 1rem;
+			right: 1rem;
+			max-width: none;
+			text-align: right;
 		}
 	}
 </style>
