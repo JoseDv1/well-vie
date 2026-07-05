@@ -1,0 +1,55 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Waitlist Confirmation | Well-Vie">
+	<main>
+		<section class="confirmation slide">
+			<h1>You're On The Waitlist</h1>
+			<p>You've been added to the Path II waitlist.</p>
+			<p>
+				Thank you for sharing what you're hoping to gain from The Ecosystem.
+				We'll keep your note close, and you'll be the first to hear when
+				applications open.
+			</p>
+			<p class="signoff">
+				With love,<br />
+				The Well-Vie Team
+			</p>
+			<a href="/ecosystem/" class="btn">Return to The Ecosystem</a>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		justify-content: center;
+		padding: var(--section-gap) 2rem;
+	}
+
+	.confirmation {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		max-width: 720px;
+		text-align: center;
+	}
+
+	h1 {
+		color: var(--fg-color);
+	}
+
+	p {
+		line-height: 1.8;
+	}
+
+	.signoff {
+		margin-top: 0.5rem;
+	}
+
+	.btn {
+		margin-top: var(--small-gap);
+	}
+</style>

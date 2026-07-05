@@ -1,57 +1,136 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
-const includedItems = [
-	"2 live 90-minute Sunday sessions",
-	"Breathwork & nervous system support",
-	"Community conversations & reflection",
-	"Week 2 & 4 WhatsApp community check-ins",
-	"Replay access included",
-	"Intimate group setting (12 women max)",
-];
 ---
 
 <Layout title="The Reset | Well-Vie">
 	<main>
 		<section class="hero slide">
-			<span class="hero-label">A 30-Day Experience</span>
+			<span class="hero-label">Path 1</span>
 			<h1>The Reset</h1>
 			<p class="subtitle">
 				For women seeking deeper connection, nervous system support, breathwork,
 				and intentional community.
 			</p>
 			<p>
-				The Reset was created as an entry point into The Ecosystem - a space to
-				slow down, reconnect to yourself, and be supported alongside other women
-				navigating the fullness of life.
+				A 3 week experience designed to help women slow down, reflect,
+				reconnect to themselves, and experience breathwork, nervous system
+				support, community, and honest conversation.
 			</p>
-			<a href="#" class="btn disabled">Join The Reset</a>
+			<a href="#what-to-expect" class="btn">Begin Your Journey</a>
 		</section>
 
 		<hr class="divider" />
 
-		<section class="included slide">
-			<h2>What's Included</h2>
-			<ul class="included-list">
-				{includedItems.map((item) => <li>{item}</li>)}
-			</ul>
-		</section>
+		<span id="what-to-expect" class="section-anchor" aria-hidden="true"></span>
+		<section class="expect slide">
+			<h2>What to Expect</h2>
+			<div class="week-list">
+				<article class="week-card">
+					<h3>Week One</h3>
+					<h4>Connect &amp; Set Intentions</h4>
+					<p>
+						Our first week is designed to help you slow down and reconnect.
+					</p>
+					<p>
+						Together, we'll begin with a 90-minute LIVE community call where
+						you'll meet the women inside your group, share introductions, and
+						set intentions for the journey ahead. We'll move through a guided
+						breathwork session and explore simple nervous system practices to
+						support you throughout the week.
+					</p>
+					<p>
+						You'll also receive journal prompts and reflection exercises to help
+						you integrate the experience and reconnect with yourself in everyday
+						life.
+					</p>
+					<p class="week-emphasis">
+						<strong>
+							This week is about building a foundation and creating space for
+							what comes next.
+						</strong>
+					</p>
+				</article>
 
-		<hr class="divider" />
+				<article class="week-card">
+					<h3>Week Two</h3>
+					<h4>Deepen &amp; Receive Support</h4>
+					<p>Our second week is designed to help you go deeper.</p>
+					<p>
+						Together, we'll gather for a 90-minute LIVE session beginning with a
+						guided breathwork and nervous system reset. From there, we'll move
+						into meaningful conversation centered around what you're currently
+						navigating and wanting support with.
+					</p>
+					<p>
+						You'll learn practical somatic tools to bring into everyday life,
+						have space to ask questions, and connect with other women walking
+						through similar seasons.
+					</p>
+					<p class="week-emphasis">
+						<strong>
+							This week is about feeling seen, supported, and remembering that
+							you don't have to carry everything alone.
+						</strong>
+					</p>
+				</article>
 
-		<section class="why slide">
-			<h2>Why "The Reset"?</h2>
-			<div class="why-content">
-				<p>
-					The Reset is designed to create space for women to pause, reconnect to
-					themselves, and receive support before jumping back into the pace of
-					everyday life.
-				</p>
-				<p>
-					This is not about fixing yourself or becoming someone new. It's about
-					creating space to breathe, regulate, reconnect, and feel supported in
-					community.
-				</p>
+				<article class="week-card">
+					<h3>Week Three</h3>
+					<h4>Reconnect &amp; Reset</h4>
+					<p>
+						Our final week is designed to help you integrate and move forward
+						with intention.
+					</p>
+					<p>
+						We'll come together for a 90-minute LIVE closing session,
+						reconnecting through guided breathwork, reflection, and integration.
+						This is an opportunity to celebrate your growth, revisit the
+						intentions you set at the beginning of the experience, and create
+						space for what comes next.
+					</p>
+					<p>
+						You'll leave with practices and journal prompts to continue
+						supporting yourself long after the three weeks have ended.
+					</p>
+					<p>
+						This week is about honoring how far you've come and moving forward
+						with greater clarity, connection, and self-awareness.
+					</p>
+				</article>
+
+				<article class="program-included">
+					<h3>Included Throughout</h3>
+					<ul class="included-throughout-list">
+						<li>Three LIVE 90-minute sessions</li>
+						<li>Guided breathwork journeys</li>
+						<li>Nervous system support and somatic practices</li>
+						<li>Journal prompts and reflection exercises</li>
+						<li>Community and connection</li>
+						<li>Replay access available if life gets in the way</li>
+						<li>An intimate group setting (limited to 15 women)</li>
+					</ul>
+				</article>
+
+				<article class="bonus-card">
+					<p class="section-label">Bonus Feature</p>
+					<h3>Private WhatsApp Community</h3>
+					<p>
+						Throughout the three weeks, you'll have access to a private
+						WhatsApp group with the women inside your cohort. This space is
+						open for questions, reflections, celebrations, and honest
+						conversations as you move through the experience together.
+					</p>
+					<p>
+						Think of it as an extension of our calls&mdash;a place to feel
+						supported, stay connected, and remember that you don't have to
+						navigate this journey alone.
+					</p>
+					<p class="week-emphasis">
+						<strong>
+							Some of the most meaningful moments happen between the calls.
+						</strong>
+					</p>
+				</article>
 			</div>
 		</section>
 
@@ -61,29 +140,30 @@ const includedItems = [
 				<div class="details-grid">
 					<div class="detail-item">
 						<dt>Start Date</dt>
-						<dd>July 1, 2026</dd>
+						<dd>September 15, 2026</dd>
 					</div>
 					<div class="detail-item">
 						<dt>Investment</dt>
-						<dd>$222 / €222</dd>
+						<dd>USD $333</dd>
 					</div>
 				</div>
 				<p>Optional payment plan available.</p>
 				<p class="limited">
-					Spots are intentionally limited to 12 women to preserve the intimacy
+					Spots are intentionally limited to 15 women to preserve the intimacy
 					and intentionality of the experience.
 				</p>
+				<a href="/reset/apply/" class="btn">Apply</a>
 			</div>
 		</section>
 
 		<section class="closing slide">
-			<h2>What Comes After The Reset?</h2>
+			<h2>What Comes After?</h2>
 			<p>
-				Women who complete The Reset will receive priority access to future
-				Well-Vie experiences, including The Ecosystem, retreats, workshops, and
-				in-person gatherings.
+				Women who complete Path I will receive priority access to Path II &
+				Path III, retreats, workshops, in-person gatherings and future Well-Vie
+				experiences.
 			</p>
-			<a href="/ecosystem" class="btn">Explore The Ecosystem</a>
+			<a href="/ecosystem/#path-ii-waitlist" class="btn">Join the Waitlist</a>
 		</section>
 	</main>
 </Layout>
@@ -150,33 +230,97 @@ const includedItems = [
 		margin: 0;
 	}
 
-	/* Included */
-	.included {
+	.section-anchor {
+		display: block;
+		scroll-margin-top: 2rem;
+	}
+
+	/* What to Expect */
+	.expect {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
 		gap: var(--element-gap);
+		width: 100%;
 	}
 
-	.included-list {
+	.week-list {
 		display: flex;
 		flex-direction: column;
-		gap: 1.25rem;
-		list-style: none;
-		font-family: var(--roslindale);
-		font-size: var(--heading-paragraph);
-		color: var(--text-color);
+		gap: var(--element-gap);
+		width: 100%;
+		max-width: 720px;
 	}
 
-	.included-list li {
+	.week-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		padding-bottom: var(--element-gap);
+		border-bottom: 1px solid var(--fg-light-color);
+	}
+
+	.week-card:last-child {
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+
+	.week-card h3 {
+		color: var(--fg-color);
+		font-size: clamp(2.5rem, 7vw, 4rem);
+		line-height: 1;
+	}
+
+	.week-card h4 {
+		font-family: var(--roslindale);
+		font-size: var(--heading-paragraph);
+		color: var(--fg-color);
+		font-weight: normal;
+	}
+
+	.week-card p {
+		max-width: 620px;
+		line-height: 1.75;
+	}
+
+	.week-emphasis {
+		margin-top: 0.5rem;
+	}
+
+	.program-included,
+	.bonus-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		padding-top: var(--small-gap);
+	}
+
+	.program-included h3,
+	.bonus-card h3 {
+		font-size: clamp(2.5rem, 7vw, 4rem);
+		line-height: 1;
+	}
+
+	.included-throughout-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		list-style: none;
+		color: var(--text-color);
+		font-size: var(--paragraph);
+	}
+
+	.included-throughout-list li {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 0.75rem;
 	}
 
-	.included-list li::before {
+	.included-throughout-list li::before {
 		content: "";
 		display: inline-block;
 		width: 8px;
@@ -186,28 +330,17 @@ const includedItems = [
 		flex-shrink: 0;
 	}
 
-	/* Why section */
-	.why {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		gap: var(--small-gap);
+	.section-label {
+		font-family: var(--gt-walsheim);
+		font-size: 1rem;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: var(--text-color);
 	}
 
-	.why h2 {
-		margin-bottom: var(--small-gap);
-	}
-
-	.why-content {
-		display: flex;
-		flex-direction: column;
-		gap: var(--small-gap);
-		max-width: 600px;
-	}
-
-	.why-content p {
-		line-height: 1.8;
+	.bonus-card p:not(.section-label) {
+		max-width: 620px;
+		line-height: 1.75;
 	}
 
 	/* Details band */

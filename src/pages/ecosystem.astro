@@ -1,4 +1,5 @@
 ---
+import EcosystemWaitlistForm from "@/components/EcosystemWaitlistForm.astro";
 import Layout from "@/layouts/Layout.astro";
 
 const insideItems = [
@@ -14,17 +15,30 @@ const whoItsForItems = [
 	"deeper connection",
 	"emotional support",
 	"nervous system care",
-	"healing-centered spaces",
 	"intentional community",
 	"honest growth",
 ];
+
 ---
 
 <Layout title="The Ecosystem | Well-Vie">
 	<main>
-		<section class="hero slide">
-			<span class="hero-label">Introducing</span>
-			<h1>The Ecosystem</h1>
+		<section class="opening slide">
+			<div class="opening-inner">
+				<h1>You Don't Have To Carry Everything Alone.</h1>
+				<p>
+					A supportive space for women to breathe, reconnect, and feel held
+					through community, nervous system support, retreats, and honest
+					conversation.
+				</p>
+			</div>
+		</section>
+
+		<hr class="divider" />
+
+		<section class="intro slide">
+			<span class="section-label">Introducing</span>
+			<h2>The Ecosystem</h2>
 			<p class="subtitle">
 				A supportive community for women seeking deeper connection, nervous
 				system support, healing, and growth.
@@ -35,7 +49,6 @@ const whoItsForItems = [
 				can reconnect to themselves and feel supported through the fullness of
 				life.
 			</p>
-			<a href="#" class="btn disabled">Explore Membership</a>
 		</section>
 
 		<hr class="divider" />
@@ -44,19 +57,28 @@ const whoItsForItems = [
 			<h2>Why "The Ecosystem"?</h2>
 			<div class="why-content">
 				<p>
-					I chose the word ecosystem because ecosystems are built on connection
-					- life supporting life.
+					We chose the word ecosystem because ecosystems are built on connection
+					— life supporting life.
 				</p>
 				<p>
 					Healing, growth, and regulation don't happen in isolation. They happen
-					through community, shared experiences, safe spaces, and meaningful
-					connection.
+					through shared experiences, safe spaces, and meaningful connection.
 				</p>
 				<p>
-					The Ecosystem is designed to feel that way - a space where women can be
-					supported as whole humans while navigating the fullness of life.
+					The Ecosystem is a space where women can feel supported, connected,
+					and grow together.
 				</p>
 			</div>
+		</section>
+
+		<hr class="divider" />
+
+		<section class="who slide">
+			<h2>Who It's For</h2>
+			<p class="who-intro">For women craving:</p>
+			<ul class="who-list">
+				{whoItsForItems.map((item) => <li>{item}</li>)}
+			</ul>
 		</section>
 
 		<hr class="divider" />
@@ -70,66 +92,53 @@ const whoItsForItems = [
 
 		<hr class="divider" />
 
-		<section class="who slide">
-			<h2>Who It's For</h2>
-			<p class="who-intro">For women craving:</p>
-			<ul class="who-list">
-				{whoItsForItems.map((item) => <li>{item}</li>)}
-			</ul>
-		</section>
-
-		<section class="closing slide">
-			<div class="closing-inner">
-				<h2>You Don't Have To Carry Everything Alone.</h2>
-				<p>
-					Whether you're new to this work or already on your healing journey, The
-					Ecosystem offers support, connection, and space to return to yourself
-					alongside women doing the same.
-				</p>
-				<a href="#" class="btn disabled">Join The Ecosystem</a>
-			</div>
-		</section>
-
 		<section class="journey slide">
-			<h2>The Path</h2>
+			<h2>The Ecosystem</h2>
 			<ol class="timeline">
 				<li class="timeline-item">
 					<div class="timeline-marker"></div>
 					<div class="timeline-content">
-						<h3>The Reset</h3>
+						<h3>Path I</h3>
 						<p>
-							A 30-day experience designed to help women slow down, reconnect to
-							themselves, and experience the heart of The Ecosystem through
-							breathwork, nervous system support, community, and honest
-							conversation.
+							A 3-week experience designed to help women slow down, reconnect,
+							and build a foundation through breathwork, nervous system support,
+							and community.
 						</p>
-						<a href="/reset" class="btn">Learn About The Reset</a>
+						<a href="/reset" class="btn">Begin Here</a>
+					</div>
+				</li>
+				<li id="path-ii" class="timeline-item">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<h3>Path II</h3>
+						<p>
+							A 3-month container for women ready to go deeper—supported by
+							breathwork, expert guidance, and community to create lasting
+							transformation.
+						</p>
+						<p class="timeline-meta">
+							Opening January 2027
+						</p>
+						<a href="#path-ii-waitlist" class="btn">Join the Waitlist</a>
 					</div>
 				</li>
 				<li class="timeline-item">
 					<div class="timeline-marker"></div>
 					<div class="timeline-content">
-						<h3>The Ecosystem</h3>
+						<h3>Path III</h3>
 						<p>
-							A deeper ongoing space for women wanting continued support,
-							connection, breathwork, conversations, guest experts, and
-							intentional growth in community.
-						</p>
-					</div>
-				</li>
-				<li class="timeline-item">
-					<div class="timeline-marker"></div>
-					<div class="timeline-content">
-						<h3>Well-Vie Retreats</h3>
-						<p>
-							In-person experiences centered around breathwork, restoration,
-							connection, embodiment, and community.
+							Immersive retreats designed for restoration, connection, and
+							embodied growth.
 						</p>
 						<a href="/retreats" class="btn">Explore Retreats</a>
 					</div>
 				</li>
 			</ol>
 		</section>
+
+		<hr class="divider" />
+
+		<EcosystemWaitlistForm />
 	</main>
 </Layout>
 
@@ -139,15 +148,51 @@ const whoItsForItems = [
 		padding: 0 2rem;
 		padding-top: var(--section-gap);
 		padding-bottom: var(--section-gap);
-		max-width: 900px;
+		max-width: 1100px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: var(--section-gap);
 	}
 
-	/* Hero */
-	.hero {
+	main > section {
+		width: 100%;
+	}
+
+	/* Opening */
+	.opening {
+		width: calc(100% + 4rem);
+		margin-inline: -2rem;
+		background-color: var(--fg-color);
+		border-radius: var(--border-radius);
+		padding: calc(var(--section-gap) * 0.75) 2rem;
+	}
+
+	.opening-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: var(--small-gap);
+		max-width: 720px;
+		margin: 0 auto;
+	}
+
+	.opening h1 {
+		color: var(--bg-color);
+		font-size: clamp(3.5rem, 6.2vw, 6rem);
+		line-height: 1;
+		max-width: 760px;
+	}
+
+	.opening p {
+		line-height: 1.8;
+		color: var(--bg-color);
+		max-width: 660px;
+	}
+
+	/* Intro */
+	.intro {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -156,7 +201,7 @@ const whoItsForItems = [
 		padding-block: var(--element-gap);
 	}
 
-	.hero-label {
+	.section-label {
 		font-family: var(--gt-walsheim);
 		font-size: var(--paragraph);
 		letter-spacing: 0.15em;
@@ -164,13 +209,13 @@ const whoItsForItems = [
 		color: var(--text-color);
 	}
 
-	.hero h1 {
+	.intro h2 {
 		font-size: var(--subheading);
 		color: var(--fg-color);
 		margin-top: 0.25rem;
 	}
 
-	.hero .subtitle {
+	.intro .subtitle {
 		font-family: var(--roslindale);
 		font-size: var(--heading-paragraph);
 		color: var(--fg-color);
@@ -178,13 +223,9 @@ const whoItsForItems = [
 		margin-top: var(--small-gap);
 	}
 
-	.hero > p:not(.subtitle) {
+	.intro > p:not(.subtitle) {
 		max-width: 580px;
 		line-height: 1.8;
-	}
-
-	.hero .btn {
-		margin-top: var(--element-gap);
 	}
 
 	/* Dividers */
@@ -286,46 +327,6 @@ const whoItsForItems = [
 		flex-shrink: 0;
 	}
 
-	/* Closing section */
-	.closing {
-		width: calc(100% + 4rem);
-		margin-inline: -2rem;
-		background-color: var(--fg-color);
-		border-radius: var(--border-radius);
-		padding: var(--section-gap) 2rem;
-	}
-
-	.closing-inner {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		gap: var(--small-gap);
-		max-width: 650px;
-		margin: 0 auto;
-	}
-
-	.closing h2 {
-		color: var(--bg-color);
-	}
-
-	.closing p {
-		line-height: 1.8;
-		color: var(--bg-color);
-	}
-
-	.closing .btn {
-		margin-top: var(--element-gap);
-		border-color: var(--bg-color);
-		color: var(--bg-color);
-		background-color: transparent;
-	}
-
-	.closing .btn:hover {
-		background-color: var(--bg-color);
-		color: var(--fg-color);
-	}
-
 	/* Journey section */
 	.journey {
 		display: flex;
@@ -393,6 +394,11 @@ const whoItsForItems = [
 	.timeline-content p {
 		font-size: var(--paragraph);
 		line-height: 1.7;
+	}
+
+	.timeline-content .timeline-meta {
+		font-weight: 500;
+		color: var(--fg-color);
 	}
 
 	.timeline-content .btn {

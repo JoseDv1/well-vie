@@ -1,0 +1,55 @@
+---
+import ResetApplicationForm from "@/components/ResetApplicationForm.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Reset Application | Well-Vie">
+	<main>
+		<section class="application-intro slide">
+			<span class="section-label">Path I</span>
+			<h1>Reset Application</h1>
+			<p>
+				This application is for women interested in joining the next Reset
+				cohort. We intentionally keep our spaces intimate so every woman feels
+				supported and aligned with the experience.
+			</p>
+		</section>
+
+		<ResetApplicationForm />
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--section-gap);
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: var(--section-gap) 2rem;
+	}
+
+	.application-intro {
+		max-width: 760px;
+		text-align: center;
+	}
+
+	.section-label {
+		font-family: var(--gt-walsheim);
+		font-size: var(--paragraph);
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: var(--text-color);
+	}
+
+	h1 {
+		margin-top: 0.5rem;
+		color: var(--fg-color);
+	}
+
+	p {
+		margin-top: var(--small-gap);
+		line-height: 1.8;
+	}
+</style>
