@@ -98,6 +98,12 @@ const heroClass = containedTitle ? "hero contained-title" : "hero";
 		margin: 0;
 	}
 
+	@media (width >= 900px) and (height <= 760px) {
+		:global(html.is-safari) h1 {
+			transform: translateY(-14%);
+		}
+	}
+
 	@media (width < 500px) {
 		div.hero.contained-title h1 {
 			top: var(--textY);
