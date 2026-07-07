@@ -27,7 +27,7 @@ test("scroll reveal animation uses fixed offset and early trigger", () => {
 	assert.match(layoutSource, /observer\.unobserve\(entry\.target\)/);
 });
 
-test("layout marks Safari for browser-specific hero fitting", () => {
-	assert.match(layoutSource, /navigator\.userAgent/);
-	assert.match(layoutSource, /document\.documentElement\.classList\.add\("is-safari"\)/);
+test("layout does not rely on Safari user-agent sniffing", () => {
+	assert.doesNotMatch(layoutSource, /navigator\.userAgent/);
+	assert.doesNotMatch(layoutSource, /document\.documentElement\.classList\.add\("is-safari"\)/);
 });

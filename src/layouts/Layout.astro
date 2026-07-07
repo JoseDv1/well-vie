@@ -25,11 +25,6 @@ const { title } = Astro.props;
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
 			rel="stylesheet"
 		/>
-		<script is:inline>
-			if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
-				document.documentElement.classList.add("is-safari");
-			}
-		</script>
 		<title>{title}</title>
 	</head>
 	<body>

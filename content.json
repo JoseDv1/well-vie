@@ -1,7 +1,7 @@
 {
   "pages": {
     "home": {
-      "title": "Your Life, <br> Well Lived",
+      "title": "Your Life, <br> Well&nbsp;Lived",
       "mainArticle": {
         "title": "Welcome to Well-Vie",
         "content": [
@@ -35,7 +35,7 @@
       ]
     },
     "about": {
-      "title": "Bonjour! <br> I’m McKenzie.",
+      "title": "Bonjour! <br> I’m&nbsp;McKenzie.",
       "contentTitle": "About Well-Vie",
       "paragraphs": [
         "Well-Vie began as a space rooted in wellness, intentional living, and creating meaningful experiences for women. Over time, life reshaped the vision behind it completely.",

@@ -19,12 +19,11 @@ test("hero supports right-anchored contained title placement", () => {
 
 test("regular heroes keep natural line spacing and use a short laptop font cap", () => {
 	assert.doesNotMatch(source, /line-height:\s*0\.92/);
+	assert.match(source, /width:\s*max-content/);
+	assert.match(source, /@media \(width <= 768px\)\s*{[^}]*width: auto;/s);
 	assert.match(
 		source,
 		/@media \(width >= 900px\) and \(height <= 760px\)\s*{[^}]*font-size: clamp\(5\.25rem, 7\.2vw, var\(--heading\)\);/s,
 	);
-	assert.match(
-		source,
-		/@media \(width >= 900px\) and \(height <= 760px\)\s*{[^}]*:global\(html\.is-safari\) h1\s*{[^}]*font-size: clamp\(4\.5rem, 6\.4vw, 5\.9rem\);[^}]*transform: translateY\(-8%\);/s,
-	);
+	assert.doesNotMatch(source, /is-safari/);
 });
