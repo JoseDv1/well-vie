@@ -82,6 +82,10 @@ const heroClass = containedTitle ? "hero contained-title" : "hero";
 			right: var(--textRight);
 		}
 
+		@media (width >= 900px) and (height <= 760px) {
+			font-size: clamp(5.25rem, 7.2vw, var(--heading));
+		}
+
 		@media (width < 500px) {
 			top: unset;
 			bottom: 1.25rem;

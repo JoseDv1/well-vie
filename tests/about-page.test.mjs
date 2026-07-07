@@ -15,3 +15,7 @@ test("about page includes McKenzie's signoff after the bio", () => {
 	assert.match(source, /Bisous, McKenzie/);
 	assert.match(source, /Founder of Well-Vie/);
 });
+
+test("about hero title is positioned safely on laptop-height viewports", () => {
+	assert.doesNotMatch(source, /pcTextPosition={\["50%", "46%"\]}/);
+});

@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const content = JSON.parse(readFileSync(resolve(root, "content.json"), "utf8"));
+const source = readFileSync(resolve(root, "src/pages/index.astro"), "utf8");
 
 test("home page uses the updated ecosystem summary", () => {
 	const ecosystemArticle = content.pages.home.articles.find(
@@ -19,4 +20,8 @@ test("home page uses the updated ecosystem summary", () => {
 	);
 	assert.doesNotMatch(ecosystemArticle.content, /desiring deeper connection/);
 	assert.doesNotMatch(ecosystemArticle.content, /honest connection|Through community/);
+});
+
+test("home hero title is positioned safely on laptop-height viewports", () => {
+	assert.match(source, /pcTextPosition={\["60%", "50%"\]}/);
 });
