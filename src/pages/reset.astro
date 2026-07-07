@@ -21,11 +21,10 @@ import Layout from "@/layouts/Layout.astro";
 
 		<hr class="divider" />
 
-		<span id="what-to-expect" class="section-anchor" aria-hidden="true"></span>
-		<section class="expect slide">
-			<h2>What to Expect</h2>
+		<section id="what-to-expect" class="expect">
+			<h2 class="slide">What to Expect</h2>
 			<div class="week-list">
-				<article class="week-card">
+				<article class="week-card slide">
 					<h3>Week One</h3>
 					<h4>Connect &amp; Set Intentions</h4>
 					<p>
@@ -51,7 +50,7 @@ import Layout from "@/layouts/Layout.astro";
 					</p>
 				</article>
 
-				<article class="week-card">
+				<article class="week-card slide">
 					<h3>Week Two</h3>
 					<h4>Deepen &amp; Receive Support</h4>
 					<p>Our second week is designed to help you go deeper.</p>
@@ -74,7 +73,7 @@ import Layout from "@/layouts/Layout.astro";
 					</p>
 				</article>
 
-				<article class="week-card">
+				<article class="week-card slide">
 					<h3>Week Three</h3>
 					<h4>Reconnect &amp; Reset</h4>
 					<p>
@@ -98,7 +97,7 @@ import Layout from "@/layouts/Layout.astro";
 					</p>
 				</article>
 
-				<article class="program-included">
+				<article class="program-included slide">
 					<h3>Included Throughout</h3>
 					<ul class="included-throughout-list">
 						<li>Three LIVE 90-minute sessions</li>
@@ -111,7 +110,7 @@ import Layout from "@/layouts/Layout.astro";
 					</ul>
 				</article>
 
-				<article class="bonus-card">
+				<article class="bonus-card slide">
 					<p class="section-label">Bonus Feature</p>
 					<h3>Private WhatsApp Community</h3>
 					<p>
@@ -178,7 +177,7 @@ import Layout from "@/layouts/Layout.astro";
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: var(--section-gap);
+		gap: calc(var(--section-gap) * 0.82);
 	}
 
 	/* Hero */
@@ -230,25 +229,21 @@ import Layout from "@/layouts/Layout.astro";
 		margin: 0;
 	}
 
-	.section-anchor {
-		display: block;
-		scroll-margin-top: 2rem;
-	}
-
 	/* What to Expect */
 	.expect {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		gap: var(--element-gap);
+		gap: calc(var(--element-gap) * 0.9);
 		width: 100%;
+		scroll-margin-top: 2rem;
 	}
 
 	.week-list {
 		display: flex;
 		flex-direction: column;
-		gap: var(--element-gap);
+		gap: calc(var(--element-gap) * 1.45);
 		width: 100%;
 		max-width: 720px;
 	}
@@ -258,7 +253,7 @@ import Layout from "@/layouts/Layout.astro";
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-		padding-bottom: var(--element-gap);
+		padding-bottom: calc(var(--element-gap) * 1.45);
 		border-bottom: 1px solid var(--fg-light-color);
 	}
 
@@ -295,7 +290,7 @@ import Layout from "@/layouts/Layout.astro";
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-		padding-top: var(--small-gap);
+		padding-top: calc(var(--element-gap) * 0.35);
 	}
 
 	.program-included h3,

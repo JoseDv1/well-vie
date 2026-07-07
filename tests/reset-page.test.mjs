@@ -23,7 +23,7 @@ test("reset page reflects the updated offer details", () => {
 });
 
 test("reset page replaces whats included with the three week program layout", () => {
-	const whatToExpectIndex = source.indexOf("<h2>What to Expect</h2>");
+	const whatToExpectIndex = source.indexOf('<h2 class="slide">What to Expect</h2>');
 	const weekOneIndex = source.indexOf("<h3>Week One</h3>");
 	const weekTwoIndex = source.indexOf("<h3>Week Two</h3>");
 	const weekThreeIndex = source.indexOf("<h3>Week Three</h3>");
@@ -83,6 +83,8 @@ test("reset page replaces whats included with the three week program layout", ()
 	assert.match(source, /Replay access available if life gets in the way/);
 	assert.match(source, /An intimate group setting \(limited to 15 women\)/);
 	assert.match(source, /<p class="section-label">Bonus Feature<\/p>/);
+	assert.match(source, /\.week-list\s*{[^}]*gap: calc\(var\(--element-gap\) \* 1\.45\);/s);
+	assert.match(source, /\.week-card\s*{[^}]*padding-bottom: calc\(var\(--element-gap\) \* 1\.45\);/s);
 	assert.match(
 		normalizedSource,
 		/Throughout the three weeks, you'll have access to a private WhatsApp group with the women inside your cohort\./,
@@ -118,11 +120,10 @@ test("reset page sends interested women to the reset application", () => {
 		source,
 		/<section class="hero slide">(?:(?!<\/section>)[\s\S])*<a href="#what-to-expect" class="btn">Begin Your Journey<\/a>/,
 	);
-	assert.match(
-		source,
-		/<span id="what-to-expect" class="section-anchor" aria-hidden="true"><\/span>/,
-	);
-	assert.match(source, /<section class="expect slide">/);
+	assert.doesNotMatch(source, /class="section-anchor"/);
+	assert.match(source, /<section id="what-to-expect" class="expect">/);
+	assert.doesNotMatch(source, /<section class="expect slide">/);
+	assert.match(source, /<h2 class="slide">What to Expect<\/h2>/);
 	assert.match(
 		source,
 		/<section class="details slide">(?:(?!<\/section>)[\s\S])*<a href="\/reset\/apply\/" class="btn">Apply<\/a>/,
