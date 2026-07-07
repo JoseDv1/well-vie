@@ -25,6 +25,6 @@ test("regular heroes keep natural line spacing and use a short laptop font cap",
 	);
 	assert.match(
 		source,
-		/@media \(width >= 900px\) and \(height <= 760px\)\s*{[^}]*:global\(html\.is-safari\) h1\s*{[^}]*transform: translateY\(-14%\);/s,
+		/@media \(width >= 900px\) and \(height <= 760px\)\s*{[^}]*:global\(html\.is-safari\) h1\s*{[^}]*font-size: clamp\(4\.5rem, 6\.4vw, 5\.9rem\);[^}]*transform: translateY\(-8%\);/s,
 	);
 });

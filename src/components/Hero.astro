@@ -100,7 +100,8 @@ const heroClass = containedTitle ? "hero contained-title" : "hero";
 
 	@media (width >= 900px) and (height <= 760px) {
 		:global(html.is-safari) h1 {
-			transform: translateY(-14%);
+			font-size: clamp(4.5rem, 6.4vw, 5.9rem);
+			transform: translateY(-8%);
 		}
 	}
 
