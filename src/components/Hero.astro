@@ -73,6 +73,7 @@ const heroClass = containedTitle ? "hero contained-title" : "hero";
 		right: var(--pcTextRight);
 		color: var(--bg-color);
 		z-index: 100;
+		width: max-content;
 		max-width: 700px;
 		text-shadow: var(--textShadow);
 
@@ -80,6 +81,7 @@ const heroClass = containedTitle ? "hero contained-title" : "hero";
 			top: var(--textY);
 			left: var(--textX);
 			right: var(--textRight);
+			width: auto;
 		}
 
 		@media (width >= 900px) and (height <= 760px) {
@@ -96,13 +98,6 @@ const heroClass = containedTitle ? "hero contained-title" : "hero";
 
 	div.hero.contained-title h1 {
 		margin: 0;
-	}
-
-	@media (width >= 900px) and (height <= 760px) {
-		:global(html.is-safari) h1 {
-			font-size: clamp(4.5rem, 6.4vw, 5.9rem);
-			transform: translateY(-8%);
-		}
 	}
 
 	@media (width < 500px) {

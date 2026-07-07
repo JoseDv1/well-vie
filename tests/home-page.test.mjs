@@ -25,3 +25,8 @@ test("home page uses the updated ecosystem summary", () => {
 test("home hero title is positioned safely on laptop-height viewports", () => {
 	assert.match(source, /pcTextPosition={\["60%", "50%"\]}/);
 });
+
+test("home hero keeps the second title line together", () => {
+	assert.equal(content.pages.home.title, "Your Life, <br> Well&nbsp;Lived");
+	assert.doesNotMatch(content.pages.home.title, /Well Lived/);
+});

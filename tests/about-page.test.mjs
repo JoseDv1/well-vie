@@ -5,6 +5,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const content = JSON.parse(readFileSync(resolve(root, "content.json"), "utf8"));
 const source = readFileSync(resolve(root, "src/pages/about.astro"), "utf8");
 
 test("about page includes McKenzie's signoff after the bio", () => {
@@ -18,4 +19,9 @@ test("about page includes McKenzie's signoff after the bio", () => {
 
 test("about hero title is positioned safely on laptop-height viewports", () => {
 	assert.doesNotMatch(source, /pcTextPosition={\["50%", "46%"\]}/);
+});
+
+test("about hero keeps the second title line together", () => {
+	assert.equal(content.pages.about.title, "Bonjour! <br> I’m&nbsp;McKenzie.");
+	assert.doesNotMatch(content.pages.about.title, /I’m McKenzie/);
 });
