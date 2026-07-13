@@ -64,9 +64,13 @@ test("reset page presents the three week program inside The Reset", () => {
 	assert.match(source, /iconPaths\.map\(\(path\) => <path d=\{path\} \/>\)/);
 	assert.match(
 		source,
-		/\.portal-grid\s*\{[^}]*grid-template-columns: repeat\(3, minmax\(0, 1fr\)\);/s,
+		/\.portal-grid\s*\{[^}]*grid-template-columns: repeat\(3, minmax\(0, 1fr\)\);[^}]*gap: 0;[^}]*border-top: 1px solid var\(--fg-color\);[^}]*border-left: 1px solid var\(--fg-color\);/s,
 	);
-	assert.match(source, /\.portal-grid li\s*\{[^}]*border: 1px solid var\(--fg-color\);/s);
+	assert.match(
+		source,
+		/\.portal-grid li\s*\{[^}]*border-right: 1px solid var\(--fg-color\);[^}]*border-bottom: 1px solid var\(--fg-color\);[^}]*border-radius: 0;/s,
+	);
+	assert.doesNotMatch(source, /\.portal-grid li\s*\{[^}]*border: 1px solid/s);
 	assert.match(source, /<h4>Connect &amp; Set Intentions<\/h4>/);
 	assert.match(source, /<h4>Deepen &amp; Receive Support<\/h4>/);
 	assert.match(source, /<h4>Reconnect &amp; Reset<\/h4>/);
