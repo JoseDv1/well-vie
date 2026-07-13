@@ -1,5 +1,62 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+const portalItems = [
+	{
+		label: "Community Calendar",
+		iconPaths: [
+			"M6 2v4M18 2v4M3 9h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z",
+		],
+	},
+	{
+		label: "Live Workshop Access",
+		iconPaths: [
+			"M15 10l5-3v10l-5-3M4 6h9a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z",
+		],
+	},
+	{
+		label: "Session Replays",
+		iconPaths: [
+			"M4.05 11a8 8 0 1 1 2.3 6.65M4 5v6h6M10 9l5 3-5 3Z",
+		],
+	},
+	{
+		label: "Guided Breathwork Library",
+		iconPaths: [
+			"M3 8h10a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7a3 3 0 1 1-3 3",
+		],
+	},
+	{
+		label: "Body Scan Meditations",
+		iconPaths: [
+			"M12 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM8 22l1-7-3-3 2-4h8l2 4-3 3 1 7M9 8l3 5 3-5",
+		],
+	},
+	{
+		label: "Daily Intentions & Affirmations",
+		iconPaths: [
+			"M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6ZM18 1v4M16 3h4",
+		],
+	},
+	{
+		label: "Journal Prompts & Reflection Exercises",
+		iconPaths: [
+			"M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2V3ZM5 7H3M5 12H3M5 17H3M9 8h6M9 12h6M9 16h4",
+		],
+	},
+	{
+		label: "Community Space",
+		iconPaths: [
+			"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75",
+		],
+	},
+	{
+		label: "Program Resources",
+		iconPaths: [
+			"M3 7h6l2 2h10v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7ZM3 7V5a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v2",
+		],
+	},
+];
 ---
 
 <Layout title="The Reset | Well-Vie">
@@ -12,9 +69,12 @@ import Layout from "@/layouts/Layout.astro";
 				and intentional community.
 			</p>
 			<p>
-				A 3 week experience designed to help women slow down, reflect,
+				A 3-week experience designed to help women slow down, reflect,
 				reconnect to themselves, and experience breathwork, nervous system
 				support, community, and honest conversation.
+			</p>
+			<p class="program-format">
+				Live online &bull; Open worldwide &bull; Replays included
 			</p>
 			<a href="#what-to-expect" class="btn">Begin Your Journey</a>
 		</section>
@@ -22,7 +82,7 @@ import Layout from "@/layouts/Layout.astro";
 		<hr class="divider" />
 
 		<section id="what-to-expect" class="expect">
-			<h2 class="slide">What to Expect</h2>
+			<h2 class="slide">Inside The Reset</h2>
 			<div class="week-list">
 				<article class="week-card slide">
 					<h3>Week One</h3>
@@ -95,6 +155,32 @@ import Layout from "@/layouts/Layout.astro";
 						This week is about honoring how far you've come and moving forward
 						with greater clarity, connection, and self-awareness.
 					</p>
+				</article>
+
+				<article class="program-included portal-included slide">
+					<h3>Your Well-Vie Portal</h3>
+					<p>
+						Throughout The Reset, you'll have access to your private Well-Vie
+						member portal. A calm, organized space where everything lives in one
+						place. It's designed to support you between our live sessions and give
+						you a space to return to whenever you need it.
+					</p>
+					<ul class="portal-grid">
+						{
+							portalItems.map(({ label, iconPaths }) => (
+								<li>
+									<svg
+										viewBox="0 0 24 24"
+										aria-hidden="true"
+										focusable="false"
+									>
+										{iconPaths.map((path) => <path d={path} />)}
+									</svg>
+									<span>{label}</span>
+								</li>
+							))
+						}
+					</ul>
 				</article>
 
 				<article class="program-included slide">
@@ -217,6 +303,10 @@ import Layout from "@/layouts/Layout.astro";
 		line-height: 1.8;
 	}
 
+	.hero .program-format {
+		font-weight: 500;
+	}
+
 	.hero .btn {
 		margin-top: var(--element-gap);
 	}
@@ -229,7 +319,7 @@ import Layout from "@/layouts/Layout.astro";
 		margin: 0;
 	}
 
-	/* What to Expect */
+	/* Inside The Reset */
 	.expect {
 		display: flex;
 		flex-direction: column;
@@ -297,6 +387,51 @@ import Layout from "@/layouts/Layout.astro";
 	.bonus-card h3 {
 		font-size: clamp(2.5rem, 7vw, 4rem);
 		line-height: 1;
+	}
+
+	.portal-included p {
+		max-width: 620px;
+		line-height: 1.75;
+	}
+
+	.portal-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0;
+		width: 100%;
+		margin-top: 0.75rem;
+		padding: 0;
+		border-top: 1px solid var(--fg-color);
+		border-left: 1px solid var(--fg-color);
+		list-style: none;
+	}
+
+	.portal-grid li {
+		display: flex;
+		min-height: 125px;
+		padding: 1.1rem 0.75rem;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.65rem;
+		border-right: 1px solid var(--fg-color);
+		border-bottom: 1px solid var(--fg-color);
+		border-radius: 0;
+		color: var(--text-color);
+		font-size: 0.95rem;
+		line-height: 1.35;
+		text-align: center;
+	}
+
+	.portal-grid svg {
+		width: 27px;
+		height: 27px;
+		color: var(--fg-color);
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.5;
+		stroke-linecap: round;
+		stroke-linejoin: round;
 	}
 
 	.included-throughout-list {
@@ -422,5 +557,15 @@ import Layout from "@/layouts/Layout.astro";
 
 	.closing .btn {
 		margin-top: var(--element-gap);
+	}
+
+	@media (max-width: 680px) {
+		.portal-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.portal-grid li {
+			min-height: 105px;
+		}
 	}
 </style>
