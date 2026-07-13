@@ -52,13 +52,21 @@ test("reset page presents the three week program inside The Reset", () => {
 		"Session Replays",
 		"Guided Breathwork Library",
 		"Body Scan Meditations",
-		"Daily Intentions &amp; Affirmations",
-		"Journal Prompts &amp; Reflection Exercises",
+		"Daily Intentions & Affirmations",
+		"Journal Prompts & Reflection Exercises",
 		"Community Space",
 		"Program Resources",
 	]) {
-		assert.match(source, new RegExp(`<li>${portalItem}</li>`));
+		assert.match(source, new RegExp(`label: "${portalItem}"`));
 	}
+	assert.match(source, /<ul class="portal-grid">/);
+	assert.match(source, /portalItems\.map\(\(\{ label, iconPaths \}\) =>/);
+	assert.match(source, /iconPaths\.map\(\(path\) => <path d=\{path\} \/>\)/);
+	assert.match(
+		source,
+		/\.portal-grid\s*\{[^}]*grid-template-columns: repeat\(3, minmax\(0, 1fr\)\);/s,
+	);
+	assert.match(source, /\.portal-grid li\s*\{[^}]*border: 1px solid var\(--fg-color\);/s);
 	assert.match(source, /<h4>Connect &amp; Set Intentions<\/h4>/);
 	assert.match(source, /<h4>Deepen &amp; Receive Support<\/h4>/);
 	assert.match(source, /<h4>Reconnect &amp; Reset<\/h4>/);
