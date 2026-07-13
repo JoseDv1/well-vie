@@ -12,7 +12,11 @@ test("reset page reflects the updated offer details", () => {
 	assert.match(source, /<span class="hero-label">Path 1<\/span>/);
 	assert.match(
 		normalizedSource,
-		/A 3 week experience designed to help women slow down, reflect, reconnect to themselves, and experience breathwork, nervous system support, community, and honest conversation\./,
+		/A 3-week experience designed to help women slow down, reflect, reconnect to themselves, and experience breathwork, nervous system support, community, and honest conversation\./,
+	);
+	assert.match(
+		normalizedSource,
+		/Live online &bull; Open worldwide &bull; Replays included/,
 	);
 	assert.doesNotMatch(source, /A 30-Day Experience|A 30-day experience/);
 	assert.doesNotMatch(source, /Sunday sessions|Week 2 & 4|WhatsApp community check-ins/);
@@ -22,20 +26,39 @@ test("reset page reflects the updated offer details", () => {
 	assert.doesNotMatch(source, /\$333 \/|€333|â‚¬333|12 women/);
 });
 
-test("reset page replaces whats included with the three week program layout", () => {
-	const whatToExpectIndex = source.indexOf('<h2 class="slide">What to Expect</h2>');
+test("reset page presents the three week program inside The Reset", () => {
+	const insideResetIndex = source.indexOf('<h2 class="slide">Inside The Reset</h2>');
 	const weekOneIndex = source.indexOf("<h3>Week One</h3>");
 	const weekTwoIndex = source.indexOf("<h3>Week Two</h3>");
 	const weekThreeIndex = source.indexOf("<h3>Week Three</h3>");
+	const portalIndex = source.indexOf("<h3>Your Well-Vie Portal</h3>");
 	const includedIndex = source.indexOf("<h3>Included Throughout</h3>");
 	const bonusIndex = source.indexOf("<h3>Private WhatsApp Community</h3>");
 
-	assert.ok(whatToExpectIndex > -1, "expected What to Expect section heading");
-	assert.ok(weekOneIndex > whatToExpectIndex, "expected Week One after heading");
+	assert.ok(insideResetIndex > -1, "expected Inside The Reset section heading");
+	assert.ok(weekOneIndex > insideResetIndex, "expected Week One after heading");
 	assert.ok(weekTwoIndex > weekOneIndex, "expected Week Two after Week One");
 	assert.ok(weekThreeIndex > weekTwoIndex, "expected Week Three after Week Two");
-	assert.ok(includedIndex > weekThreeIndex, "expected Included Throughout after Week Three");
+	assert.ok(portalIndex > weekThreeIndex, "expected portal after Week Three");
+	assert.ok(includedIndex > portalIndex, "expected Included Throughout after portal");
 	assert.ok(bonusIndex > includedIndex, "expected WhatsApp community after included list");
+	assert.match(
+		normalizedSource,
+		/Throughout The Reset, you'll have access to your private Well-Vie member portal\. A calm, organized space where everything lives in one place\. It's designed to support you between our live sessions and give you a space to return to whenever you need it\./,
+	);
+	for (const portalItem of [
+		"Community Calendar",
+		"Live Workshop Access",
+		"Session Replays",
+		"Guided Breathwork Library",
+		"Body Scan Meditations",
+		"Daily Intentions &amp; Affirmations",
+		"Journal Prompts &amp; Reflection Exercises",
+		"Community Space",
+		"Program Resources",
+	]) {
+		assert.match(source, new RegExp(`<li>${portalItem}</li>`));
+	}
 	assert.match(source, /<h4>Connect &amp; Set Intentions<\/h4>/);
 	assert.match(source, /<h4>Deepen &amp; Receive Support<\/h4>/);
 	assert.match(source, /<h4>Reconnect &amp; Reset<\/h4>/);
@@ -97,7 +120,7 @@ test("reset page replaces whats included with the three week program layout", ()
 		normalizedSource,
 		/Some of the most meaningful moments happen between the calls\./,
 	);
-	assert.doesNotMatch(source, /What's Included/);
+	assert.doesNotMatch(source, /What's Included|What to Expect/);
 	assert.doesNotMatch(source, /includedItems|included-list/);
 	assert.doesNotMatch(source, /One 60-minute coaching session|Replay access included/);
 });
@@ -123,7 +146,7 @@ test("reset page sends interested women to the reset application", () => {
 	assert.doesNotMatch(source, /class="section-anchor"/);
 	assert.match(source, /<section id="what-to-expect" class="expect">/);
 	assert.doesNotMatch(source, /<section class="expect slide">/);
-	assert.match(source, /<h2 class="slide">What to Expect<\/h2>/);
+	assert.match(source, /<h2 class="slide">Inside The Reset<\/h2>/);
 	assert.match(
 		source,
 		/<section class="details slide">(?:(?!<\/section>)[\s\S])*<a href="\/reset\/apply\/" class="btn">Apply<\/a>/,
