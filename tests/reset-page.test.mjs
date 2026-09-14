@@ -20,7 +20,7 @@ test("reset page reflects the updated offer details", () => {
 	);
 	assert.doesNotMatch(source, /A 30-Day Experience|A 30-day experience/);
 	assert.doesNotMatch(source, /Sunday sessions|Week 2 & 4|WhatsApp community check-ins/);
-	assert.match(source, /September 15, 2026/);
+	assert.match(source, /October 1, 2026/);
 	assert.match(source, /USD \$333/);
 	assert.match(source, /15 women/);
 	assert.doesNotMatch(source, /\$333 \/|€333|â‚¬333|12 women/);
