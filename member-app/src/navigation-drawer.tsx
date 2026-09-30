@@ -1,4 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
+import {CircleIcon} from './circle-icon';
 import {Menu, X, Leaf, Sparkles, BookOpen, CalendarDays, Users, UserRound} from 'lucide-react';
 
 const destinations = [
@@ -7,7 +8,7 @@ const destinations = [
   {path:'/journal',label:'Journal',icon:BookOpen},
   {path:'/gatherings',label:'Gatherings',icon:CalendarDays},
   {path:'/reset',label:'The Reset',icon:Leaf},
-  {path:'/circle',label:'Circle',icon:Users},
+  {path:'/circle',label:'Circle',icon:CircleIcon},
   {path:'/profile',label:'My profile',icon:UserRound},
 ];
 
