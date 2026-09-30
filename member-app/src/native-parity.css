@@ -177,3 +177,8 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .composer-row .composer-mic[aria-pressed=true] { color: var(--error); background: color-mix(in srgb,var(--error) 10%,var(--surface)); }
 .composer .reply-draft { margin: 5px 10px 6px; padding: 8px 10px; border-radius: 16px; }
 .composer .recording-status { padding: 4px 12px 8px; color: var(--error); }
+.composer:focus-within { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
+.composer .composer-row > textarea:focus-visible { outline: none; }
+.navigation-drawer { touch-action: pan-y; }
+.navigation-drawer:focus { outline: none; }
+.drawer-heading .drawer-close { width: 44px; height: 44px; min-width: 44px; min-height: 44px; padding: 13px; background: none; opacity: .75; }
