@@ -457,3 +457,31 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .profile-review { padding:20px; border-radius:22px; background:color-mix(in srgb,var(--wash) 72%,transparent); margin:0 0 28px; }
 .profile-review h2 { font-size:22px; margin:0 0 8px; }
 .profile-review p { font-size:14px; line-height:1.5; margin:0; }
+.avatar.initials { font-size:22px; color:var(--heading); border:1px solid var(--line); }
+.profile-review h2 { display:flex; align-items:center; gap:8px; }
+.page-eyebrow-row .eyebrow { color:var(--heading); }
+.page-title-row h1,.page-heading > p { text-wrap:pretty; }
+.page-heading > p { margin-top:6.6px; margin-bottom:-5.4px; }
+@supports(corner-shape:superellipse(2)) { .card,.feeling { corner-shape:superellipse(2); } }
+.guide-page .stack { gap:24px; }
+.guide-room.card { display:flex; align-items:flex-start; gap:16px; padding:20px; }
+.guide-icon { width:48px; height:48px; border-radius:50%; display:grid; place-items:center; flex-shrink:0; background:var(--wash); color:var(--heading); }
+.guide-room h2 { font-size:22px; margin:0 0 7px; }
+.guide-room p { font-size:16px; line-height:2.05; margin:0; }
+.guide-room p+p { margin-top:14px; }
+.guide-footer { font-size:14px; line-height:1.5; margin:0; padding:20px; text-align:center; }
+.practice-card strong,.practice-card .muted,.need-card small,.feeling small { text-wrap:pretty; }
+.feature.card { padding:23px; }
+.feature small { line-height:18px; }
+.feature-quote { z-index:1; position:relative; font:bold 46px/28px Georgia,serif; height:28px; margin-top:7px; color:var(--heading); }
+.tonal,.gathering .actions .outline,.week-replay,.member-tools .link-card,.member-tools .settings-links a,.member-tools .settings-links button { border-radius:999px; font:600 15px/1.3 var(--font-system); padding:0 18px; min-height:48px; }
+.gathering.card { padding:19px; }
+.gathering p { margin-top:10px; margin-bottom:-2px; }
+.gathering-schedule small { line-height:18px; }
+.primary:active,.outline:active,.practice-card:active,.feeling:active,.need-card:active { transform:scale(.985); transition:transform 140ms cubic-bezier(.16,1,.3,1); }
+@media(prefers-reduced-motion:reduce) { .primary:active,.outline:active,.practice-card:active,.feeling:active,.need-card:active { transform:none; } }
+.streak-note { margin:0 0 24px; font-size:14px; line-height:1.5; color:var(--heading); }
+.check-in .streak-note { margin:24px 0 0; }
+.page-heading { margin-bottom:26px; }
+.entry-card { padding:21px; }
+.entry-open small { line-height:18px; }
