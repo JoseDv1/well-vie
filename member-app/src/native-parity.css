@@ -213,3 +213,45 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
   .login-page[data-keyboard=true] .cl-card { padding: 8px 0; gap: 16px; }
   .login-page[data-keyboard=true] .cl-form { gap: 16px; }
 }
+
+/* Native practice and reflection geometry, from AudioPracticeView/PracticeRouteView. */
+.app-header .inbox { width: 44px; height: 44px; min-width: 44px; padding: 0; }
+.circle-inbox-icon { flex-shrink: 0; overflow: visible; }
+.detail-header { display: grid; grid-template-columns: 44px minmax(0,1fr) 44px; text-align: center; border-bottom: 0; font: 600 17px/1.3 var(--font-system); color: var(--heading); }
+.detail-back { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); box-shadow: 0 8px 24px #3e4e3510; }
+.full-width { width: 100%; }
+.audio-practice { width: 100%; max-width: 560px; margin: auto; padding: 24px 12px 36px; text-align: center; }
+.audio-practice-copy .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 2.8px; }
+.audio-practice-copy h1 { max-width: 330px; margin: 12px auto 0; font-size: 48px; line-height: .98; white-space: pre-line; }
+.audio-practice-copy p { max-width: 400px; margin: 12px auto 0; font-size: 15px; line-height: 1.75; }
+.audio-halo { display: grid; place-items: center; position: relative; width: min(440px,100%); aspect-ratio: 1; margin: 12px auto 0; }
+.audio-halo canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.halo-toggle { position: relative; display: grid; place-items: center; width: clamp(96px,27%,112px); aspect-ratio: 1; border-radius: 50%; background: var(--surface); color: var(--heading); border: 1px solid color-mix(in srgb,var(--heading) 6%,transparent); box-shadow: 0 0 24px color-mix(in srgb,var(--heading) 22%,transparent); transition: transform 180ms ease-out; }
+.halo-toggle:active { transform: scale(.94); }
+.halo-toggle .lucide-play { margin-left: 4px; }
+.audio-duration { font: 400 18px/1.5 var(--font-body); color: var(--heading); margin: 18px 0 0; }
+.practice-finish { font: 400 14px/1.5 var(--font-body); color: var(--sage); text-decoration: underline; text-underline-offset: 3px; margin-top: 28px; padding: 10px 12px; min-height: 44px; }
+.has-player .audio-practice { padding-bottom: 140px; }
+.gentle-close { max-width: 560px; margin: auto; padding: 44px 24px; text-align: center; }
+.gentle-mark { position: relative; display: grid; place-items: center; width: 150px; height: 150px; margin: 0 auto; border-radius: 50%; background: var(--wash); color: var(--heading); }
+.gentle-mark > span { position: absolute; width: 104px; height: 104px; border: 1px solid var(--line); border-radius: 50%; }
+.gentle-close h1 { font-size: 36px; margin: 26px 0 0; line-height: 1.16; }
+.gentle-streak { font-size: 14px; margin: 12px 0 0; }
+.gentle-content { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.gentle-content > button { width: 100%; }
+.gentle-content h2 { font-size: 22px; margin: 0 0 16px; }
+.gentle-content textarea { min-height: 130px; padding: 12px; font: 400 16px/1.5 var(--font-body); }
+.gentle-content .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 0; }
+.intention-kept { display: grid; gap: 18px; color: var(--heading); }
+.intention-kept > svg { margin: auto; }
+.intention-kept h2 { margin: 0; }
+.journal-write { width: 100%; max-width: 760px; margin: auto; padding: 24px; }
+.journal-invitations.card { padding: 20px; margin: 0 0 20px; }
+.journal-invitations h2 { font-size: 22px; margin: 0; }
+.journal-invitations .outline { display: flex; width: 100%; text-align: left; justify-content: flex-start; font-size: 14px; margin-top: 12px; }
+.journal-change-prompt { margin-top: 12px; font: 400 14px/1.5 var(--font-body); color: var(--sage); min-height: 44px; }
+.journal-write .journal-editor { display: block; margin: 16px 0 20px; min-height: 300px; border-radius: 18px; }
+@media(orientation:landscape) and (max-height:600px) { .journal-write .journal-editor { min-height: 180px; } }
+.calm-enter { animation: calm-enter 620ms cubic-bezier(.16,1,.3,1) both; }
+.calm-route { animation: calm-enter 680ms cubic-bezier(.16,1,.3,1) both; }
+@keyframes calm-enter { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: none; } }
