@@ -182,3 +182,34 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .navigation-drawer { touch-action: pan-y; }
 .navigation-drawer:focus { outline: none; }
 .drawer-heading .drawer-close { width: 44px; height: 44px; min-width: 44px; min-height: 44px; padding: 13px; background: none; opacity: .75; }
+.mini-player { bottom: 6px; }
+@media(display-mode:standalone) { .mini-player { bottom: calc(8px + env(safe-area-inset-bottom)); } }
+.navigation-drawer[open] { animation: drawer-in 280ms cubic-bezier(.2,0,0,1); }
+.navigation-drawer[open]::backdrop { animation: drawer-shade-in 280ms ease-out; }
+.navigation-drawer[data-closing=true] { animation: drawer-out 220ms cubic-bezier(.4,0,1,1) forwards; pointer-events: none; }
+.navigation-drawer[data-closing=true]::backdrop { animation: drawer-shade-out 220ms ease-in forwards; }
+@keyframes drawer-in { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes drawer-out { to { transform: translateX(-100%); } }
+@keyframes drawer-shade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes drawer-shade-out { to { opacity: 0; } }
+@media(prefers-reduced-motion:reduce) { .navigation-drawer[open], .navigation-drawer[open]::backdrop { animation: none; } }
+
+/* Keep Clerk controls inside their card, including their focus treatment. */
+.login-card .cl-cardBox { overflow: visible; }
+.login-card .cl-card { width: 100%; margin: 0; border: 0; padding: 16px 0; }
+.login-card .cl-header { display: none; }
+.login-card .cl-formFieldLabel { margin: 0; }
+.login-card .cl-formFieldInput { width: 100%; min-width: 0; font-size: 16px; box-shadow: none; border: 1px solid var(--line); }
+.login-card .cl-formFieldInput:focus, .login-card .cl-formFieldInput:focus-visible { outline: none; border-color: var(--green); box-shadow: inset 0 0 0 1px var(--green); }
+.login-card .cl-formButtonPrimary { min-height: 48px; box-shadow: none; }
+
+@media(max-width:899px) {
+  .login-page { position: fixed; top: var(--visible-top,0px); left: 0; right: 0; height: var(--visible-height,100dvh); min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; padding: 24px max(20px,env(safe-area-inset-right)) 24px max(20px,env(safe-area-inset-left)); align-items: flex-start; scroll-padding: 20px; }
+  .login-card { flex-shrink: 0; min-width: 0; margin-block: auto; }
+  .login-page[data-keyboard=true] { padding-top: 16px; padding-bottom: 24px; }
+  .login-page[data-keyboard=true] .login-card > .brand { width: 150px; margin-bottom: 12px; }
+  .login-page[data-keyboard=true] .login-card h1 { font-size: 24px; margin-bottom: 10px; }
+  .login-page[data-keyboard=true] .login-intro { font-size: 14px; line-height: 1.5; margin-bottom: 12px; }
+  .login-page[data-keyboard=true] .cl-card { padding: 8px 0; gap: 16px; }
+  .login-page[data-keyboard=true] .cl-form { gap: 16px; }
+}
