@@ -60,7 +60,7 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .feature small { font-size: var(--type-label); margin-top: 2px; }
 .feature .eyebrow { letter-spacing: 1.5px; }
 .practice-body { font: 400 var(--type-body)/2.05 var(--font-body); padding: 28px; }
-.practice-body p { line-height: 2.05; }
+.practice-body p { line-height: 1.95; }
 .journal-editor { font: 400 var(--type-body)/1.6 var(--font-body); padding: 12px; }
 .entry-card { padding: 22px; }
 .entry-card h2 { font-size: var(--type-title); }
@@ -289,8 +289,13 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .page-title-row h1 { text-wrap:initial; line-height:1.20; }
 .page-eyebrow-row { animation: page-eyebrow 360ms cubic-bezier(.16,1,.3,1) both; }
 .page-title-row { animation: calm-enter 620ms 65ms cubic-bezier(.16,1,.3,1) both; }
-.page-heading > p { animation: calm-enter 620ms 130ms cubic-bezier(.16,1,.3,1) both; }
-.page-content { animation: calm-enter 620ms 195ms cubic-bezier(.16,1,.3,1) both; }
+.page-heading > p { animation: page-content-enter 620ms 130ms cubic-bezier(.16,1,.3,1) backwards; }
+.page-content { animation: page-content-enter 620ms 195ms cubic-bezier(.16,1,.3,1) backwards; }
+@keyframes page-content-enter { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+.first-check-in .page-eyebrow-row { animation-duration:760ms; }
+.first-check-in .page-title-row { animation-duration:760ms; animation-delay:105ms; }
+.first-check-in .page-heading > p { animation-duration:760ms; animation-delay:210ms; }
+.first-check-in .page-content { animation-duration:760ms; animation-delay:315ms; }
 @keyframes page-eyebrow { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
 .text-action { display:inline-flex; align-items:center; gap:7px; min-height:28px; padding:0; text-align:left; color:var(--heading); font:400 14px/1.5 var(--font-body); }
 .text-action.centered { justify-content:center; margin-top:8px; }
@@ -374,12 +379,14 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .reflection-history > .outline { align-self:flex-start; }
 .reflection-history .card { margin:0; }
 .reflection-heading { display:flex; align-items:center; gap:8px; font:400 12px/1.5 var(--font-body); letter-spacing:1.4px; text-transform:uppercase; margin:0 0 12px; }
-.current-intention { padding:22px; background:var(--wash); }
-.current-intention .reflection-heading { margin:0; }
+.current-intention { padding:21px; background:var(--wash); width:min-content; max-width:100%; align-self:flex-start; }
+.current-intention .reflection-heading { margin:0; white-space:nowrap; }
+@media(max-width:359px) { .current-intention { width:100%; } .current-intention .reflection-heading { white-space:normal; } }
 .current-intention h3 { margin:10px 0; font-size:22px; }
-.reflection-row { padding:18px; border-radius:18px; width:100%; }
+.reflection-row { padding:17px; border-radius:18px; width:100%; }
 .reflection-row p { font-size:16px; line-height:1.5; margin:0 0 6px; color:var(--heading); }
 .reflection-history .stack { gap:10px; }
+.reflection-history small { display:block; font-size:12px; line-height:18px; }
 .reflection-link { display:flex; align-items:center; gap:12px; }
 .empty > svg { display:block; margin:0 auto 12px; color:var(--green); }
 .empty h2 { margin:0; }
@@ -462,7 +469,6 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .page-eyebrow-row .eyebrow { color:var(--heading); }
 .page-title-row h1,.page-heading > p { text-wrap:pretty; }
 .page-heading > p { margin-top:6.6px; margin-bottom:-5.4px; }
-@supports(corner-shape:superellipse(2)) { .card,.feeling { corner-shape:superellipse(2); } }
 .guide-page .stack { gap:24px; }
 .guide-room.card { display:flex; align-items:flex-start; gap:16px; padding:20px; }
 .guide-icon { width:48px; height:48px; border-radius:50%; display:grid; place-items:center; flex-shrink:0; background:var(--wash); color:var(--heading); }
@@ -486,6 +492,6 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .entry-card { padding:21px; }
 .entry-open small { line-height:18px; }
 .practice-body.card { padding:27px; margin:0 0 20px; }
-.practice-body p { margin:0; }
+.practice-body p { margin:-4.4px 0; }
 .week-notes { margin-top:7.6px; margin-bottom:-4.4px; }
 .week-notes.overlay-title { margin-top:-4.4px; }
