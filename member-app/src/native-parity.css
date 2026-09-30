@@ -14,7 +14,7 @@
 html { font-size: var(--type-body); }
 html[data-theme=dusk] { --text: #a0aa96; }
 h1, h2, h3 { font-weight: 400; letter-spacing: normal; }
-h1 { font-size: var(--type-display); line-height: 1.15; }
+h1 { font-size: var(--type-display); line-height: 1.16; padding-block: .025em; text-wrap: balance; }
 h2, h3 { font-size: var(--type-title); }
 p { line-height: 2.05; }
 label { font-size: var(--type-label); }
@@ -22,7 +22,9 @@ small, .small { font-size: var(--type-label); }
 input, textarea, select { min-height: 54px; border-radius: 18px; }
 .page { padding-top: 36px; }
 .page-heading .eyebrow { margin-bottom: 12px; }
-.page-heading p { font-size: var(--type-body); line-height: 2.05; margin: 14px 0 0; }
+/* SwiftUI adds 8.8pt between body lines. CSS distributes that leading at
+   both outer edges as well, so trim 4.4px from each edge of the paragraph. */
+.page-heading p { font-size: var(--type-body); line-height: 2.05; margin: 9.6px 0 -4.4px; }
 .eyebrow { font-size: var(--type-label); letter-spacing: 1.8px; line-height: 1.5; }
 .primary, .outline { font-family: var(--font-system); font-size: 16px; line-height: 1.25; }
 .primary { min-height: 52px; padding: 12px 22px; font-weight: 600; }
