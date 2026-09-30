@@ -2,21 +2,26 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
     {
-      "src": "^/invite/?$",
-      "dest": "/invite/index.html",
+      "src": "^/invite(?:/.*)?$",
       "headers": {
         "Cache-Control": "no-store",
         "Referrer-Policy": "no-referrer",
         "X-Robots-Tag": "noindex, nofollow",
         "Content-Security-Policy": "default-src 'none'; base-uri 'none'; frame-ancestors 'none'",
         "X-Content-Type-Options": "nosniff"
-      }
+      },
+      "continue": true
+    },
+    {
+      "src": "^/invite/?$",
+      "dest": "/invite/index.html"
     },
     {
       "src": "^/\\.well-known/apple-app-site-association$",
       "headers": {
         "Content-Type": "application/json",
         "Cache-Control": "public, max-age=3600",
+        "X-Robots-Tag": "noindex, nofollow",
         "X-Content-Type-Options": "nosniff"
       },
       "continue": true
