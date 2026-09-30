@@ -3,12 +3,13 @@
   "routes": [
     {
       "src": "^/invite/?$",
-      "status": 307,
+      "dest": "/invite/index.html",
       "headers": {
-        "Location": "https://apps.apple.com/app/id6815497100",
         "Cache-Control": "no-store",
         "Referrer-Policy": "no-referrer",
-        "X-Robots-Tag": "noindex, nofollow"
+        "X-Robots-Tag": "noindex, nofollow",
+        "Content-Security-Policy": "default-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff"
       }
     },
     {
