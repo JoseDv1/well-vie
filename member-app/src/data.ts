@@ -1,0 +1,29 @@
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import {config} from './config.ts';
+export type Feeling={id:number;slug:string;label:string;sort_order:number};
+export type Need=Feeling&{invitation:string};
+export type Practice={id:number;title:string;need_slug:string;kind:'audio'|'text';description:string;body_text:string|null;audio_path:string|null;duration_sec:number|null;is_placeholder:boolean};
+export type Profile={id:string;name:string;photo_path:string|null;intention:string;about:string;hoping:string;path:string;profile_visible:boolean;circle_moderation_status:string;circle_moderation_note:string|null;is_admin:boolean;welcomed_at:string|null;profile_prompts:Record<string,string>};
+export type Entry={id:number;title:string|null;prompt_text:string|null;practice_id:number|null;body:string;created_at:string};
+export type Intention={id:number;text:string;created_at:string};
+export type Checkin={id:number;custom_feeling:string|null;created_at:string;feelings:{label:string}|null;needs:{label:string}|null};
+export type Week={id:number;week_number:number;title:string;notes:string;call_replay_url:string|null;breathwork_practice_id:number|null;somatic_practice_id:number|null;prompt_ids:number[];image_path:string|null};
+export type Gathering={id:number;title:string;kind:string;description:string;starts_at:string;duration_min:number|null;join_url:string|null;replay_url:string|null};
+export type Circle={id:string;name:string;description:string;member_count:number;unread_count:number;muted:boolean;last_message:string|null;last_message_at:string|null};
+export type Message={id:string;seq:number;circle_id:string;sender_id:string|null;sender_name:string;body:string;reply_to:string|null;reply_body:string|null;reply_sender:string|null;attachment_path:string|null;attachment_name:string|null;attachment_type:string|null;created_at:string;edited_at:string|null;deleted_at:string|null;reactions:{user_id:string;emoji:string}[];moderation_status:string;revision:number};
+export type ChatMember={id:string;name:string;last_read_seq:number;is_typing:boolean};
+export const practiceColumns='id,title,need_slug,kind,description,body_text,audio_path,duration_sec,is_placeholder';
+export const profileColumns='id,name,photo_path,intention,about,hoping,path,profile_visible,circle_moderation_status,circle_moderation_note,is_admin,welcomed_at,profile_prompts';
+export async function result<T>(request:PromiseLike<{data:unknown;error:unknown}>):Promise<T>{const {data,error}=await request;if(error)throw error;return data as T;}
+export function makeClient(getToken:()=>Promise<string|null>){return createClient(config.supabaseUrl,config.supabaseKey,{accessToken:getToken,global:{fetch:(input,init)=>fetch(input,{...init,cache:'no-store'})},auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});}
+export type DB=SupabaseClient;
+export async function rpc<T>(db:DB,name:string,args:Record<string,unknown>={}):Promise<T>{return result<T>(db.rpc(name,args));}
+export async function signedURL(db:DB,bucket:string,path:string,ttl=300){const r=await result<{signedUrl:string}>(db.storage.from(bucket).createSignedUrl(path,ttl));return r.signedUrl;}
+export async function allRows<T>(page:(from:number,to:number)=>PromiseLike<{data:unknown;error:unknown}>){let rows:T[]=[];for(let from=0;;from+=500){const next=await result<T[]>(page(from,from+499));rows=rows.concat(next);if(next.length<500)return rows;}}
+export const attachmentTypes:Record<string,string>={'image/jpeg':'jpg','image/png':'png','video/mp4':'mp4','audio/mp4':'m4a','application/pdf':'pdf','text/plain':'txt'};
+export function validateAttachment(file:Pick<File,'size'|'type'|'name'>){if(!file.size||file.size>20*1024*1024||!attachmentTypes[file.type]||file.name.length>200)throw new Error('Choose a photo, MP4 video, M4A voice note, PDF, or text file up to 20 MB.');}
+export function httpsURL(value:string|null|undefined){if(!value)return null;try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password?u.href:null;}catch{return null;}}
+export function safeError(error:unknown){const message=typeof error==='object'&&error&&'message'in error?String(error.message):'';if(/daily report limit/i.test(message))return 'You have reached the daily reporting limit. Please contact Well-Vie if you need more help.';if(/network|fetch|timeout/i.test(message))return 'We could not connect. Check your connection and try again.';if(/Choose a|Write a|Please enter|Recording|microphone/i.test(message))return message;return 'We couldn’t complete that just now. Please try again.';}
+export function cleanCopy(value:string|null|undefined){return (value??'').replaceAll('—',', ').replaceAll('–','-');}
+export function calendarText(event:Gathering){const clean=(s:string)=>s.replaceAll('\r','').replaceAll('\\','\\\\').replaceAll('\n','\\n').replaceAll(',','\\,').replaceAll(';','\\;');const stamp=(d:Date)=>d.toISOString().replace(/[-:]|\.\d{3}/g,'');const start=new Date(event.starts_at);return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Well-Vie//Gatherings//EN','BEGIN:VEVENT',`UID:gathering-${event.id}@well-vie.com`,`DTSTAMP:${stamp(new Date())}`,`DTSTART:${stamp(start)}`,...(event.duration_min?[`DTEND:${stamp(new Date(+start+event.duration_min*60000))}`]:[]),`SUMMARY:${clean(event.title)}`,`DESCRIPTION:${clean(event.description+'\n'+(httpsURL(event.join_url)??''))}`,...(httpsURL(event.join_url)?[`URL:${httpsURL(event.join_url)}`]:[]),'END:VEVENT','END:VCALENDAR'].join('\r\n');}
+export function downloadText(name:string,body:string,type='text/plain'){const url=URL.createObjectURL(new Blob([body],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

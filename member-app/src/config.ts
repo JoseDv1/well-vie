@@ -1,0 +1,1 @@
+export const config = {"clerkKey": "pk_live_Y2xlcmsud2VsbC12aWUuY29tJA", "supabaseUrl": "https://xsltodvgquimppfetmzv.supabase.co", "supabaseKey": "sb_publishable_IdLw6M8671hb60fOY2q3qA_dcGVvpL-"} as const;

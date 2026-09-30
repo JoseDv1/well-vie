@@ -1,0 +1,1 @@
+{"id":"/app/","name":"Well-Vie","short_name":"Well-Vie","start_url":"/app/","scope":"/app/","display":"standalone","background_color":"#faffff","theme_color":"#faffff","icons":[{"src":"/app/assets/icon192.png","sizes":"192x192","type":"image/png","purpose":"any"},{"src":"/app/assets/icon512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
