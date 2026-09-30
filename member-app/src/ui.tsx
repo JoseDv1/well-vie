@@ -1,7 +1,7 @@
 import {useCallback,useEffect,useRef,useState,type ReactNode} from 'react';
 import {ArrowLeft,ChevronRight,LoaderCircle} from 'lucide-react';
 import {safeError,cleanCopy} from './data';
-export function Page({eyebrow,title,intro,children,back}: {eyebrow?:string;title:string;intro?:string;children?:ReactNode;back?:()=>void}){return <section className="page">{back&&<button className="back" onClick={back}><ArrowLeft size={18}/>Back</button>}<header className="page-heading">{eyebrow&&<div className="eyebrow">{cleanCopy(eyebrow)}</div>}<h1>{cleanCopy(title)}</h1>{intro&&<p>{cleanCopy(intro)}</p>}</header>{children}</section>;}
+export function Page({eyebrow,title,intro,children,back,action}: {eyebrow?:string;title:string;intro?:string;children?:ReactNode;back?:()=>void;action?:ReactNode}){return <section className="page">{back&&<button className="back" onClick={back}><ArrowLeft size={18}/>Back</button>}<header className="page-heading">{eyebrow&&<div className="eyebrow">{cleanCopy(eyebrow)}</div>}<div className="page-title-row"><h1>{cleanCopy(title)}</h1>{action}</div>{intro&&<p>{cleanCopy(intro)}</p>}</header>{children}</section>;}
 export function Loading(){return <div className="loading" role="status"><LoaderCircle className="spin" size={26}/><span>Gathering your space…</span></div>;}
 export function ErrorBox({error,retry}:{error:unknown;retry?:()=>void}){return <div className="error" role="alert"><p>{typeof error==='string'?error:safeError(error)}</p>{retry&&<button className="outline" onClick={retry}>Try again</button>}</div>;}
 export function Empty({title,children}:{title:string;children?:ReactNode}){return <div className="card empty"><h2>{title}</h2>{children}</div>;}

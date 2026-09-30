@@ -11,6 +11,7 @@ import {Journal,WriteJournal,JournalEntry,ReflectionHistory} from './journal';
 import {ProfileView,Intake,Blocked,Guide} from './profile';
 import {Circles,Chat,Directory,Moderation} from './circle';
 import './style.css';
+import './native-parity.css';
 function Brand(){return <img className="brand" src="/app/assets/wordmark.png" alt="Well-Vie"/>;}
 function Login(){const invitation=new URLSearchParams(location.search).has('__clerk_ticket');return <main className="login-page"><div className="login-card"><Brand/><h1>A quiet place to return to.</h1><p className="login-intro">Well-Vie is invite only. Sign in with the email address you were invited with.</p>{invitation?<SignUp routing="hash" forceRedirectUrl="/app/" signInUrl="/app/"/>:<SignIn routing="hash" forceRedirectUrl="/app/"/>}<p className="small muted">Need a hand? <a href="mailto:mckenzie@well-vie.com">Contact Well-Vie</a></p></div></main>;}
 function Connected(){const {isLoaded,isSignedIn,userId,sessionId,getToken}=useAuth();const clerk=useClerk();const token=useRef(getToken);token.current=getToken;const db=useMemo(()=>makeClient(()=>token.current()),[userId,sessionId]);const signOut=async()=>{await db.removeAllChannels();await clerk.signOut({redirectUrl:'/app/'});};if(!isLoaded)return <Loading/>;if(!isSignedIn)return <Login/>;return <MemberApp key={userId+':'+sessionId} db={db} signOut={signOut}/>;}
