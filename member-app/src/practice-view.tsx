@@ -15,7 +15,7 @@ export function PracticeView({id,initiallyComplete=false}:{id:number;initiallyCo
   const eventID=useRef(crypto.randomUUID()),completionID=useRef<string>(eventID.current),action=useAction();
   const saveCompletion=async()=>{setSync('saving');try{await rpc(db,'record_practice_completion',{p_event_id:completionID.current,p_practice_id:id});setSync('saved');}catch{setSync('failed');}};
   const finish=()=>{if(finishedRef.current)return;finishedRef.current=true;completionID.current=playing?.id===id?playbackEventID:eventID.current;if(playing?.id===id)stop();setFinished(true);window.scrollTo(0,0);void saveCompletion();};
-  useEffect(()=>{if(completedPracticeID===id)finish();},[completedPracticeID,id]);
+  useEffect(()=>{if(completedPracticeID===id&&playing?.id===id)finish();},[completedPracticeID,id,playing?.id]);
   if(load.loading)return <Loading/>;
   if(load.error)return <ErrorBox error={load.error} retry={load.reload}/>;
   const practice=load.data;if(!practice)return <Page title="Practice unavailable" intro="This practice is no longer available."/>;
