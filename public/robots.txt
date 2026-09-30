@@ -1,0 +1,5 @@
+User-agent: *
+
+# Private member application
+User-agent: *
+Disallow: /app
