@@ -14,9 +14,12 @@ const destinations = [
 export function NavigationDrawer({active, unread, go}:{active:string;unread:number;go:(path:string)=>void}) {
   const panel=useRef<HTMLDialogElement>(null);
   const [open,setOpen]=useState(false);
+  const [closing,setClosing]=useState(false);
   const touch=useRef<{x:number;y:number}|undefined>(undefined);
   const [drag,setDrag]=useState(0);
-  const close=()=>{panel.current?.close();setOpen(false);setDrag(0);touch.current=undefined;};
+  const finishClose=()=>{panel.current?.close();setOpen(false);setClosing(false);setDrag(0);touch.current=undefined;};
+  const close=()=>{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)finishClose();else setClosing(true);};
+  useEffect(()=>{if(!closing)return;const timer=setTimeout(finishClose,220);return()=>clearTimeout(timer);},[closing]);
   useEffect(()=>{
     if(!open)return;
     const previous=document.body.style.overflow;
@@ -25,8 +28,8 @@ export function NavigationDrawer({active, unread, go}:{active:string;unread:numb
   },[open]);
   return <>
     <button className="icon-button drawer-trigger" aria-label="Open navigation" aria-haspopup="dialog" aria-expanded={open}
-      onClick={()=>{panel.current?.showModal();panel.current?.focus({preventScroll:true});setOpen(true);}}><Menu size={24}/></button>
-    <dialog ref={panel} className="navigation-drawer" aria-label="Navigation" tabIndex={-1} style={{transform:drag?`translateX(${drag}px)`:undefined}} onClose={()=>{setOpen(false);setDrag(0);}}
+      onClick={()=>{setClosing(false);panel.current?.showModal();panel.current?.focus({preventScroll:true});setOpen(true);}}><Menu size={24}/></button>
+    <dialog ref={panel} className="navigation-drawer" aria-label="Navigation" tabIndex={-1} data-closing={closing} style={{transform:drag?`translateX(${drag}px)`:undefined}} onCancel={event=>{event.preventDefault();close();}} onClose={()=>{setOpen(false);setClosing(false);setDrag(0);}}
       onTouchStart={event=>{const point=event.touches[0];touch.current={x:point.clientX,y:point.clientY};}}
       onTouchMove={event=>{if(!touch.current)return;const point=event.touches[0];const dx=point.clientX-touch.current.x;const dy=point.clientY-touch.current.y;if(Math.abs(dy)>Math.abs(dx)+12){touch.current=undefined;setDrag(0);return;}if(dx< -10)setDrag(dx);}}
       onTouchEnd={event=>{const start=touch.current;const end=event.changedTouches[0];const dx=start&&end?end.clientX-start.x:0;const dy=start&&end?end.clientY-start.y:0;if(dx< -60&&Math.abs(dx)>Math.abs(dy))close();else setDrag(0);touch.current=undefined;}}
