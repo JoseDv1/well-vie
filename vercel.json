@@ -2,6 +2,19 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
     {
+      "src": "^/privacy(?:/.*)?$",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow",
+        "Referrer-Policy": "no-referrer",
+        "X-Content-Type-Options": "nosniff"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/privacy/?$",
+      "dest": "/privacy/index.html"
+    },
+    {
       "src": "^/invite(?:/.*)?$",
       "headers": {
         "Cache-Control": "no-store",
