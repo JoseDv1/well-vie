@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["XUKXY2QLRJ.com.wellvie.wellVieMobile"],
+        "components": [
+          {"/": "/invite"},
+          {"/": "/invite/"}
+        ]
+      }
+    ]
+  }
+}
