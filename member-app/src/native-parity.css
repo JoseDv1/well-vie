@@ -166,3 +166,14 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
   .chat-page { height: calc(100dvh - 76px); }
   .has-player .chat-page { height: calc(100dvh - 188px); }
 }
+
+/* Compact single-line composer, matching the supplied mobile reference. */
+.composer, .has-player .composer { padding: 5px; border-radius: 29px; background: var(--surface); }
+.composer-row { display: flex; align-items: flex-end; gap: 2px; }
+.composer .composer-row > textarea { flex: 1; width: 0; min-width: 0; min-height: 44px; max-height: 120px; margin: 0; padding: 11px 5px; border: 0; border-radius: 0; outline-offset: -2px; font: 400 17px/22px var(--font-system); background: transparent; resize: none; }
+.composer-row .icon-button { width: 44px; height: 44px; min-width: 44px; min-height: 44px; margin: 0; padding: 10px; }
+.composer-row .composer-send { background: var(--heading); color: var(--paper); }
+.composer-row .composer-send:disabled { background: var(--wash); color: var(--sage); opacity: .65; cursor: default; }
+.composer-row .composer-mic[aria-pressed=true] { color: var(--error); background: color-mix(in srgb,var(--error) 10%,var(--surface)); }
+.composer .reply-draft { margin: 5px 10px 6px; padding: 8px 10px; border-radius: 16px; }
+.composer .recording-status { padding: 4px 12px 8px; color: var(--error); }
