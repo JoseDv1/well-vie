@@ -255,3 +255,26 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .calm-enter { animation: calm-enter 620ms cubic-bezier(.16,1,.3,1) both; }
 .calm-route { animation: calm-enter 680ms cubic-bezier(.16,1,.3,1) both; }
 @keyframes calm-enter { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: none; } }
+
+/* Message actions are attached to a held/right-clicked bubble, without a footer row. */
+.message-wrap { position: relative; max-width: 90%; min-width: 0; }
+.message-wrap.own { align-self: flex-end; }
+.message-wrap .message { max-width: 100%; margin: 0; touch-action: pan-y; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; transition: transform 180ms ease-out; }
+.message-wrap .message[data-swiping=true] { transition: none; }
+.message-wrap .message p { margin: 7px 0 0; }
+.message-meta:empty, .reactions:empty { display: none; }
+.message-wrap .reactions:not(:empty) { margin-top: 8px; }
+.swipe-reply-hint { position: absolute; left: 10px; top: calc(50% - 10px); color: var(--sage); }
+.message-wrap.own .swipe-reply-hint { left: auto; right: 10px; }
+.message-popover { position: fixed; z-index: 110; width: 220px; padding: 8px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: 0 12px 40px #17231530; color: var(--heading); max-height: calc(100dvh - 24px); overflow-y: auto; animation: calm-enter 180ms ease-out; }
+.message-popover > button { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; min-height: 44px; text-align: left; border-radius: 12px; padding: 10px 12px; font: 400 14px/1.3 var(--font-body); }
+.message-popover > button:hover, .message-popover > button:focus-visible { background: var(--wash); }
+.message-popover .message-reactions { display: flex; padding: 2px 4px 8px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.message-popover .message-reactions button { flex: 1; min-height: 44px; font-size: 22px; }
+.outgoing-row { display: flex; align-items: center; align-self: flex-end; gap: 8px; max-width: 100%; }
+.outgoing-row .message { min-width: 100px; max-width: 100%; }
+.message-retry { flex-shrink: 0; min-width: 44px; min-height: 44px; display: grid; gap: 3px; place-items: center; color: var(--error); }
+.message-retry span { font: 400 10px/1.2 var(--font-body); }
+.message-sending { color: var(--sage); padding: 8px; }
+.pending-message .small { display: flex; gap: 8px; align-items: center; }
+@media(min-width:900px) { .message-wrap { max-width: 75%; } }
