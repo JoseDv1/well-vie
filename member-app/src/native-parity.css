@@ -379,7 +379,7 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .reflection-history > .outline { align-self:flex-start; }
 .reflection-history .card { margin:0; }
 .reflection-heading { display:flex; align-items:center; gap:8px; font:400 12px/1.5 var(--font-body); letter-spacing:1.4px; text-transform:uppercase; margin:0 0 12px; }
-.current-intention { padding:21px; background:var(--wash); width:min-content; max-width:100%; align-self:flex-start; }
+.current-intention { padding:21px; background:var(--wash); width:min-content; min-width:min(100%,296px); max-width:100%; align-self:flex-start; overflow-wrap:anywhere; }
 .current-intention .reflection-heading { margin:0; white-space:nowrap; }
 @media(max-width:359px) { .current-intention { width:100%; } .current-intention .reflection-heading { white-space:normal; } }
 .current-intention h3 { margin:10px 0; font-size:22px; }
