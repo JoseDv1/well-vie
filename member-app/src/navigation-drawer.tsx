@@ -29,7 +29,7 @@ export function NavigationDrawer({active, unread, go}:{active:string;unread:numb
     <dialog ref={panel} className="navigation-drawer" aria-label="Navigation" tabIndex={-1} style={{transform:drag?`translateX(${drag}px)`:undefined}} onClose={()=>{setOpen(false);setDrag(0);}}
       onTouchStart={event=>{const point=event.touches[0];touch.current={x:point.clientX,y:point.clientY};}}
       onTouchMove={event=>{if(!touch.current)return;const point=event.touches[0];const dx=point.clientX-touch.current.x;const dy=point.clientY-touch.current.y;if(Math.abs(dy)>Math.abs(dx)+12){touch.current=undefined;setDrag(0);return;}if(dx< -10)setDrag(dx);}}
-      onTouchEnd={()=>{if(drag< -60)close();else setDrag(0);touch.current=undefined;}}
+      onTouchEnd={event=>{const start=touch.current;const end=event.changedTouches[0];const dx=start&&end?end.clientX-start.x:0;const dy=start&&end?end.clientY-start.y:0;if(dx< -60&&Math.abs(dx)>Math.abs(dy))close();else setDrag(0);touch.current=undefined;}}
       onTouchCancel={()=>{touch.current=undefined;setDrag(0);}}
       onClick={event=>{if(event.target!==event.currentTarget)return;const rect=event.currentTarget.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)close();}}>
       <div className="drawer-heading"><img src="/app/assets/wordmark.png" alt="Well-Vie"/><button className="icon-button drawer-close" aria-label="Close navigation" onClick={close}><X size={18}/></button></div>
