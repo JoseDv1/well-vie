@@ -467,7 +467,7 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .avatar.initials { font-size:22px; color:var(--heading); border:1px solid var(--line); }
 .profile-review h2 { display:flex; align-items:center; gap:8px; }
 .page-eyebrow-row .eyebrow { color:var(--heading); }
-.page-title-row h1,.page-heading > p { text-wrap:pretty; }
+.page-title-row h1,.page-heading > p { text-wrap:wrap; }
 .page-heading > p { margin-top:6.6px; margin-bottom:-5.4px; }
 .guide-page .stack { gap:24px; }
 .guide-room.card { display:flex; align-items:flex-start; gap:16px; padding:20px; }
@@ -476,7 +476,7 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .guide-room p { font-size:16px; line-height:2.05; margin:0; }
 .guide-room p+p { margin-top:14px; }
 .guide-footer { font-size:14px; line-height:1.5; margin:0; padding:20px; text-align:center; }
-.practice-card strong,.practice-card .muted,.need-card small,.feeling small { text-wrap:pretty; }
+.practice-card strong,.practice-card .muted,.need-card small,.feeling small { text-wrap:wrap; }
 .feature.card { padding:23px; }
 .feature small { line-height:18px; }
 .feature-quote { z-index:1; position:relative; font:bold 46px/28px Georgia,serif; height:28px; margin-top:7px; color:var(--heading); }
