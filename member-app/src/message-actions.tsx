@@ -3,7 +3,7 @@ import {createPortal} from 'react-dom';
 import {Reply} from 'lucide-react';
 import {inwardSwipe} from './message-gesture';
 
-export function MessageBubble({own,label,children,actions,onReply}:{own:boolean;label:string;children:ReactNode;actions?:ReactNode;onReply?:()=>void}){
+export function MessageBubble({own,label,children,actions,onReply,deliveryWarning}:{own:boolean;label:string;children:ReactNode;actions?:ReactNode;onReply?:()=>void;deliveryWarning?:ReactNode}){
   const root=useRef<HTMLElement>(null),menu=useRef<HTMLDivElement>(null);
   const gesture=useRef<{x:number;y:number;long:boolean;cancelled:boolean}|null>(null),timer=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
   const [anchor,setAnchor]=useState<{x:number;y:number}|null>(null),[offset,setOffset]=useState(0);
@@ -25,6 +25,7 @@ export function MessageBubble({own,label,children,actions,onReply}:{own:boolean;
       onClickCapture={event=>{if(gesture.current?.long){event.preventDefault();event.stopPropagation();}}}>
       {children}
     </article>
+    {deliveryWarning}
     {anchor&&createPortal(<div ref={menu} className="message-popover" role="dialog" aria-label="Message options" style={position} onClick={event=>{if((event.target as Element).closest('button')){setAnchor(null);}}}>{actions}</div>,document.body)}
   </div>;
 }
