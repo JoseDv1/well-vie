@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import {BookOpen,Download,History,PenLine,Trash2,Quote,Leaf,Navigation,ChevronRight} from 'lucide-react';
 import {useMember} from './context';
-import {type Entry,type Intention,type Checkin,result,rpc,allRows,downloadText,cleanCopy} from './data';
+import {type Entry,type Intention,type Checkin,result,rpc,allRows,downloadText,cleanCopy,gentleStreak} from './data';
 import {Page,Loading,ErrorBox,Empty,useLoad,useAction,dateLabel,timeLabel} from './ui';
 const journalColumns='id,title,prompt_text,practice_id,body,created_at';
 export function Journal(){
@@ -10,7 +10,7 @@ export function Journal(){
   const action=useAction();const exportEntries=()=>downloadText('well-vie-journal.txt',(load.data??[]).map(e=>`${dateLabel(e.created_at)}\n${e.title??''}\n${e.prompt_text??''}\n\n${e.body}`).join('\n\n________\n\n'));
   return <Page eyebrow="Private journal" title="A place for your own words" intro="These entries stay tied to your account and are not shared with other members." action={<button className="primary" onClick={()=>go('/write')}><PenLine size={18}/>Write</button>}>
     {load.loading?<Loading/>:load.error?<ErrorBox error={load.error} retry={load.reload}/>:<>
-      <div className="actions journal-tools"><button className="outline" onClick={exportEntries}><Download size={18}/>Take a copy</button><button className="outline tonal" onClick={()=>go('/history')}><History size={18}/>Looking back</button></div>
+      {gentleStreak((load.data??[]).map(e=>e.created_at))>=2&&<p className="streak-note">You’ve journaled {gentleStreak((load.data??[]).map(e=>e.created_at))} days in a row</p>}<div className="actions journal-tools"><button className="outline" onClick={exportEntries}><Download size={18}/>Take a copy</button><button className="outline tonal" onClick={()=>go('/history')}><History size={18}/>Looking back</button></div>
       {!load.data?.length?<Empty title="Your journal begins here" icon={<BookOpen size={32}/>}><p>Write freely, or begin from a journal invitation inside The Reset.</p></Empty>:<div className="stack journal-entries">{load.data.map(e=><article className="card entry-card" key={e.id}><button className="entry-open" onClick={()=>go('/journal/'+e.id)}><h2>{cleanCopy(e.title)||dateLabel(e.created_at)}</h2>{e.prompt_text&&<p className="entry-prompt">{cleanCopy(e.prompt_text)}</p>}<p className="line-clamp entry-body">{e.body}</p><small>{timeLabel(e.created_at)}</small></button><button className="icon-button" aria-label="Delete entry" disabled={action.busy} onClick={()=>{if(window.confirm('Delete this journal entry permanently? This cannot be undone.'))void action.run(async()=>{await result(db.from('journal_entries').delete().eq('id',e.id));await load.reload();});}}><Trash2 size={18}/></button></article>)}</div>}{action.error&&<ErrorBox error={action.error}/>}
     </>}
   </Page>;
