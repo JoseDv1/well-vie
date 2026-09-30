@@ -485,3 +485,7 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 .page-heading { margin-bottom:26px; }
 .entry-card { padding:21px; }
 .entry-open small { line-height:18px; }
+.practice-body.card { padding:27px; margin:0 0 20px; }
+.practice-body p { margin:0; }
+.week-notes { margin-top:7.6px; margin-bottom:-4.4px; }
+.week-notes.overlay-title { margin-top:-4.4px; }
