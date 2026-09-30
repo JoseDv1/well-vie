@@ -3,11 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "npm ci --prefix member-app --ignore-scripts && npm run build --prefix member-app && astro check && astro build",
+    "dev": "node scripts/build-invite-config.mjs && astro dev",
+    "start": "node scripts/build-invite-config.mjs && astro dev",
+    "build": "node scripts/build-invite-config.mjs && npm ci --prefix member-app --ignore-scripts && npm run build --prefix member-app && astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test:invite": "node --test scripts/invite-routing.test.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
