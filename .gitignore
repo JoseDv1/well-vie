@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # Generated member application
 /public/app/
+
+# Public release flag generated from the deployment environment
+/public/invite/availability.js
