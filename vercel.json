@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "^/invite/?$",
+      "status": 307,
+      "headers": {
+        "Location": "https://apps.apple.com/app/id6815497100",
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    },
+    {
+      "src": "^/\\.well-known/apple-app-site-association$",
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "public, max-age=3600",
+        "X-Content-Type-Options": "nosniff"
+      },
+      "continue": true
+    }
+  ]
+}
