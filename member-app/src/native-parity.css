@@ -197,7 +197,8 @@ input, textarea, select { min-height: 54px; border-radius: 18px; }
 /* Keep Clerk controls inside their card, including their focus treatment. */
 .login-card .cl-cardBox { overflow: visible; }
 .login-card .cl-card { width: 100%; margin: 0; border: 0; padding: 16px 0; }
-.login-card .cl-header { display: none; }
+/* Keep the account identifier and change-account control available on later steps. */
+.login-card .cl-header { gap: 8px; }
 .login-card .cl-formFieldLabel { margin: 0; }
 .login-card .cl-formFieldInput { width: 100%; min-width: 0; font-size: 16px; box-shadow: none; border: 1px solid var(--line); }
 .login-card .cl-formFieldInput:focus, .login-card .cl-formFieldInput:focus-visible { outline: none; border-color: var(--green); box-shadow: inset 0 0 0 1px var(--green); }
